@@ -31,20 +31,17 @@ Include reference data used for all steps of QC and analysis, and include their 
 
 hg19 map files: `link.to.map/files` (URL)
 
-## Methods Overview
-Proved a high-level methods overview for the project here. For example, data will be taken in and processed through a typical GWAS quality control. Then we will run GWAS for each ancestry group and meta-analyize the resulting summary statistics files. 
-
-### Theory
-If needed, theory behind project can be outlined in this section. LaTeX can be used to render mathematical expressions. For example:
-
-```math
-\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
-```
-
 ### Staging
 Provide brief overview of staging process for data analysis. Including what platform was used and how (e.g. local machine, GoogleCloud project, or UGER). Include versions of all relevant software used after this description. Inlcude links to scripts used to access software if it makes sense to do so.
 
 **Installed/used software:** Shapeit4, Impute5, plin1.96...
+
+### Subsetting
+Date started:   `202403` 
+
+Date finished:  `202404` 
+
+WGSPD subset pulled from gnomadv3 genomes VDS. See *subsetting/* for more details.
 
 ### Quality control
 Date started:   `00/00/00` 

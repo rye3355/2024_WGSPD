@@ -1,4 +1,4 @@
-e# Quality Control
+# Quality Control
 
 ## Subsetting
 
