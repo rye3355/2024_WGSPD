@@ -1,5 +1,5 @@
-# Project_Template
-This is a template for a project repository that can be cloned/copied by the analysts and used to keep track of their projects. Including keeping track of data files, code used in the analysis process, and any relevant reference files or outputs. This text can be replaced with a short text outlining project.
+# WGSPD
+2024 analysis of WGSPD cohort
 
 ## Project Overview
 ### Description
