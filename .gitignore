@@ -1,4 +1,4 @@
 *.DS_Store
 *.RHistory
 
-2024_WGSPD/subsetting/files/gnomad_v3.1_subset-metadata.tsv
+subsetting/files/gnomad_v3.1_subset-metadata.tsv
