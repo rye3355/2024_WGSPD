@@ -1,21 +1,22 @@
 # Quality Control
 
-## Filtering
-
-Filtering can be done using Bash:
-
+Filter out variants outside of LCRs, filter out low quality reads. 
 ```bash
-bash hello.sh
+hailctl dataproc start rye \
+    --num-workers 5 \
+    --packages gnomad \
+    --autoscaling-policy=test-5-200 \
+    --max-idle=15m
+hailctl dataproc submit rye 00_variant-qc.py
 ```
 
-or R:
-
-```r
-print("Hello World!")
+Run Hail sample qc to generate basic metrics
+```bash
+hailctl dataproc submit rye 01_sample-qc.py
+gsutil cp gs://2024-wgspd/qc/20240408_subset_sample_qc1.tsv files/
 ```
 
-or Python:
-
+Generate 
 ```python
 print("Hellow World!")
 ```

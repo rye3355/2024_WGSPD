@@ -2,3 +2,4 @@
 *.RHistory
 
 subsetting/files/gnomad_v3.1_subset-metadata.tsv
+Analysis/QC/files/20240408_subset_sample_qc1.tsv
