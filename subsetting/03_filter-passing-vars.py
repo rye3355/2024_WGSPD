@@ -22,6 +22,7 @@ print(f"Starting: {mt.count()}")
 # There are also some other qc steps done before the next filtering table by gnomad (see message from Qin)
 
 # HT from Qin
+# from gnomad_qc.v4.resources.variant_qc import final_filter
 v = hl.read_table("gs://gnomad-subsets-2024/gnomad-v3/gnomad.genomes.v4.0.final_filter.ht")
 # 990067456
 
