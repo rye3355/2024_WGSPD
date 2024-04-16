@@ -10,15 +10,15 @@ hailctl dataproc start rye \
 hailctl dataproc submit rye 00_variant-qc.py
 ```
 
-Run Hail sample qc to generate basic metrics
+Run Hail sample qc to generate basic metrics.
 ```bash
 hailctl dataproc submit rye 01_sample-qc.py
 gsutil cp gs://2024-wgspd/qc/20240408_subset_sample_qc1.tsv files/
 ```
 
-Generate 
-```python
-print("Hellow World!")
+Initial sample-level filtering based on read metrics
+```bash
+Rscript 02_sample-qc_MAD-4.R
 ```
 
 or C++
