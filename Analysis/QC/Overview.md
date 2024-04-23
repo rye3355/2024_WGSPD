@@ -29,9 +29,20 @@ Rscript 02_sample-filtering.R
 ```
 
 
-LD Prune
-```bash
+LD Prune, pull resources using QoB from gnomad bucket
+```python
+import hail as hl
+hl.init(gcs_requester_pays_configuration = 'wes-bipolar',
+        tmp_dir = 'gs://wes-bipolar-tmp-4day',
+        default_reference = 'GRCh38')
 
+v2_qc_mt_liftover = hl.read_matrix_table("gs://gnomad/sample_qc/mt/gnomad.joint.high_callrate_common_biallelic_snps.pruned.grch38.mt/") # Read pruned MT, see from gnomad_qc.v2.resources.sample_qc import get_liftover_v2_qc_mt
+v2_qc_mt_liftover.rows().write("gs://2024-wgspd/qc/20240423_gnomad.joint.high_callrate_common_biallelic_snps.pruned.grch38.ht", overwrite=True)
+```
+
+Using LD pruned variants from gnomadv3, run relatedness analysis (pc_relate)
+```bash
+Rscript 03_pc-relate.py
 ```
 
 
