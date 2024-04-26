@@ -82,12 +82,13 @@ result.export(output = "gs://2024-wgspd/qc/20240425_pc-relate_samples-to-remove.
 ```
 
 
-Check concordance of related samples with gnomadv3 QC
+Check concordance of related samples with gnomadv3 QC and write final manifest
 ```R
 library(data.table)
 system2("gsutil", "cp gs://2024-wgspd/qc/20240425_pc-relate_samples-to-remove.tsv files/")
 to_remove = fread("files/20240425_pc-relate_samples-to-remove.tsv")
 meta = fread("../../subsetting/files/gnomad_v3.1_subset-metadata.tsv")
+manifest = fread("../../subsetting/2024_WGSPD_merged-manifest.tsv")
 
 table(meta[meta$s %in% to_remove$s, "sample_filters.all_samples_related"])
 # 1443 / 2105 match up with gnomad
@@ -101,14 +102,19 @@ table(to_remove$PRIMARY_DISEASE)
 table(to_remove$CASECON)
 # CASE CTRL 
 # 790 1315 
+
+manifest = manifest[manifest$s %in% meta$s[meta$high_quality],] # Slim to high quality (32739)
+manifest = manifest[manifest$CASECON %in% c("CASE", "CTRL"),] # Slim to case/control (30659)
+manifest = manifest[!(manifest$s %in% to_remove$s)] # Remove relateds (28554)
+manifest = merge(manifest, meta[, c("s", "population_inference.pop")], by = "s", all.x = T, all.y = F) # Get inferred populations
+
+
+write.table(manifest, "20240426_WGSPD_final-qcd-manifest.tsv", sep = "\t",
+            quote = F, col.names = T, row.names = F)
 ```
 
-
-
-
-# More QC
-You can also refer to specific scripts: [script1.sh](script1.sh)
-
+Write out final QC'd MT
 ```bash
-bash script1.sh
+hailctl dataproc submit rye 04_remove-related.py
 ```
+
