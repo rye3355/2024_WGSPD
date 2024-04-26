@@ -1,0 +1,2106 @@
+s	sex_new	sex_old	SEX	primary_disease_new	primary_disease_new_fixed	primary_disease_old	primary_disease_old_fixed	PRIMARY_DISEASE	CASECON
+05C44528	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+07C63716	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+07C64498	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+09C100011	Male	Male	Male	Schizoaffective disorder, depressive type	SCZ	Schizoaffective disorder, depressive type	SCZ	SCZ	CASE
+09C100087	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+09C100124	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+09C100178	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+09C100257	Male	Male	Male	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+09C100294	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+09C100340	Male	Male	Male	Schizoaffective disorder, bipolar type	SCZ	Schizoaffective disorder, bipolar type	SCZ	SCZ	CASE
+09C100390	Female	Female	Female	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+09C100451	Male	Male	Male	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+09C79872	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+09C81670	Male	Male	Male	Schizophrenia, Hebephrenic	SCZ	Schizophrenia, Hebephrenic	SCZ	SCZ	CASE
+09C82200	Male	Male	Male	Schizoaffective disorder, bipolar type	SCZ	Schizoaffective disorder, bipolar type	SCZ	SCZ	CASE
+09C82237	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+09C82581	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+09C84640	Male	Male	Male	Schizoaffective disorder, bipolar type	SCZ	Schizoaffective disorder, bipolar type	SCZ	SCZ	CASE
+09C84978	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+09C85339	Male	Male	Male	Schizoaffective disorder, bipolar type	SCZ	Schizoaffective disorder, bipolar type	SCZ	SCZ	CASE
+09C85731	Male	Male	Male	Schizoaffective disorder, bipolar type	SCZ	Schizoaffective disorder, bipolar type	SCZ	SCZ	CASE
+09C86753	Female	Female	Female	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+09C86759	Male	Male	Male	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+09C86879	Female	Female	Female	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+09C87260	Male	Male	Male	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+09C89267	Male	Male	Male	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+09C89675	Male	Male	Male	Schizophrenia, Hebephrenic	SCZ	Schizophrenia, Hebephrenic	SCZ	SCZ	CASE
+09C89963	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+09C90512	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+09C91144	Female	Female	Female	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+09C91219	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+09C91384	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+09C91591	Male	Male	Male	Schizophrenia, Hebephrenic	SCZ	Schizophrenia, Hebephrenic	SCZ	SCZ	CASE
+09C92835	Male	Male	Male	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+09C95437	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+09C95536	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+09C95802	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+09C95875	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+09C95889	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+09C97214	Male	Male	Male	Schizophrenia, Hebephrenic	SCZ	Schizophrenia, Hebephrenic	SCZ	SCZ	CASE
+09C97226	Female	Female	Female	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+09C97227	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+09C97517	Female	Female	Female	Bipolar I disorder	BD1	Bipolar I disorder	BD1	BD1	CASE
+09C97947	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+09C98101	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+09C98628	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+09C98772	Male	NA	Male	Schizophrenia, Hebephrenic	SCZ	NA	NA	SCZ	CASE
+09C98933	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+09C99408	Male	Male	Male	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+09C99441	Male	Male	Male	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+09C99723	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+1005NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1011NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+10165	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1016NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+10195	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1027NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1044NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1045NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1046NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1052NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1090-HH	Female	Female	Female	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+10C100756	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C100863	Male	Male	Male	Schizoaffective disorder, bipolar type	SCZ	Schizoaffective disorder, bipolar type	SCZ	SCZ	CASE
+10C100867	Male	Male	Male	Schizoaffective disorder, depressive type	SCZ	Schizoaffective disorder, depressive type	SCZ	SCZ	CASE
+10C101498	Female	Female	Female	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+10C101562	Male	Male	Male	Schizophrenia, Hebephrenic	SCZ	Schizophrenia, Hebephrenic	SCZ	SCZ	CASE
+10C101666	Male	Male	Male	Schizophrenia, Hebephrenic	SCZ	Schizophrenia, Hebephrenic	SCZ	SCZ	CASE
+10C101669	Female	Female	Female	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+10C101681	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C101715	Male	Male	Male	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+10C101883	Male	Male	Male	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+10C102301	Female	Female	Female	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+10C102538	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C102553	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+10C102556	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+10C103193	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+10C103649	Female	Female	Female	Schizoaffective disorder, depressive type	SCZ	Schizoaffective disorder, depressive type	SCZ	SCZ	CASE
+10C104233	Female	Female	Female	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+10C104477	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+10C104554	Female	Female	Female	Schizoaffective disorder, bipolar type	SCZ	Schizoaffective disorder, bipolar type	SCZ	SCZ	CASE
+10C104760	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+10C104940	Male	Male	Male	Schizophrenia, Hebephrenic	SCZ	Schizophrenia, Hebephrenic	SCZ	SCZ	CASE
+10C104967	Female	Female	Female	Schizoaffective disorder, bipolar type	SCZ	Schizoaffective disorder, bipolar type	SCZ	SCZ	CASE
+10C105112	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C105431	Female	Female	Female	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+10C106201	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C106203	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+10C106926	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C108794	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C109017	Male	Male	Male	Bipolar I disorder	BD1	Bipolar I disorder	BD1	BD1	CASE
+10C109739	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+10C109908	Male	Male	Male	Schizophrenia, Hebephrenic	SCZ	Schizophrenia, Hebephrenic	SCZ	SCZ	CASE
+10C110103	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+10C110476	Female	Female	Female	Schizoaffective disorder, depressive type	SCZ	Schizoaffective disorder, depressive type	SCZ	SCZ	CASE
+10C110537	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C110783	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+10C110790	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C110955	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C110974	Male	Male	Male	Schizoaffective disorder, bipolar type	SCZ	Schizoaffective disorder, bipolar type	SCZ	SCZ	CASE
+10C111197	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C111290	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C111780	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C111806	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C111947	Male	Male	Male	Bipolar I disorder	BD1	Bipolar I disorder	BD1	BD1	CASE
+10C112152	Male	Male	Male	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+10C112351	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+10C112566	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+10C112737	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C112759	Female	Female	Female	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+10C112761	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+10C112973	Male	Male	Male	Schizoaffective disorder, bipolar type	SCZ	Schizoaffective disorder, bipolar type	SCZ	SCZ	CASE
+10C113128	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C113237	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+10C113239	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+10C113295	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+10C113747	Female	Female	Female	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+10C113883	Male	Male	Male	Schizophrenia, Hebephrenic	SCZ	Schizophrenia, Hebephrenic	SCZ	SCZ	CASE
+10C114098	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C114385	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C114672	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C114878	Male	Male	Male	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+10C114915	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+10C115248	Female	Female	Female	Schizophrenia, Hebephrenic	SCZ	Schizophrenia, Hebephrenic	SCZ	SCZ	CASE
+10C115657	Female	Female	Female	Schizophrenia, Hebephrenic	SCZ	Schizophrenia, Hebephrenic	SCZ	SCZ	CASE
+10C115671	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+10C115674	Female	Female	Female	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+10C116013	Male	Male	Male	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+10C116023	Female	Female	Female	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+10C116261	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C116270	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C116310	Female	Female	Female	Schizophrenia, Hebephrenic	SCZ	Schizophrenia, Hebephrenic	SCZ	SCZ	CASE
+10C116498	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C116797	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+10C116897	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C117156	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C117480	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+10C117491	Male	Male	Male	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+10C117497	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+10C117533	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C117661	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+10C117890	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+10C117895	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+11015	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+11215	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+11394	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+11447	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1145-FA	Male	Male	Male	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+1190-BD	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+11C118131	Male	Male	Male	Schizophrenia, Hebephrenic	SCZ	Schizophrenia, Hebephrenic	SCZ	SCZ	CASE
+11C118261	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+11C118606	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C118770	Male	Male	Male	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+11C118922	Female	Female	Female	Schizoaffective disorder, depressive type	SCZ	Schizoaffective disorder, depressive type	SCZ	SCZ	CASE
+11C119010	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C119095	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C119357	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+11C119667	Male	Male	Male	Schizophrenia, Hebephrenic	SCZ	Schizophrenia, Hebephrenic	SCZ	SCZ	CASE
+11C119873	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C120490	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C120507	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C120519	Male	Male	Male	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+11C120543	Male	Male	Male	Schizoaffective disorder, bipolar type	SCZ	Schizoaffective disorder, bipolar type	SCZ	SCZ	CASE
+11C121068	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+11C121143	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C121522	Male	Male	Male	Schizophrenia, Hebephrenic	SCZ	Schizophrenia, Hebephrenic	SCZ	SCZ	CASE
+11C121683	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C121768	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C122047	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C122339	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C122696	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C122968	Female	Female	Female	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+11C123356	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C123381	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C123528	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C123532	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C123545	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C123857	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C124425	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C124687	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C124947	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+11C125936	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C126037	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C126085	Male	Male	Male	Schizoaffective disorder, depressive type	SCZ	Schizoaffective disorder, depressive type	SCZ	SCZ	CASE
+11C126231	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+11C126441	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+11C126476	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+1238NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1240NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1242-BN	Male	Male	Male	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+1244NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1246NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1248NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1249NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1252NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1273-FM	Male	Male	Male	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+1284NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1287NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1288NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1314NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1328NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1331NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1404NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1418NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1421NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1445NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1446NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1447NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1458NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1461NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1476NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1479NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1482NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1484NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1488NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1492NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1494NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1496NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1499NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1500NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1503NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1586NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1587NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1590NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1592NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1593NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1602NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1607NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1613NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1614NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1616NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1619NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1620NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1632NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+163516	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+1653NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1656NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1658NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1660NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1661NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1664NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1672NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1681NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1682NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1686NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1712NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1753NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1756NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1757NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1758NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+176230	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+1762NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1769NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+176NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1772NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1781NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1784NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1805NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1808NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1812NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1819NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1823NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1828NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1836NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1837NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1838NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1840NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1843NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1844NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1852NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1855NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1856_451NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1859NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1862NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1865nih	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1866nih	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1868nih	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1872nih	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1875nih	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1903NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1906NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+190NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1913NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1914NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1915NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1917NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1918NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1920NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1931NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1935NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1936NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1941NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+1942NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+200803172-17	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+200NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+201008310-14	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+201012243-21	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+201019709-19	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+201133060-16	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+201209560-24	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+201217093-27	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+201217224-23	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+201235576-26	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+201235672-26	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+201241138-26	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+201243560-26	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+201244275-24	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+201503058-25	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+201510995-26	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+201600186-25	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+201609838-26	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+201801220-27	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+201805574-23	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2052nih	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+207-CH	Female	Female	Female	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+2074NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2075NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+214-ME	Male	Male	Male	Bipolar Disorder	BD	Bipolar Disorder	BD	BD	CASE
+219NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+221-CD	Male	Male	Male	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+224-CC	Male	Male	Male	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+229-MG	Male	Male	Male	Bipolar Disorder	BD	Bipolar Disorder	BD	BD	CASE
+229NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+237-BE	Female	Female	Female	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+237369	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+2380NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2385NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2387NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2389NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2390NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2393NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2399NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2403NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2420NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2421NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2422NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2423NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2426NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2429NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2432NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2435NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2436NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2437NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2439NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2440NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2441NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2443NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2445NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2446NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2447NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2449NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2453NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2454NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2456NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2457NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2458NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2459NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2460NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2462NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2464NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2465NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2468NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2475NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2477NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2478NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2479NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2481NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2482NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2485NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2487NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2488NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2491NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2494NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+249584	Male	Male	Male	Schizoaffective disorder, depressive type	SCZ	Schizoaffective disorder, depressive type	SCZ	SCZ	CASE
+2497NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2498NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2500NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2502NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2503NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2515NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2518NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2528NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2596NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2597NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2599NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2600NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+282-WA	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+2893803133	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893803455	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844002	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844023	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844079	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844165	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844205	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844238	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844336	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844493	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844544	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844605	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844666	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844697	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844723	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844740	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844747	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844749	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844879	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844893	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844938	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844944	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893844990	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845010	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845035	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845075	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845102	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845114	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845139	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845159	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845298	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845309	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845331	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845350	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845361	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845377	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845379	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845444	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845448	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845455	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845467	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845484	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845500	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845553	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845555	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845576	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845626	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845649	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845650	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845661	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845719	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845722	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845733	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845742	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845757	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845783	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845871	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893845875	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893846850	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893846996	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847010	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847023	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847042	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847057	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847201	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847267	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847293	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847364	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847369	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847385	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847427	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847469	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847482	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847519	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847546	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847562	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847573	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847660	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847739	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847761	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847783	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847825	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893847877	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893848304	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893848331	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893848465	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893848757	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893848922	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893849192	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893849375	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893849514	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893850320	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893850327	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893850584	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893850696	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893850970	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893850991	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893851052	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893851220	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893851375	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893851400	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893851565	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893851570	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893851628	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893851709	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893851737	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893851966	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893852066	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893852100	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893852385	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893852496	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893854034	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893854139	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893854459	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893854816	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893854927	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893855755	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893855871	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893855957	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893855960	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893857225	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893857258	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893857298	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893857465	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893857502	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893857920	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893896296	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893896413	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893896726	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893896924	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893897052	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893897502	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893897861	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893897913	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893898287	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893898348	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893898361	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893898374	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893898765	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893899377	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893899677	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893900015	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893900427	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893900685	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893900693	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893900748	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2893902396	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894049361	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894049447	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894049661	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894049716	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894049776	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894049822	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894049865	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894049896	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894049946	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894049962	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894050077	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894050239	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894050357	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894050416	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894051341	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894052149	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894052797	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894052980	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894053074	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894053139	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894054046	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894054089	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+2894054169	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+299-TK	Male	Male	Male	Bipolar Disorder	BD	Bipolar Disorder	BD	BD	CASE
+3126-DM	Female	Female	Female	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+313-MM	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+315-MM	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+3166-DO	Male	Male	Male	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+3170-MR	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+3171-DH	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+3173-CT	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+320-CE	Female	Female	Female	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+323-IE	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+326-HC	Male	Male	Male	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+327-HD	Female	Female	Female	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+328-HG	Male	Male	Male	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+329-HA	Male	Male	Male	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+330-LP	Male	Male	Male	Schizophrenia, Depression, Bipolar Disorder	CASE	Depression	OTHER	CASE	CASE
+3345-BR	Male	Male	Male	Bipolar Disorder	BD	Bipolar Disorder	BD	BD	CASE
+335-MM	Female	Female	Female	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+335NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+3367-MN	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+3368-SJ	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+3369-MT	Male	Male	Male	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+338NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+341003	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+342-HJ	Male	Male	Male	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+344-FK	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+344494	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+345-LE	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+351-LJ	Male	Male	Male	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+354-OT	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+3554-FT	Male	Male	Male	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+3557-FD	Male	Male	Male	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+3559-FP	Male	Male	Male	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+370062105_2	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+370062106_2	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+370062134_2	Female	Female	Female	Bipolar I Disorder	BD1	Bipolar I Disorder	BD1	BD1	CASE
+370064396_2	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+379-LF	Male	Male	Male	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+394NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+397NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+398NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+411-GL	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+414-WM	Female	Female	Female	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+415-FH	Female	Female	Female	Bipolar Disorder	BD	Bipolar Disorder	BD	BD	CASE
+422-BM	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+431-BG00307	Female	Female	Female	BP	BD	BP	BD	BD	CASE
+431-BG00357	Female	Female	Female	BP	BD	BP	BD	BD	CASE
+431-BG00423	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+431-BG00425	Male	Male	Male	BP	BD	BP	BD	BD	CASE
+431-BG00540	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+431-BG00893	Female	Female	Female	BP	BD	BP	BD	BD	CASE
+431-BG00933	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+431-BG01575	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+431-BG01579	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+431-BG01591	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+431-BG01599	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+431-BG01606	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+431-BG01627	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+431-BG01638	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+431-BG01644	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+431-BG01698	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+431-BG01711	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+431-BG01784	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+431-BG02740	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+446-FA	Male	Male	Male	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+446NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+451-HM	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+460NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+461NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+463NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+468-DL	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+480-HMjr	Female	Female	Female	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+484-OP	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+489-MP	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+490-LJ	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+507NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+510-BA	Male	Male	Male	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+511-BM	Female	Female	Female	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+515-BM	Female	Female	Female	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+525-BW	Male	Male	Male	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+527-GR	Female	Female	Female	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+530-LEsr	Female	Female	Female	Bipolar Disorder	BD	Bipolar Disorder	BD	BD	CASE
+5306-SP	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+5336-FM	Male	Male	Male	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+534-CB	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+535493	Female	Female	Female	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+536-CA	Male	Male	Male	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+539NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+540-PA	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+5404-FD	Male	Male	Male	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+540NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+544103	Male	Female	Male	Schizophrenia, Paranoid	SCZ	Control	CTRL	SCZ	CASE
+559144	Male	Male	Male	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+567-AA	Female	Female	Female	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+572NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+577891	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+600-SJ	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+601-FKjr	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+605-BA	Female	Female	Female	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+6075-LK	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+609-RM	Female	Female	Female	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+610-HM	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+614101	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+6274-LS	Female	Female	Female	Healthy Control	CTRL	Healthy Control	CTRL	CTRL	CTRL
+6279-LL	Female	Female	Female	Schizophrenia, Depression, Bipolar Disorder	CASE	Schizophrenia, Depression, Bipolar Disorder	CASE	CASE	CASE
+627951	Male	Male	Male	Schizophrenia, Hebephrenic	SCZ	Schizophrenia, Hebephrenic	SCZ	SCZ	CASE
+639006	Male	Male	Male	Schizoaffective disorder, depressive type	SCZ	Schizoaffective disorder, depressive type	SCZ	SCZ	CASE
+647309	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+654NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+664NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+665NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+700021428	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+700021553	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+700022866	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+700034345	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+700036346	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+700039304	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+700039376	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+700113268	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+700113456	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+756NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+757NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+770439	Male	Male	Male	Schizoaffective disorder, depressive type	SCZ	Schizoaffective disorder, depressive type	SCZ	SCZ	CASE
+787829	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+796NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+8007540135	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540136	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540139	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540151	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540157	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540160	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540165	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540173	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540177	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540181	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540185	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540186	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540194	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540195	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540196	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540206	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540210	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540211	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540215	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540216	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540221	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540222	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540235	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540238	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540264	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540270	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540273	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540274	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540275	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540287	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540288	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540297	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540306	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540321	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540333	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540338	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540344	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540350	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540351	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540353	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540354	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540357	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540361	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540363	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540365	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540367	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540371	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540374	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540388	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540389	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540390	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540391	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540397	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540398	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540400	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540401	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540408	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540413	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540414	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540417	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540418	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540421	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540427	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540430	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540435	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540436	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540440	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540445	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540446	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540448	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540450	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540454	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540455	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540456	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540463	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540466	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540467	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540471	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540475	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540477	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540479	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540487	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540489	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540499	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540501	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540511	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540524	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540525	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540532	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540534	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540541	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540545	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540546	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540549	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540556	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540561	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540565	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540577	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540583	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540587	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540588	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540589	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540595	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540603	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540605	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540611	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540612	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540619	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540622	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540635	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540646	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540648	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540652	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540658	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540664	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540666	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007540670	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540671	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540681	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540682	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540687	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540694	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540706	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540718	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540722	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540723	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540735	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540736	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540741	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540743	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540744	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540745	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540749	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540751	Female	Female	Female	Bipolar Disorder	BD	Bipolar Disorder	BD	BD	CASE
+8007540753	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540756	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540757	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540760	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540765	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540766	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540768	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540770	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540775	Female	Female	Female	Bipolar Disorder	BD	Bipolar Disorder	BD	BD	CASE
+8007540778	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540789	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540793	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540803	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540805	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540809	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540811	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540812	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540816	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540828	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540829	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540839	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540840	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540841	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540851	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540852	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540854	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540855	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540858	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540868	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540870	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540871	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540888	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540893	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540902	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540903	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540913	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540925	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540937	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540949	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540964	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540981	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540991	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007540998	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541002	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541014	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541015	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541017	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007541021	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541022	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541027	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541034	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541035	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541038	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541044	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541045	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541050	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541051	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541055	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541063	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541064	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541067	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541076	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541095	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541096	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541106	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541127	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541140	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541148	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541160	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541172	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541183	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541190	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541203	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541212	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541214	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541222	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007541224	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541226	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541228	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541241	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007541246	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007541248	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541260	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541262	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541263	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541270	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007541274	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541277	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541280	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541284	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541285	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541287	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541296	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541303	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007541304	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541307	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007541315	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541325	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541345	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541363	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541368	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541370	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541373	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541375	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541380	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541390	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541412	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541423	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541438	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541439	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541451	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007541475	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541477	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541488	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541490	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541504	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541508	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541511	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541512	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541517	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541532	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541540	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541547	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541555	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541556	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541563	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541573	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541577	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541578	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541580	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541584	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541592	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541601	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541611	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541614	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541616	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541622	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541627	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541632	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541633	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541635	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541637	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541644	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541645	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541647	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541649	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541650	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541651	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541656	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541659	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541661	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541662	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541663	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541666	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541669	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541672	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541679	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541691	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541692	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541694	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541695	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541702	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541742	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007541752	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541755	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541761	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541762	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541763	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541770	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541783	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541786	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541787	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541793	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541799	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541803	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007541808	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541810	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007541811	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541813	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541821	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541823	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541830	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541832	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541834	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541847	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541848	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541854	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541864	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541865	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541868	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541869	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007541877	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541889	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541890	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541893	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007541897	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541901	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541903	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541904	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541911	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541913	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541915	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541925	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541927	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541935	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541936	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541940	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541947	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541953	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541956	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541961	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541967	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541968	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541969	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541970	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541974	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541981	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541993	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007541996	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542004	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542005	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542013	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542015	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542016	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542017	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542018	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542019	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542021	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542025	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542027	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542033	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542041	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542042	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542043	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542058	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542081	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542082	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542093	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542106	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542117	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542141	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542157	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542181	Male	NA	Male	Schizophrenia	SCZ	NA	NA	SCZ	CASE
+8007542194	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542206	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542217	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542245	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542250	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542253	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542259	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542266	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542267	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542274	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542278	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542280	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542281	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542282	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542288	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542291	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542292	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542299	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542300	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542319	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542324	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542333	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542336	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542341	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542346	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542350	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542354	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542357	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542361	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542376	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542379	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542385	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542391	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542396	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542397	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542408	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542409	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542419	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542426	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542427	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542429	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542431	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542432	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542443	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542445	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542447	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542448	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542457	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542459	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542461	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542466	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542471	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542472	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542489	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542490	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542493	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542495	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542496	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542498	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542500	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542501	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542502	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542504	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542505	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542507	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542508	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542510	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542519	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542520	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542522	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542526	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542830	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542853	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542913	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542914	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542916	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542917	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542920	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542934	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542936	Male	Male	Male	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542940	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542943	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542951	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542973	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542975	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542980	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542986	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542991	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8007542996	Female	Female	Female	Bipolar	BD	Bipolar	BD	BD	CASE
+8007542997	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8013030713	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+8013030725	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+849NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+872NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+879631	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+891NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+894NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+896NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+9047-04	Female	Female	Female	Bipolar with Psychosis	BD	Bipolar with Psychosis	BD	BD	CASE
+9058-18	Female	Female	Female	Bipolar with Psychosis	BD	Bipolar with Psychosis	BD	BD	CASE
+9058-19	Female	Female	Female	Bipolar with Psychosis	BD	Bipolar with Psychosis	BD	BD	CASE
+9061-12	Male	Male	Male	Bipolar with Psychosis	BD	Bipolar with Psychosis	BD	BD	CASE
+9090-13	Female	Female	Female	BP Disorder	BD	BP Disorder	BD	BD	CASE
+9090-15	Female	Female	Female	Mania with Psychosis	BD	Mania with Psychosis	BD	BD	CASE
+912-LE	Female	Female	Female	Bipolar Disorder	BD	Bipolar Disorder	BD	BD	CASE
+9414-02	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+9414-06	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+9414-07	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+9416-03	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+9416-06	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+9420-11	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+9420-12	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+960NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+984NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+988NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+989NIH	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+990231002	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+990291031_2	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+990294396_2	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+990362052_2	Male	Male	Male	Bipolar I Disorder	BD1	Bipolar I Disorder	BD1	BD1	CASE
+990362056_2	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+990362084_2	Female	Female	Female	Bipolar I Disorder	BD1	Bipolar I Disorder	BD1	BD1	CASE
+990362090_2	Female	Female	Female	Bipolar I Disorder	BD1	Bipolar I Disorder	BD1	BD1	CASE
+990392106_2	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+990491004_2	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+990492132	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+992852096_2	Female	Female	Female	Bipolar I Disorder	BD1	Bipolar I Disorder	BD1	BD1	CASE
+A14LIALS121	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+A14LIALS137	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+A14LIALS193	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+A14LIALS28	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+A14LIALS354	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA01120	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA01220	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA01297	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA01316	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA02063	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA03049	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA05141	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA05171	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA05174	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA20035	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA23025	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA24001	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA25008	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA25030	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA25053	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA25058	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA25062	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA25075	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA25082	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AA25092	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+AKSH-001	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C0200557	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C03-1466	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C03-1467	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C03-1478	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C03-1479	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C03-1584	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C03-1607	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C03-1611	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C03-1675	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C03-1796	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C03-1848	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C03-1894	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C03-2775	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-0104	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-0155	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-0237	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-0316	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-0321	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-0397	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-0455	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-0466	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-0631	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-0633	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-0635	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-0775	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-0778	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-0909	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-1141	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-1190	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-1193	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-1252	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-1253	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-1254	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-1258	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-1260	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-1296	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-1298	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-1428	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-1430	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-1472	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-1546	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-1912	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-1928	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-1930	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-1948	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C04-2658	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C0400632	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-0175	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-0208	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-0211	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-0274	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-0279	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-0491	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-0527	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-0773	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-0775	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-0778	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-0782	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-0827	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-0842	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-0868	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-0875	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-0878	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-0965	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-1673	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-2567	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-2570	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C05-2574	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C0500786	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C0502126	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-0219	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-0223	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-0297	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-0423	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-0492	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-0499	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-0678	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-0854	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-0855	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-0857	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-0989	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-1179	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-1256	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-1260	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-2022	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-2471	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-2682	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-2860	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-2863	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-3082	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C06-3372	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C07-0237	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C07-0494	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C07-0940	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C07-1372	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C07-1571	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C07-1575	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C0700155	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C08-0172	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C08-0174	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C08-0221	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C08-0277	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C08-0523	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C08-0674	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C08-0946	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C08-1000	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C08-1088	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C08-1472	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C08-1475	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C08-1570	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C08-1587	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C09-0296	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C0900973	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C10-1875	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C1001316	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C11-1227	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C11-1307	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C11-1462	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C11-1662	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C12-0280	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C12-0795	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C12-1303	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C1200040	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C13-0896	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C15-0222	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C1500089	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C8600037	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C89-0458	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C92-0611	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C93-0240	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+C94-0650	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CHB-005	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CHB-008	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CHB-009	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CHB-080	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CHB-099	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CHB-106	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CHB-143	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CHB-146	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CHB-147	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CHB-156	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CHB-159	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CHB-188	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CHB-230	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CHB-290	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CHB-291	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CHB-321	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CHB-324	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CHWA-14	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CS-0041-01_C	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CS-0050-01 A	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CS-0055-01_A	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CS-0060-01 C	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+CS-0073-01_A	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+F13	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+FA12	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+G00002	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+G00237	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+G00264	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+G00272	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+G00276	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+G00286	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+G00324	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+G00329	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+G1856	Male	Male	Male	Bipolar Disorder	BD	Bipolar Disorder	BD	BD	CASE
+G1858	Female	Female	Female	Bipolar Disorder	BD	Bipolar Disorder	BD	BD	CASE
+G1860	Female	Female	Female	Bipolar Disorder	BD	Bipolar Disorder	BD	BD	CASE
+G1862	Male	Male	Male	Bipolar DIsorder	BD	Bipolar DIsorder	BD	BD	CASE
+GK0005-003	Male	Male	Male	SCZ	SCZ	SCZ	SCZ	SCZ	CASE
+GK0005-004	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK0012-004	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK0014-003	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK0094-001	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK0094-006	Male	Male	Male	SCZ	SCZ	SCZ	SCZ	SCZ	CASE
+GK0100-003	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK0100-006	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK0102-004	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK0104-004	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK0120-004	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK0160-003	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK0169-001	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK0183-004	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK0186-003	Female	Female	Female	SCZ	SCZ	SCZ	SCZ	SCZ	CASE
+GK0189-004	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK0192-004	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK0246-005	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK0294-005	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK0303-003	Male	Male	Male	SCZ	SCZ	SCZ	SCZ	SCZ	CASE
+GK0327-003	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK0339-004	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK0339-005	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK0371-003	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+GK2240-003	Male	Male	Male	SCZ	SCZ	SCZ	SCZ	SCZ	CASE
+GK3215-001	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+GM-1020	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1056	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1107	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1134	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1138	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1189	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1190	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1202	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1203	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1227	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1244	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1271	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1310	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1328	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1340	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1343	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1358	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1385	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1405	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1406	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1410	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1411	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1442	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1446	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1498	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1505	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1517	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1530	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1532	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1545	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1548	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+GM-1562	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+Ger_1204	Female	NA	Female	Schizophrenia	SCZ	NA	NA	SCZ	CASE
+Ger_1206	Male	NA	Male	Control	CTRL	NA	NA	CTRL	CTRL
+Ger_1270	Male	NA	Male	Schizophrenia	SCZ	NA	NA	SCZ	CASE
+Ger_1295	Male	NA	Male	Control	CTRL	NA	NA	CTRL	CTRL
+Ger_1390	Male	NA	Male	Control	CTRL	NA	NA	CTRL	CTRL
+Ger_1454	Female	NA	Female	Control	CTRL	NA	NA	CTRL	CTRL
+Ger_1463	Male	NA	Male	Schizophrenia	SCZ	NA	NA	SCZ	CASE
+Ger_1501	Male	NA	Male	Control	CTRL	NA	NA	CTRL	CTRL
+Ger_1565	Male	NA	Male	Control	CTRL	NA	NA	CTRL	CTRL
+Ger_1573	Male	NA	Male	Schizophrenia	SCZ	NA	NA	SCZ	CASE
+Ger_1616	Female	NA	Female	Control	CTRL	NA	NA	CTRL	CTRL
+Ger_2016	Female	NA	Female	Control	CTRL	NA	NA	CTRL	CTRL
+Ger_2089	Male	NA	Male	Control	CTRL	NA	NA	CTRL	CTRL
+Ger_2291	Male	NA	Male	Control	CTRL	NA	NA	CTRL	CTRL
+Ger_2448	Female	NA	Female	Control	CTRL	NA	NA	CTRL	CTRL
+Ger_2496	Male	NA	Male	Schizophrenia	SCZ	NA	NA	SCZ	CASE
+Ger_2573	Female	NA	Female	Control	CTRL	NA	NA	CTRL	CTRL
+Ger_2595	Male	NA	Male	Control	CTRL	NA	NA	CTRL	CTRL
+Ger_2678	Male	NA	Male	Control	CTRL	NA	NA	CTRL	CTRL
+Ger_3370	Male	NA	Male	Schizophrenia	SCZ	NA	NA	SCZ	CASE
+Ger_3387	Female	NA	Female	Control	CTRL	NA	NA	CTRL	CTRL
+Ger_3396	Male	NA	Male	Control	CTRL	NA	NA	CTRL	CTRL
+Ger_3524	Male	NA	Male	Schizophrenia	SCZ	NA	NA	SCZ	CASE
+Ger_4392	Female	NA	Female	Schizophrenia	SCZ	NA	NA	SCZ	CASE
+Ger_4534	Male	NA	Male	Schizophrenia	SCZ	NA	NA	SCZ	CASE
+Ger_4701	Male	NA	Male	Schizophrenia	SCZ	NA	NA	SCZ	CASE
+Ger_4716	Male	NA	Male	Schizophrenia	SCZ	NA	NA	SCZ	CASE
+Ger_476	Female	NA	Female	Control	CTRL	NA	NA	CTRL	CTRL
+Ger_726	Female	NA	Female	Control	CTRL	NA	NA	CTRL	CTRL
+Ger_853	Female	NA	Female	Control	CTRL	NA	NA	CTRL	CTRL
+Ger_857	Female	NA	Female	Schizophrenia	SCZ	NA	NA	SCZ	CASE
+Ger_858	Female	NA	Female	Schizophrenia	SCZ	NA	NA	SCZ	CASE
+Ger_946	Female	NA	Female	Schizophrenia	SCZ	NA	NA	SCZ	CASE
+Ger_978	Male	NA	Male	Control	CTRL	NA	NA	CTRL	CTRL
+H_TK-D112359-35-D112359-35	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+IC2687839	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+IIU 91	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+IIU 93	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+IIU 95	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+IIU 96	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+IIU 97	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+IIU 98	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+IIU 99	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+J14VAN270	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+J14VAN368	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+L16633	Female	NA	Female	F20.01	SCZ	NA	NA	SCZ	CASE
+L31104	Female	NA	Female	F20.5	SCZ	NA	NA	SCZ	CASE
+L61225	Female	NA	Female	F20.09	SCZ	NA	NA	SCZ	CASE
+L80623	Female	NA	Female	F20.01	SCZ	NA	NA	SCZ	CASE
+LQ0134-001	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+LQ0161-001	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+LQ0196-001	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+LQ0218-001	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+LQ0233-001	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+LQ0241-001	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+LQ0302-001	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+LQ0318-001	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+LQ0396-001	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+LQ0427-001	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+LQ0450-001	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+LQ0453-001	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+LQ0460-001	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+LQ0483-001	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+LQ0512-001	Unknown	Unknown	Unknown	Control	CTRL	Control	CTRL	CTRL	CTRL
+LR-010-01-01	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+LR-015-01-01	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+LR-052-01-00	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+LR-116-01-01	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+LR-154-01-01	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+LR-154-02-01	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+LR-183-01-01	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+LR-188-01	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+LR-191-01	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+LR-209-01-00	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+LR-225-01-01	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+LR-229-01-01	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+LR-236-01-01	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+M02	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+MCL_021 A	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+MEI_CON_133 B	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+MH0126598	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0126662	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0126765	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+MH0126943	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0127375	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0127433	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0127466	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0127479	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0127763	Female	Female	Female	Schizophrenia, Hebephrenic	SCZ	Schizophrenia, Hebephrenic	SCZ	SCZ	CASE
+MH0128000	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0128011	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0128219	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+MH0128402	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0128425	Male	Male	Male	Schizophrenia, Hebephrenic	SCZ	Schizophrenia, Hebephrenic	SCZ	SCZ	CASE
+MH0128536	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+MH0128570	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0128882	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0128979	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0129152	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0129614	Female	Female	Female	Schizoaffective disorder, bipolar type	SCZ	Schizoaffective disorder, bipolar type	SCZ	SCZ	CASE
+MH0129707	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0129985	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0130242	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0130459	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0130846	Male	Male	Male	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+MH0130887	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0131655	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0131838	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0132166	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+MH0132738	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+MH0132862	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0133158	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+MH0133276	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0133475	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0133476	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0133482	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0133542	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0133548	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0133728	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0133733	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0134067	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0134871	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0134898	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+MH0134984	Male	Male	Male	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+MH0135062	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0135402	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0135557	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0135558	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0135670	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0135839	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0135847	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0135864	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0135969	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0135988	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0136228	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0136246	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0136248	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0136828	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+MH0137214	Male	Male	Male	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+MH0137833	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+MH0138175	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+MH0138231	Male	Male	Male	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+MH0139037	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0139243	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0139246	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+MH0140010	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0140123	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0140285	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+MH0140370	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0140905	Male	Male	Male	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+MH0140954	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0141328	Female	Female	Female	Schizoaffective disorder, depressive type	SCZ	Schizoaffective disorder, depressive type	SCZ	SCZ	CASE
+MH0141439	Female	Female	Female	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+MH0141444	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0141869	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+MH0141932	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0142130	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0142188	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0142362	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0142446	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0142630	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0142669	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0143330	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0143332	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0143543	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0143646	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0144586	Male	Male	Male	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+MH0144703	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+MH0145674	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0145775	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0146126	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0146887	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+MH0147143	Male	Male	Male	Schizoaffective disorder, bipolar type	SCZ	Schizoaffective disorder, bipolar type	SCZ	SCZ	CASE
+MH0147301	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+MH0147527	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0147699	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0147962	Female	Female	Female	Schizoaffective disorder, depressive type	SCZ	Schizoaffective disorder, depressive type	SCZ	SCZ	CASE
+MH0149204	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0149912	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+MH0150118	Male	Male	Male	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+MH0150484	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0151025	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0152105	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0152779	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0152818	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0152888	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0153342	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0153450	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0153741	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0157382	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0157504	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0157525	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0158050	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0158349	Female	Female	Female	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+MH0159832	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0160070	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0161762	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0162178	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0163576	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0164063	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0164234	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0164423	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0164881	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0165540	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0166326	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0176566	Male	Male	Male	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+MH0184661	Male	Male	Male	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+MH0185649	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0186714	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+MH0187228	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0187550	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+MH0192857	Male	Male	Male	Schizoaffective disorder, bipolar type	SCZ	Schizoaffective disorder, bipolar type	SCZ	SCZ	CASE
+MH0197618	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0197669	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0198058	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0198185	Male	Male	Male	Schizophrenia, Hebephrenic	SCZ	Schizophrenia, Hebephrenic	SCZ	SCZ	CASE
+MH0198291	Female	Female	Female	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0198354	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0198356	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0200592	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0200911	Male	Male	Male	Schizophrenia, Undifferentiated	SCZ	Schizophrenia, Undifferentiated	SCZ	SCZ	CASE
+MH0201663	Male	Male	Male	Bipolar I with psychosis	BD1	Bipolar I with psychosis	BD1	BD1	CASE
+MH0202424	Male	Male	Male	Schizoaffective disorder, bipolar type	SCZ	Schizoaffective disorder, bipolar type	SCZ	SCZ	CASE
+MH0216725	Male	Male	Male	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+MH0217686	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+MH0217866	Male	Male	Male	Schizophrenia, Paranoid	SCZ	Schizophrenia, Paranoid	SCZ	SCZ	CASE
+MH0217977	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+ML-0693-01 B	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+ML-0879-01_C	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+ML-0907-01_B	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+ML-0930-01 A	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+ML-0974-01_A	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+ML-0988-01_A	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+ML-1182-01 D	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD100095	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD102758	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD107903	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD109428	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD117999	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD119788	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD121577	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD121678	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD125203	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD128405	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD129982	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD137660	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD141558	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD144903	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD148040	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD155620	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD157122	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD167955	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD174186	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD180047	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD193890	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD194800	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD197320	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD198151	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD207346	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD218386	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD218484	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD222419	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD226202	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD226631	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD226891	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD232097	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD242652	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD242907	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD243051	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD245566	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD251382	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD252589	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD255146	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD256721	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD261464	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD263067	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD264964	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD273230	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD279857	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD280356	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD284820	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD286874	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD290576	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD290978	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD292405	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD296881	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD301972	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD307264	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD312098	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD318219	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD320031	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD321230	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD327185	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD327686	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD337592	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD338912	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD344499	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD351743	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD353660	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD371600	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD380152	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD386300	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD386383	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD391376	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD392459	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD396919	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD397892	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD399185	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD399470	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD405006	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD418584	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD422125	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD425942	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD435250	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD440006	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD448139	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD451107	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD456290	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD458136	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD460734	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD469436	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD469769	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD470566	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD471795	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD480004	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD481707	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD482105	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD484524	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD493762	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD494019	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD506477	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD508513	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD530201	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD531078	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD534707	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD535939	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD536232	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD542085	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD544732	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD552205	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD556470	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD562827	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD565826	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD571279	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD571857	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD576134	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD578314	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD579427	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD584731	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD585040	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD587214	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD589464	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD590795	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD591239	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD591636	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD595199	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD596994	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD599441	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD600193	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD605118	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD605988	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD607673	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD619024	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD619272	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD619336	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD626369	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD629257	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD643886	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD648559	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD653867	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD656009	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD657705	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD660527	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD663228	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD666056	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD666549	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD672154	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD674919	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD675878	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD681354	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD681769	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD683148	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD697406	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD704126	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD704203	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD706786	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD708367	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD719434	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD719822	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD724345	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD725998	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD729648	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD732844	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD738950	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD739111	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD746840	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD755070	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD755174	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD763805	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD766238	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD779306	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD779933	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD780373	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD788906	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD795503	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD798150	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD798302	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD799764	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD800722	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD803888	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD812459	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD814593	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD816732	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD819920	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD828598	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD830397	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD834485	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD837794	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD841682	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD845367	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD848874	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD852767	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD856312	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD861630	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD863582	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD864848	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD873482	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD873623	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD873698	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD876704	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD881460	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD883502	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD884931	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD886744	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD897198	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD902165	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD904597	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD912160	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD915827	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD924400	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD924716	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD937944	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD942443	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD947805	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD948991	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD951152	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD953906	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD956520	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD957805	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD959992	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD967640	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD971890	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD973771	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD975383	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+NWD992695	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+O-6020	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+O-6054	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+O-6057	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+O-6070	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+O-6073	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+O-6074	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+O-6076	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+O-6083	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+O-6085	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+O-6088	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+O-6090	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+O-6132	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+O-6133	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+O-6139	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+P1A07	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+P1A08	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+P1A09	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+P1A10	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+P1A13	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+P1A16	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+P2A04	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+P2A06	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+P2A07	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+P2A08	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+P2A10	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+P2A2	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+P3A07	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+P3A13	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+PAIH_002	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+PAIH_043	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+S14F13ALS83	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+S3A08	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+S3A09	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+S4A08	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+S5026	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S5053	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S5144	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S5215	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S5283	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S5293	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S5343	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S5344	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S5467	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S5496	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S5563	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S5626	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S5702	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S5713	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S5734	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S5744	Male	Male	Male	bipolar disorders	BD	bipolar disorders	BD	BD	CASE
+S5804	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S5845	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S5865	Female	Female	Female	bipolar disorders	BD	bipolar disorders	BD	BD	CASE
+S5924	Male	Male	Male	bipolar disorders	BD	bipolar disorders	BD	BD	CASE
+S5931	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S5979	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6228	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6231	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6236	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6243	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6247	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6248	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6251	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6257	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6271	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6272	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6275	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6276	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6285	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6287	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6289	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6292	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6297	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6298	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6301	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6307	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6318	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6339	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6342	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6344	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6355	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6357	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6362	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6363	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6365	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6372	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6373	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6376	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6379	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6386	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6387	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6388	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6390	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6392	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6413	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6423	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6425	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6431	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6436	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6438	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6440	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6442	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6446	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6450	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6457	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6460	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6465	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6466	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6468	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6471	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6473	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6477	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+S6494	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6495	Female	Female	Female	control	CTRL	control	CTRL	CTRL	CTRL
+S6507	Male	Male	Male	control	CTRL	control	CTRL	CTRL	CTRL
+SC4047-201	Male	Male	Male	SCZ	SCZ	SCZ	SCZ	SCZ	CASE
+SC4091-201	Male	Male	Male	SCZ	SCZ	SCZ	SCZ	SCZ	CASE
+SC8290-001	Male	Male	Male	SCZ	SCZ	SCZ	SCZ	SCZ	CASE
+SKAAWG0007	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0030	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0060	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0065	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0119	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0150	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0169	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0185	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0210	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0226	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0243	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0259	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0261	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0271	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0286	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0393	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0397	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0421	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0438	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0454	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SKAAWG0464	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SUPER_SU50116	NA	Female	Female	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50117	NA	Male	Male	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50146	NA	Female	Female	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50205	NA	Female	Female	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50282	NA	Male	Male	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50298	NA	Female	Female	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50366	NA	Male	Male	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50386	NA	Female	Female	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50387	NA	Male	Male	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50456	NA	Female	Female	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50491	NA	Female	Female	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50554	NA	Male	Male	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50555	NA	Female	Female	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50556	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+SUPER_SU50626	NA	Male	Male	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50674	NA	Female	Female	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50698	NA	Male	Male	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50702	NA	Female	Female	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50707	NA	Male	Male	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50742	NA	Male	Male	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50754	NA	Male	Male	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50773	NA	Female	Female	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50779	NA	Male	Male	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50794	NA	Female	Female	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50849	NA	Male	Male	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50856	NA	Male	Male	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50885	NA	Male	Male	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU50893	NA	Male	Male	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU51019	NA	Male	Male	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU51082	NA	Male	Male	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU51225	NA	Female	Female	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU51244	NA	Female	Female	NA	NA	Psychosis	SCZ	SCZ	CASE
+SUPER_SU51812	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+T00237	Male	Male	Male	Schizophrenia	SCZ	Schizophrenia	SCZ	SCZ	CASE
+T01107	Male	Male	Male	Control	CTRL	Control	CTRL	CTRL	CTRL
+UK624-1	Male	NA	Male	Control	CTRL	NA	NA	CTRL	CTRL
+WESB8001	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB3003	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB3009	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB3143	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB3146	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB3213	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB3355	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB3373	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB3439	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB3517	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB3558	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB3588	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB3607	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB3819	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB3831	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB3972	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4039	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4083	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4157	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4182	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4250	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4278	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4280	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4325	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4448	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4558	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4574	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4580	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4619	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4620	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4653	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4719	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4736	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4754	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4761	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4911	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4917	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL
+WGSB4949	NA	NA	NA	NA	NA	NA	NA	CTRL	CTRL

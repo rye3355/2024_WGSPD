@@ -46,6 +46,66 @@ Rscript 03_pc-relate.py
 ```
 
 
+After relatedness output, get maximally independent (unrelated) set of samples
+```python
+import hail as hl
+mt = hl.read_matrix_table("gs://2024-wgspd/qc/20240408_subset_initial-var-QC.mt") # Read in data
+samples = mt.cols()
+meta = hl.import_table("gs://2024-wgspd/gnomad_v3.1_subset-metadata.tsv", key="s") # Read in meta
+samples = samples.annotate(high_quality = meta[samples.s].high_quality)
+samples = samples.filter(samples.high_quality == "true") # Filter to high quality
+manifest = hl.import_table("gs://2024-wgspd/2024_WGSPD_merged-manifest.tsv", key="s") # Read in manifest
+samples = samples.annotate(case_con = manifest[samples.s].CASECON)
+samples = samples.filter(hl.set(["CASE", "CTRL"]).contains(samples.case_con)) # Filter to CASE CON
+samples = samples.annotate(is_case = samples.case_con == "CASE") # Define ordering (prefer CASE > CTRL)
+def tie_breaker(l, r): # Define tiebreaker function 
+    return hl.if_else(l.is_case & ~r.is_case, -1,
+                      hl.if_else(~l.is_case & r.is_case, 1, 0))
+
+pc_rel = hl.read_table("gs://2024-wgspd/qc/20240423_pc-relate_relatedness.ht") # Relatedness (4316 entries)
+pairs = pc_rel.filter(pc_rel['kin'] > 0.05) # Slim to related, as used in gnomadQC (4316 pairs)
+pairs_with_case = pairs.key_by(
+    i=hl.struct(id=pairs.i, is_case=samples[pairs.i].is_case),
+    j=hl.struct(id=pairs.j, is_case=samples[pairs.j].is_case)) # Annotate with ordering to use in tie_breaker
+
+related_samples_to_remove = hl.maximal_independent_set(
+   pairs_with_case.i, pairs_with_case.j, False, tie_breaker) # Find maximally indep set (samples to remove)
+
+related_samples_to_remove.aggregate(hl.agg.counter(related_samples_to_remove.node.is_case)) 
+# {False: 1315, True: 790}
+
+result = manifest.filter(hl.is_defined(
+    related_samples_to_remove.key_by(
+       s = related_samples_to_remove.node.id.s)[manifest.s]))
+
+result.export(output = "gs://2024-wgspd/qc/20240425_pc-relate_samples-to-remove.tsv")
+```
+
+
+Check concordance of related samples with gnomadv3 QC
+```R
+library(data.table)
+system2("gsutil", "cp gs://2024-wgspd/qc/20240425_pc-relate_samples-to-remove.tsv files/")
+to_remove = fread("files/20240425_pc-relate_samples-to-remove.tsv")
+meta = fread("../../subsetting/files/gnomad_v3.1_subset-metadata.tsv")
+
+table(meta[meta$s %in% to_remove$s, "sample_filters.all_samples_related"])
+# 1443 / 2105 match up with gnomad
+# FALSE TRUE
+#   662  1443 
+
+table(to_remove$PRIMARY_DISEASE)
+#  BD  BD1 CASE CTRL  SCZ 
+#  87   29   44 1315  630 
+
+table(to_remove$CASECON)
+# CASE CTRL 
+# 790 1315 
+```
+
+
+
+
 # More QC
 You can also refer to specific scripts: [script1.sh](script1.sh)
 
