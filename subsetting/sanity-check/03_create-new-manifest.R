@@ -32,11 +32,11 @@ car_manifest <- car_manifest[!duplicated(car_manifest$subject_id, fromLast = T) 
 
 stopifnot(all(old_manifest$COLLABORATOR_SAMPLE_ID %in% car_manifest$subject_id)) # 1025 old samples not in Caroline's new manifest
 table(old_manifest$COHORT[!(old_manifest$COLLABORATOR_SAMPLE_ID %in% car_manifest$subject_id)], useNA = "always") # From these cohorts:
-# 0 SUPER - PALOTIE            <NA> 
-#   173             852               0 
+            #   0 SUPER - PALOTIE            <NA> 
+            # 173             852               0 
 table(old_manifest$PRIMARY_DISEASE[!(old_manifest$COLLABORATOR_SAMPLE_ID %in% car_manifest$subject_id)], useNA = "always") # With these phenotypes:
-#       Psychosis      <NA> 
-#   173       852         0 
+      #     Psychosis      <NA> 
+      # 173       852         0 
 
 
 # See how samples in Caroline's manifest lines up with old manifest
@@ -69,6 +69,8 @@ colnames(d)[2:3] <- c("sex_new", "sex_old")
 d$SEX <- coalesce(d$sex_new, d$sex_old)
 
 table(d$SEX, useNA = "always")
+    #        #N/A  Female    Male Unknown    <NA> 
+    # 173       5    7204    8891     237   19017 
 d$SEX <- case_when(d$SEX == "Female" ~ "Female",
                    d$SEX == "Male" ~ "Male",
                    !(is.na(d$SEX)) ~ "Unknown")
@@ -111,6 +113,8 @@ d$primary_disease_new_fixed <- case_when(d$primary_disease_new %in% c("Bipolar",
 table(d[, c("primary_disease_new", "primary_disease_new_fixed")], useNA = "always")
 table(d[d$primary_disease_new_fixed == "OTHER", c("primary_disease_new", "primary_disease_new_fixed")], useNA = "always")
 table(d$primary_disease_new_fixed, useNA = "always")
+  #  BD   BD1   BD2  CASE  CTRL OTHER   SCZ  <NA> 
+  # 690  1182     6   140  4022  3102  6343 20042 
 
 
 stopifnot(all(is.na(d$primary_disease_new[!(d$s %in% car_manifest$subject_id)])))
@@ -149,7 +153,8 @@ d$primary_disease_old_fixed <- case_when(d$primary_disease_old %in% c("Bipolar",
 table(d[, c("primary_disease_old", "primary_disease_old_fixed")], useNA = "always")
 table(d[d$primary_disease_old_fixed == "OTHER", c("primary_disease_old", "primary_disease_old_fixed")], useNA = "always")
 table(d$primary_disease_old_fixed, useNA = "always")
-
+  #  BD   BD1   BD2  CASE  CTRL OTHER   SCZ  <NA> 
+  # 807  1193     6    70  4497   874  7032 21048 
 
 table(d[, c("primary_disease_new_fixed", "primary_disease_old_fixed")], useNA = "always")
 
@@ -161,7 +166,7 @@ table(d[d$primary_disease_old_fixed == "CTRL" & d$primary_disease_new_fixed == "
 
 
 # Use Caroline's new manifest as default, fall back on old manifest if NA
-d$PRIMARY_DISEASE <- coalesce(d$primary_disease_new_fixed, temp$primary_disease_old_fixed)
+d$PRIMARY_DISEASE <- coalesce(d$primary_disease_new_fixed, d$primary_disease_old_fixed)
 
 # Rescue SCZ from old subset with SCZ categorization
 d$PRIMARY_DISEASE[is.na(d$PRIMARY_DISEASE) &
@@ -174,12 +179,15 @@ d$PRIMARY_DISEASE[is.na(d$PRIMARY_DISEASE) &
                           is.na(d$primary_disease_old_fixed)] <- "CTRL" 
 
 table(d$PRIMARY_DISEASE, useNA = "always")
+  # BD   BD1   BD2  CASE  CTRL OTHER   SCZ  <NA> 
+  # 690  1182     6   140 23039  3275  7195     0 
+
 # Final Case/Con
 d$CASECON <- case_when(d$PRIMARY_DISEASE %in% c("BD", "BD1", "BD2", "CASE", "SCZ") ~ "CASE",
                        d$PRIMARY_DISEASE %in% c("CTRL") ~ "CTRL",
                        T ~ "OTHER")
 
-write.table(d, "../2024_WGSPD_merged-manifest.tsv", sep = "\t",
+write.table(d, "../2024_WGSPD_merged-manifest2.tsv", sep = "\t",
             quote = F, col.names = T, row.names = F)
 
 
