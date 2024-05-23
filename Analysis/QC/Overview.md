@@ -90,18 +90,18 @@ to_remove = fread("files/20240425_pc-relate_samples-to-remove.tsv")
 meta = fread("../../subsetting/files/gnomad_v3.1_subset-metadata.tsv")
 manifest = fread("../../subsetting/2024_WGSPD_merged-manifest.tsv")
 
-table(meta[meta$s %in% to_remove$s, "sample_filters.all_samples_related"])
+table(meta[meta$s %in% to_remove$s, "sample_filters.all_samples_related"], useNA = "always")
 # 1443 / 2105 match up with gnomad
-# FALSE TRUE
-#   662  1443 
+# FALSE  TRUE  <NA> 
+#   662  1443     0 
 
-table(to_remove$PRIMARY_DISEASE)
-#  BD  BD1 CASE CTRL  SCZ 
-#  87   29   44 1315  630 
+table(to_remove$PRIMARY_DISEASE, useNA = "always")
+#  BD  BD1 CASE CTRL  SCZ <NA> 
+#  87   29   44 1315  630    0 
 
-table(to_remove$CASECON)
-# CASE CTRL 
-# 790 1315 
+table(to_remove$CASECON, useNA = "always")
+# CASE CTRL <NA> 
+#  790 1315    0 
 
 manifest = manifest[manifest$s %in% meta$s[meta$high_quality],] # Slim to high quality (32739)
 manifest = manifest[manifest$CASECON %in% c("CASE", "CTRL"),] # Slim to case/control (30659)
