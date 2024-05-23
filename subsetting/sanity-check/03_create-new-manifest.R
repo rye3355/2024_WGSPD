@@ -187,7 +187,7 @@ d$CASECON <- case_when(d$PRIMARY_DISEASE %in% c("BD", "BD1", "BD2", "CASE", "SCZ
                        d$PRIMARY_DISEASE %in% c("CTRL") ~ "CTRL",
                        T ~ "OTHER")
 
-write.table(d, "../2024_WGSPD_merged-manifest2.tsv", sep = "\t",
+write.table(d, "../2024_WGSPD_merged-manifest.tsv", sep = "\t",
             quote = F, col.names = T, row.names = F)
 
 
