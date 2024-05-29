@@ -4,7 +4,7 @@ library(dplyr)
 # Read in subsetting manifest
 gnomad_meta <- fread("../files/gnomad_v3.1_subset-metadata.tsv")
 subset_manifest <- fread("../files/scz_bp_samplelist_gnomad3.tsv")
-subset_manifest <- subset_manifest[subset_manifest$sample_id%in%gnomad_meta$s]
+subset_manifest <- subset_manifest[subset_manifest$sample_id%in%gnomad_meta$s] # Slim to successfully subsetted
 
 # Read in original WGSPD samples names
 old_samples <- fread("WGSPD-SEQID_fixed_non-missing.txt")
@@ -66,7 +66,7 @@ d <- merge(d, old_manifest[, c("COLLABORATOR_SAMPLE_ID", "GENDER")],
            by.x = "s", by.y = "COLLABORATOR_SAMPLE_ID",
            all.x = T)
 colnames(d)[2:3] <- c("sex_new", "sex_old")
-d$SEX <- coalesce(d$sex_new, d$sex_old)
+d$SEX <- coalesce(d$sex_new, d$sex_old) # 
 
 table(d$SEX, useNA = "always")
     #        #N/A  Female    Male Unknown    <NA> 

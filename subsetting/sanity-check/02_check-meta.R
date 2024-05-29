@@ -5,7 +5,7 @@ gnomad_meta <- fread("../files/gnomad_v3.1_subset-metadata.tsv")
 
 # Read in subsetting manifest
 subset_manifest <- fread("../files/scz_bp_samplelist_gnomad3.tsv")
-stopifnot(all(gnomad_meta$s %in% subset_manifest$sample_id)) # Subsetting worked
+stopifnot(all(gnomad_meta$s %in% subset_manifest$sample_id)) # Subsetting worked (no extra samples)
 not_subset <- subset_manifest[!(subset_manifest$sample_id %in% gnomad_meta$s),]
 subset_manifest <- subset_manifest[subset_manifest$sample_id %in% gnomad_meta$s,]
 table(not_subset$research_project) # 1174 samples not subset out
@@ -13,14 +13,14 @@ table(not_subset$research_project) # 1174 samples not subset out
 
 # Read in original WGSPD samples names
 old_samples <- fread("WGSPD-SEQID_fixed_non-missing.txt")
-stopifnot(all(old_samples$s %in% subset_manifest$sample_id)) # None missing
+stopifnot(all(old_samples$s %in% gnomad_meta$s)) # None of old samples missing from new subset
 
 
 # Read in original WGSPD manifest
 old_manifest <- fread("DS-MANIFEST-WGSPD-WGS_FIXED-PHENOTYPES.tsv")
 stopifnot(all(old_samples$s %in% old_manifest$COLLABORATOR_SAMPLE_ID)) # None missing
 old_manifest <- old_manifest[old_manifest$COLLABORATOR_SAMPLE_ID %in% old_samples$s,]
-stopifnot(all(old_manifest$COLLABORATOR_SAMPLE_ID %in% subset_manifest$sample_id)) # All old samples in new subset
+stopifnot(all(old_manifest$COLLABORATOR_SAMPLE_ID %in% gnomad_meta$s)) # All old samples in new subset
  
 
 
@@ -31,6 +31,8 @@ sum(duplicated(car_manifest$subject_id)) # 8 duplicates for some reason
 # View(car_manifest[duplicated(car_manifest$subject_id) | duplicated(car_manifest$subject_id, fromLast = T),])
 # "11C121536"  "09C97227"   "10C101596"  "10C113795"  "11C126482"  "10C105852"  "MH0134754"  "8007542477"
 # "G84381_11C121536"   "G95284_09C97227"    "G95284_10C101596"   "G95826_10C113795"   "G95831_11C126482"   "G95835_10C105852"   "G95837_MH0134754"   "RP-1365_8007542477"
+
+sum(car_manifest$subject_id[duplicated(car_manifest$subject_id)] %in% old_manifest$COLLABORATOR_SAMPLE_ID) # 4 of these removed duplicated samples are from old run
 
 car_manifest <- car_manifest[!duplicated(car_manifest$subject_id, fromLast = T) | duplicated(car_manifest$subject_id),]
 
