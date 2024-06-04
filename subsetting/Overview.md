@@ -28,6 +28,6 @@ See *00_check-samples.ipynb* for more details
 Use gnomadv3 sample metadata HT to create new, merged manifest.
 ```bash
 python3 04_get-sample-info.py
-gsutil cp gs://2024-wgspd/gnomad_v3.1_subset-metadata.tsv files/
+gsutil cp gs://2024-wgspd/files/gnomad_v3.1_subset-metadata.tsv files/
 #Rscript 05_check-meta.R
 ```

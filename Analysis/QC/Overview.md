@@ -51,10 +51,10 @@ After relatedness output, get maximally independent (unrelated) set of samples
 import hail as hl
 mt = hl.read_matrix_table("gs://2024-wgspd/qc/20240408_subset_initial-var-QC.mt") # Read in data
 samples = mt.cols()
-meta = hl.import_table("gs://2024-wgspd/gnomad_v3.1_subset-metadata.tsv", key="s") # Read in meta
+meta = hl.import_table("gs://2024-wgspd/files/gnomad_v3.1_subset-metadata.tsv", key="s") # Read in meta
 samples = samples.annotate(high_quality = meta[samples.s].high_quality)
 samples = samples.filter(samples.high_quality == "true") # Filter to high quality
-manifest = hl.import_table("gs://2024-wgspd/2024_WGSPD_merged-manifest.tsv", key="s") # Read in manifest
+manifest = hl.import_table("gs://2024-wgspd/files/2024_WGSPD_merged-manifest.tsv", key="s") # Read in manifest
 samples = samples.annotate(case_con = manifest[samples.s].CASECON)
 samples = samples.filter(hl.set(["CASE", "CTRL"]).contains(samples.case_con)) # Filter to CASE CON
 samples = samples.annotate(is_case = samples.case_con == "CASE") # Define ordering (prefer CASE > CTRL)
@@ -109,7 +109,7 @@ manifest = manifest[!(manifest$s %in% to_remove$s)] # Remove relateds (28554)
 manifest = merge(manifest, meta[, c("s", "population_inference.pop")], by = "s", all.x = T, all.y = F) # Get inferred populations
 
 
-write.table(manifest, "20240426_WGSPD_final-qcd-manifest.tsv", sep = "\t",
+write.table(manifest, "20240523_WGSPD_final-qcd-manifest.tsv", sep = "\t",
             quote = F, col.names = T, row.names = F)
 ```
 
