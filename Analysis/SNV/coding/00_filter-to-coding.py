@@ -71,4 +71,9 @@ mt = hl.read_matrix_table("gs://2024-wgspd/snv/coding/202240604_subset_post-qc_p
 manifest = hl.import_table('gs://2024-wgspd/files/20240523_WGSPD_final-qcd-manifest.tsv', delimiter='\t',
                           key = "s", impute = True)
 mt = mt.annotate_cols(is_case = manifest[mt.s].CASECON == "CASE")
+
+
+# TODO: add in other variant-level annotations (MPC, AM, HT_GNOMAD_NONPSYCH, HT_DISCOVEHR)
+
+
 mt.write("gs://2024-wgspd/snv/coding/202240603_subset_post-qc_protein-coding.mt", overwrite = True)
