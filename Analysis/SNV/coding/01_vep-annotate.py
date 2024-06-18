@@ -51,7 +51,7 @@ def annotation_case_builder(worst_csq_for_variant_canonical_expr, lof_use_loftee
 
 
 # Read MT
-MT = 'gs://2024-wgspd/snv/coding/202240604_subset_post-qc_protein-coding.mt'
+MT = 'gs://2024-wgspd/snv/coding/202240613_subset_post-qc_protein-coding.mt'
 mt = hl.read_matrix_table(MT)
 print(f"Original data count: {mt.count()}")
 #Original data count: (144360038, 28554)
@@ -67,7 +67,7 @@ ht_vep = ht_vep.annotate(consequence_category = annotation_case_builder(ht_vep.v
 
 
 # Write
-ht_vep.write("gs://2024-wgspd/snv/coding/202240604_subset_post-qc_protein-coding_VEP-annotated.ht", overwrite = True)
+ht_vep.write("gs://2024-wgspd/snv/coding/202240613_subset_post-qc_protein-coding_VEP-annotated.ht", overwrite = True)
 
 
 

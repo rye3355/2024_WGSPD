@@ -2,6 +2,9 @@
 Filter to protein coding genes as defined by Gencode v46
 Also min rep
 
+Also annotate samples with case/control assignments,
+variants with MPC, AM, in gnomAD nonpsych, and in discovEHR
+
 https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_46/gencode.v46.annotation.gtf.gz
 """
 import hail as hl
@@ -22,7 +25,7 @@ print(f"Original data count: {mt.count()}")
 MANIFEST = 'gs://2024-wgspd/20240523_WGSPD_final-qcd-manifest.tsv'
 manifest = hl.import_table(MANIFEST, delimiter='\t',
                           key = "s", impute = True)
-mt = mt.annotate_cols(is_case = manifest[mt.s].CASECON == "CASE")
+mt = mt.annotate_cols(case_con = manifest[mt.s].CASECON)
 
 
 
@@ -61,19 +64,56 @@ print(f"min rep count: {mt.count()}")
 #min rep count: (144360038, 28554)
 
 
+# Updated MPC annotation
+MPC = 'gs://bipex2/annotations/mpc_grch38_deduped_with_outliers_2024-04-30.ht'
+mpc = hl.read_table(MPC)
+mpc = mpc.key_by('locus', 'alleles')
+mt = mt.annotate_rows(MPC = mpc[mt.locus, mt.alleles].mpc)
+
+# AM annotation
+AM = 'gs://bipex2/annotations/AlphaMissense_deduplicated_hg38_2023-10-02.ht'
+am = hl.read_table(AM)
+mt = mt.annotate_rows(AM = am[mt.locus, mt.alleles].am_pathogenicity)
+
+# gnomAD nonpsych
+GNOMAD_NONPSYCH='gs://raw_data_bipolar_dalio_w1_w2/inputs/gnomad.exomes.r2.1.1.non_psych_sites_GRCh38.ht'
+gnomAD_nonpsych = hl.read_table(GNOMAD_NONPSYCH)
+mt = mt.annotate_rows(inGnomAD_nonpsych = hl.is_defined(gnomAD_nonpsych[mt.locus, mt.alleles]))
+
+# discovEHR
+DISCOVEHR = 'gs://bd_scz/BGE_Callset_PAISA_QIMR_NeuroMex_KenyaPsych/annotations/DiscovEHR_GHS_Freeze_50.L3DP10.pVCF.frq_sites_grch38.ht'
+discovehr = hl.read_table(DISCOVEHR)
+mt = mt.annotate_rows(inDiscovEHR = hl.is_defined(discovehr[mt.locus, mt.alleles].info))
+
+
 # Write
-mt.write("gs://2024-wgspd/snv/coding/202240604_subset_post-qc_protein-coding.mt", overwrite = True)
+mt.write("gs://2024-wgspd/snv/coding/202240613_subset_post-qc_protein-coding.mt", overwrite = True)
 
 
 """
 
 mt = hl.read_matrix_table("gs://2024-wgspd/snv/coding/202240604_subset_post-qc_protein-coding.mt")
-manifest = hl.import_table('gs://2024-wgspd/files/20240523_WGSPD_final-qcd-manifest.tsv', delimiter='\t',
-                          key = "s", impute = True)
-mt = mt.annotate_cols(is_case = manifest[mt.s].CASECON == "CASE")
+
+# Updated MPC annotation
+MPC = 'gs://bipex2/annotations/mpc_grch38_deduped_with_outliers_2024-04-30.ht'
+mpc = hl.read_table(MPC)
+mpc = mpc.key_by('locus', 'alleles')
+mt = mt.annotate_rows(MPC = mpc[mt.locus, mt.alleles].mpc)
+
+# AM annotation
+AM = 'gs://bipex2/annotations/AlphaMissense_deduplicated_hg38_2023-10-02.ht'
+am = hl.read_table(AM)
+mt = mt.annotate_rows(AM = am[mt.locus, mt.alleles].am_pathogenicity)
+
+# gnomAD nonpsych
+GNOMAD_NONPSYCH='gs://raw_data_bipolar_dalio_w1_w2/inputs/gnomad.exomes.r2.1.1.non_psych_sites_GRCh38.ht'
+gnomAD_nonpsych = hl.read_table(GNOMAD_NONPSYCH)
+mt = mt.annotate_rows(inGnomAD_nonpsych = hl.is_defined(gnomAD_nonpsych[mt.locus, mt.alleles]))
+
+# discovEHR
+DISCOVEHR = 'gs://bd_scz/BGE_Callset_PAISA_QIMR_NeuroMex_KenyaPsych/annotations/DiscovEHR_GHS_Freeze_50.L3DP10.pVCF.frq_sites_grch38.ht'
+discovehr = hl.read_table(DISCOVEHR)
+mt = mt.annotate_rows(inDiscovEHR = hl.is_defined(discovehr[mt.locus, mt.alleles].info))
 
 
-# TODO: add in other variant-level annotations (MPC, AM, HT_GNOMAD_NONPSYCH, HT_DISCOVEHR)
-
-
-mt.write("gs://2024-wgspd/snv/coding/202240603_subset_post-qc_protein-coding.mt", overwrite = True)
+mt = mt.checkpoint("gs://2024-wgspd/snv/coding/202240613_subset_post-qc_protein-coding.mt", overwrite = True)
