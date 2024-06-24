@@ -68,6 +68,3 @@ ht_vep = ht_vep.annotate(consequence_category = annotation_case_builder(ht_vep.v
 
 # Write
 ht_vep.write("gs://2024-wgspd/snv/coding/202240613_subset_post-qc_protein-coding_VEP-annotated.ht", overwrite = True)
-
-
-
