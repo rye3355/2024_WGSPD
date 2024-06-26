@@ -107,7 +107,11 @@ manifest = manifest[manifest$s %in% meta$s[meta$high_quality],] # Slim to high q
 manifest = manifest[manifest$CASECON %in% c("CASE", "CTRL"),] # Slim to case/control (30659)
 manifest = manifest[!(manifest$s %in% to_remove$s)] # Remove relateds (28554)
 manifest = merge(manifest, meta[, c("s", "population_inference.pop")], by = "s", all.x = T, all.y = F) # Get inferred populations
-
+table(manifest$population_inference.pop)
+#   afr   ami   amr   asj   eas   fin   mid   nfe   oth   sas 
+# 11633    67  2279   377    40  4240     8  9315   563    32 
+colnames(manifest) <- c("s", "sex_new", "sex_old", "SEX", "primary_disease_new", "primary_disease_new_fixed", "primary_disease_old", "primary_disease_old_fixed", "PRIMARY_DISEASE", "CASECON", "POP")
+manifest$CHIP <- "WGS"
 
 write.table(manifest, "20240523_WGSPD_final-qcd-manifest.tsv", sep = "\t",
             quote = F, col.names = T, row.names = F)

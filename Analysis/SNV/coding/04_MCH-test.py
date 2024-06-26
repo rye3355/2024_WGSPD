@@ -1,6 +1,6 @@
 """
-Conduct Fisher's exact test on VEP-counts table (generated in 01_VEP-counts-export.py) for case/control burden
-
+Conduct MCH test on VEP-counts table (generated in 01_VEP-counts-export.py) 
+Currently only supports stratification by ancestry x chip
 """
 
 import hail as hl
@@ -21,7 +21,7 @@ gene_lists_info =   {"gnomAD-constrained":  {"Description": "Constrained genes a
                      "all":                 {"Description": "All provided genes"},
                     }
 
-def run_fisher(mt: hl.MatrixTable, gene_list: str):
+def run_cmh(mt: hl.MatrixTable, gene_list: str):
     print(f"\nAnalyzing {gene_list}: {gene_lists_info[gene_list]['Description']}...\n")
     
     g = hl.import_table(gene_lists_info[gene_list]["List path"], 
@@ -31,17 +31,27 @@ def run_fisher(mt: hl.MatrixTable, gene_list: str):
     print(f"\nTotal number of genes: {m.rows().count()}\n")
     m = m.annotate_cols(carrier = hl.agg.count_where(m.agg > 0))
 
+
+
+
+
+
+    # TODO: Implement CMH stratified counts
     case_carriers = m.aggregate_cols(hl.agg.filter(m.case_con == "CASE", hl.agg.sum(m.carrier)))
     control_carriers = m.aggregate_cols(hl.agg.filter(m.case_con == "CTRL", hl.agg.sum(m.carrier)))
     case_non_carriers = m.aggregate_cols(hl.agg.filter(m.case_con == "CASE", hl.agg.sum(m.carrier == 0)))
     control_non_carriers = m.aggregate_cols(hl.agg.filter(m.case_con == "CTRL", hl.agg.sum(m.carrier == 0)))
-    res = hl.eval(hl.fisher_exact_test(case_carriers, case_non_carriers,
-                                        control_carriers, control_non_carriers))
-
-    return [gene_list, res.p_value, res.odds_ratio, res.ci_95_lower, res.ci_95_upper,
-            case_carriers, case_non_carriers, control_carriers, control_non_carriers]
 
 
+
+
+
+
+
+    res = hl.eval(hl.cochran_mantel_haenszel_test(case_carriers, case_non_carriers,
+                                                  control_carriers, control_non_carriers))
+
+    return [gene_list, res.p_value, res.test_statistic]
 
 
 def main(args):
@@ -52,26 +62,53 @@ def main(args):
     # Read in MT
     print(f"\nReading in MT ({args.mt})...\n")
     mt = hl.read_matrix_table(args.mt) 
-    if mt.n_partitions() > 200:
-        mt = mt.repartition(200, shuffle = False).persist()
     print(f"\nStarting (genes, samples): {mt.count()}\n")
-    counts = mt.aggregate_cols(hl.agg.counter(mt.case_con))
-    print(counts)
 
 
-    if args.individual:
-        print(f"\nConducting case/control Fishers exact tests for each individual gene...\n")
-        ## Output Fisher's exact tests for each individual gene
-        counts = mt.annotate_rows(case_carriers = hl.agg.filter(mt.case_con == "CASE", hl.agg.count_where(mt.agg > 0)),
-                                  control_carriers = hl.agg.filter(mt.case_con == "CTRL", hl.agg.count_where(mt.agg > 0)),
-                                  case_non_carriers = hl.agg.filter(mt.case_con == "CASE", hl.agg.count_where(mt.agg == 0)),
-                                  control_non_carriers = hl.agg.filter(mt.case_con == "CTRL", hl.agg.count_where(mt.agg == 0))) # Annotate in counts
+    # Check annotation requirements
+    if (args.annotate_casecon | args.annotate_pop | args.annotate_chip) and not args.manifest:
+        print(f"No manifest provided to pull annotations from...")
+        return
+    
+    # Annotate in fields from manifest
+    # Requires key by "s" and specific fields "CASECON", "POP", and "CHIP" as needed
+    if args.manifest:
+        manifest = hl.import_table(args.manifest,
+                                   delimiter = "\t", impute = True, key = "s")
         
-        counts = counts.annotate_rows(fisher = (hl.expr.functions.fisher_exact_test(hl.int(counts.case_carriers), hl.int(counts.case_non_carriers),
-                                                                                    hl.int(counts.control_carriers), hl.int(counts.control_non_carriers)))) # Test and annotate
+        if args.annotate_casecon:
+            mt = mt.annotate_cols(case_con = manifest[mt.s].CASECON)
+        if args.annotate_pop:
+            mt = mt.annotate_cols(pop = manifest[mt.s].POP)
+        if args.annotate_chip:
+            mt = mt.annotate_cols(chip = manifest[mt.s].CHIP)
         
-        print(f"\nWriting result to: {args.out + args.file_prefix + '_case-control_Fisher-exact_individual.tsv'}\n") 
-        counts.rows().flatten().export(args.out + args.file_prefix + '_case-control_Fisher-exact_individual.tsv') # Export
+    
+    # Create population x chip stratification
+    mt = mt.annotate_cols(group = mt.pop + "_" + mt.chip)
+    counts = mt.aggregate_cols(hl.agg.counter(mt.group))
+
+    # Exclude groups that are too small as desired
+    excluded_groups = []
+    if args.minimum_group_size | args.minimum_cases:
+        if args.minimum_group_size:
+            excluded_groups += [x for x in counts if counts[x] < args.minimum_group_size]
+        if args.minimum_cases:
+            case_counts = mt.aggregate_cols(hl.agg.filter(mt.case_con == "CASE", hl.agg.counter(mt.group)))
+            excluded_groups += [x for x in case_counts if case_counts[x] < args.minimum_cases]   
+        
+        print(f"\nGroups that are too small: {set(excluded_groups)}\n")
+        print(f"\nTotal number of samples filtered out: {mt.filter_cols(hl.set(excluded_groups).contains(mt.group)).count()[1]}\n")
+        mt = mt.filter_cols(hl.set(excluded_groups).contains(mt.group), keep = False)
+        print(f"\nTotal number of samples after filtering: {mt.count()[1]}\n")
+
+
+    # Repartition if needed
+    if mt.n_partitions() > 200:
+        mt = mt.repartition(200, shuffle = False)
+
+    # Persist for speed
+    mt = mt.persist()
 
 
 
@@ -80,12 +117,11 @@ def main(args):
         results = {}
         gene_lists = args.gene_lists.replace(" ", "").split(",") # Parse command-line input
         for gene_list in gene_lists: # Iterate through every desired gene list analysis
-            results[gene_list] = run_fisher(mt, gene_list)
+            results[gene_list] = run_cmh(mt, gene_list)
             
 
         df = pd.DataFrame.from_dict(results, orient = "index",
-                                    columns = ["gene_set", "p_value", "odds_ratio", "ci_95_lower", "ci_95_upper",
-                                               "case_carriers", "case_non_carriers", "control_carriers", "control_non_carriers"])
+                                    columns = ["gene_set", "p_value", "test_statistic"])
         df_ht = hl.Table.from_pandas(df, key = "gene_set")
 
         print(f"\nWriting result to: {args.out + args.file_prefix + '_case-control_Fisher-exact_' + '-'.join(gene_lists) + '.tsv'}\n") 
@@ -103,12 +139,9 @@ if __name__ == "__main__":
         type = str,
         required = True
     )
-    """
-    TODO: accommodate MT's without case/control annotated in already, also maybe ancestry/chip
-
     parser.add_argument(
         "--manifest",
-        help = "Path to manifest keyed by samples ('s') with relevant annotations: 'CASECON', 'population_inference.pop', 'chip'",
+        help = "Path to tab-delimited manifest keyed by samples ('s') with relevant annotations: 'CASECON', 'POP', 'CHIP'",
         type = str,
         required = False
     )
@@ -127,15 +160,25 @@ if __name__ == "__main__":
         help = "Flag to annotate in chip for each sample",
         action = 'store_true'
     )
-    """
     parser.add_argument(
-        "--individual",
-        help = "Whether to conduct case/control Fishers exact tests for each individual gene",
-        action = 'store_true'
+        "--minimum_group_size",
+        help = "Minimum ancestry-chip stratification group size (otherwise, drop it from analysis)",
+        type = int,
+        required = False
     )
     parser.add_argument(
+        "--minimum_cases",
+        help = "Minimum number of cases in ancestry-chip stratification group (otherwise, drop it from analysis)",
+        type = int,
+        required = False
+    )
+
+
+
+
+    parser.add_argument(
         "--gene_lists",
-        help = "Comma-separated gene-lists to individually filter to and analyze. Possible values: gnomAD-constrained, SCHEMA, NDD, ASD.",
+        help = "Comma-separated gene-lists to individually filter to and analyze. Possible values: all, gnomAD-constrained, SCHEMA, NDD, ASD.",
         type = str,
         required = False
     )
