@@ -1,9 +1,6 @@
 """
 Get counts for specific VEP annotations and write 
 
-
-gs://2024-wgspd/snv/coding/202240618_subset_post-qc_protein-coding.mt
-
 """
 
 import hail as hl
@@ -122,7 +119,7 @@ def main(args):
     mt_agg.write(args.out + '_'.join(f) + '_counts.mt', overwrite = True)
 
     logger.info(f"Copying log to {args.out + 'logs/' + str(date.today()) + '_' + '_'.join(f) + '.log'}...")
-    hl.copy_log(f"{args.out + 'logs/' + str(date.today()) + '_' + '_'.join(f) + '.log'}")
+    hl.copy_log(f"{args.tmp + 'logs/' + str(date.today()) + '_' + '_'.join(f) + '.log'}")
 
 
 
