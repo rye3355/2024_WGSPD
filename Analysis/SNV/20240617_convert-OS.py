@@ -3,7 +3,7 @@ import hail as hl
 hl.init(gcs_requester_pays_configuration = 'wes-bipolar',
         tmp_dir = 'gs://wes-bipolar-tmp-4day')
 
-"""
+
 ht = hl.read_table("gs://gcp-public-data--gnomad/resources/context/grch37_context_vep_annotated.ht/")
 
 ht.describe()
@@ -32,16 +32,9 @@ h = h.drop(h.context, h.vep,
            h.methylation, h.coverage,
            h.gerp)
            
-h = h.checkpoint("gs://bipex2/annotations/20240617_GRCh38_OS.ht", overwrite = True)
-"""
-ht = hl.read_table("gs://bipex2/annotations/20240617_GRCh38_OS.ht")
-
-h = ht.repartition(500, shuffle = False)
+h = h.repartition(500, shuffle = False)
 h = h.key_by(locus = h.GRCh38_locus, alleles = h.alleles)
 
-#h = h.checkpoint("gs://wes-bipolar-tmp-4day/20240618_GRCh38_OS_reparititioned.ht", overwrite = True)
-h = h.checkpoint("gs://gs://bipex2/annotations/20240618_GRCh38_OS.ht")
-#ht = ht.key_by(locus=ht.new_locus, alleles = ht.alleles) 
-#ht = ht.select('OS')
+h = h.checkpoint("gs://bipex2/annotations/20240618_GRCh38_OS.ht", overwrite = True)
 
 

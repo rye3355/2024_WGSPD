@@ -12,8 +12,6 @@ import hail as hl
 hl.init(default_reference = 'GRCh38',
                 tmp_dir = "gs://wes-bipolar-tmp-4day/")
 
-"""
-
 # Read original data MT
 MT = 'gs://2024-wgspd/qc/20240426_subset_final-qcd.mt'
 mt = hl.read_matrix_table(MT)
@@ -98,8 +96,10 @@ mt = mt.annotate_rows(AM = oth[mt.locus, mt.alleles].am_pathogenicity,
 
 # Write
 mt.write("gs://2024-wgspd/snv/coding/202240618_subset_post-qc_protein-coding.mt", overwrite = True)
+
+"""
+print(mt.aggregate_rows(hl.agg.counter(mt.inOS)))
+
+#{'NAGNAG_SITE': 754, 'NON_CAN_SPLICE': 339, 'NON_CAN_SPLICE,NAGNAG_SITE': 4, 'PHYLOCSF_UNLIKELY_ORF': 125, 'PHYLOCSF_WEAK': 23076, 'SINGLE_EXON': 3523, 'SINGLE_EXON,PHYLOCSF_WEAK': 928, None: 144331289}
 """
 
-mt = hl.read_matrix_table("gs://2024-wgspd/snv/coding/202240618_subset_post-qc_protein-coding.mt")
-
-print(mt.aggregate_rows(hl.agg.counter(mt.inOS)))
