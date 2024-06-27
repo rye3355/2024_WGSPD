@@ -24,7 +24,7 @@ def main(args):
         
     # Read in MT
     logger.info(f"Reading in MT ({args.mt})...")
-    mt = hl.read_matrix_table(args.mt) 
+    mt = hl.read_matrix_table(args.mt)
     logger.info(f"Starting (variants, samples): {mt.count()}")
 
     # Variant QC (for cohort-specific AC filtering)
@@ -107,7 +107,7 @@ def main(args):
         )
 
         logger.info(f"Writing to {args.out + '_'.join(f) + '_non-gnomAD-psych_counts.mt'}...")
-        mt_agg.write(args.out + '_'.join(f) + '_non-gnomAD-psych_counts.mt', overwrite = True)
+        mt_agg.repartition(200, shuffle = False).write(args.out + '_'.join(f) + '_non-gnomAD-psych_counts.mt', overwrite = True)
 
 
     logger.info(f"Generating counts...")
@@ -116,7 +116,7 @@ def main(args):
     )
 
     logger.info(f"Writing to {args.out + '_'.join(f) + '_counts.mt'}...")
-    mt_agg.write(args.out + '_'.join(f) + '_counts.mt', overwrite = True)
+    mt_agg.repartition(200, shuffle = False).write(args.out + '_'.join(f) + '_counts.mt', overwrite = True)
 
     logger.info(f"Copying log to {args.out + 'logs/' + str(date.today()) + '_' + '_'.join(f) + '.log'}...")
     hl.copy_log(f"{args.tmp + 'logs/' + str(date.today()) + '_' + '_'.join(f) + '.log'}")

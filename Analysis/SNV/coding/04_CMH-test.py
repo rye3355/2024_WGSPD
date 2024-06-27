@@ -21,8 +21,25 @@ gene_lists_info =   {"gnomAD-constrained":  {"Description": "Constrained genes a
                      "all":                 {"Description": "All provided genes"},
                     }
 
-def run_cmh(mt: hl.MatrixTable, gene_list: str):
-    print(f"\nAnalyzing {gene_list}: {gene_lists_info[gene_list]['Description']}...\n")
+
+def compute_MCH_OR(case_carriers, case_non_carriers,
+                   control_carriers, control_non_carriers):
+    def numerator_term(a, d, t):
+        return a*d/t
+    def denominator_term(b, c, t):
+        return b*c/t
+    n1 = hl.zip(case_carriers, case_non_carriers).map(lambda ab: ab[0] + ab[1])
+    n2 = hl.zip(control_carriers, control_non_carriers).map(lambda cd: cd[0] + cd[1])
+    t = hl.zip(n1, n2).map(lambda nn: nn[0] + nn[1])
+    numerator = hl.sum(hl.zip(case_carriers, control_non_carriers, t).map(lambda tup: numerator_term(*tup)))
+    denominator = hl.sum(hl.zip(case_non_carriers, control_carriers, t).map(lambda tup: denominator_term(*tup)))
+    return numerator / denominator
+
+
+
+def run_cmh(mt: hl.MatrixTable, gene_list: str, kept_groups: list[str]):
+    print(f"\nAnalyzing {gene_list}: {gene_lists_info[gene_list]['Description']}\n")
+    print(f"Across {len(kept_groups)} groups: {kept_groups}\n")
     
     g = hl.import_table(gene_lists_info[gene_list]["List path"], 
                         delimiter = "\t", key = "gene_symbol", impute = True) # Read in list of gene symbols
@@ -32,26 +49,30 @@ def run_cmh(mt: hl.MatrixTable, gene_list: str):
     m = m.annotate_cols(carrier = hl.agg.count_where(m.agg > 0))
 
 
+    case_carriers = []
+    control_carriers = []
+    case_non_carriers = []
+    control_non_carriers = []
 
+    for group in kept_groups:
+        a = m.aggregate_cols(hl.agg.filter((m.case_con == "CASE") & (m.group == group), hl.agg.sum(m.carrier)))
+        b = m.aggregate_cols(hl.agg.filter((m.case_con == "CTRL") &( m.group == group), hl.agg.sum(m.carrier)))
+        c = m.aggregate_cols(hl.agg.filter((m.case_con == "CASE") & (m.group == group), hl.agg.sum(m.carrier == 0)))
+        d = m.aggregate_cols(hl.agg.filter((m.case_con == "CTRL") & (m.group == group), hl.agg.sum(m.carrier == 0)))
 
+        case_carriers.append(a)
+        control_carriers.append(b)
+        case_non_carriers.append(c)
+        control_non_carriers.append(d)
 
-
-    # TODO: Implement CMH stratified counts
-    case_carriers = m.aggregate_cols(hl.agg.filter(m.case_con == "CASE", hl.agg.sum(m.carrier)))
-    control_carriers = m.aggregate_cols(hl.agg.filter(m.case_con == "CTRL", hl.agg.sum(m.carrier)))
-    case_non_carriers = m.aggregate_cols(hl.agg.filter(m.case_con == "CASE", hl.agg.sum(m.carrier == 0)))
-    control_non_carriers = m.aggregate_cols(hl.agg.filter(m.case_con == "CTRL", hl.agg.sum(m.carrier == 0)))
-
-
-
-
-
-
-
+    
     res = hl.eval(hl.cochran_mantel_haenszel_test(case_carriers, case_non_carriers,
                                                   control_carriers, control_non_carriers))
+    
+    OR = compute_MCH_OR(case_carriers, case_non_carriers,
+                        control_carriers, control_non_carriers)
 
-    return [gene_list, res.p_value, res.test_statistic]
+    return [gene_list, OR, res.p_value, res.test_statistic]
 
 
 def main(args):
@@ -102,6 +123,7 @@ def main(args):
         mt = mt.filter_cols(hl.set(excluded_groups).contains(mt.group), keep = False)
         print(f"\nTotal number of samples after filtering: {mt.count()[1]}\n")
 
+    kept_groups = [x for x in counts if x not in excluded_groups]
 
     # Repartition if needed
     if mt.n_partitions() > 200:
@@ -117,15 +139,15 @@ def main(args):
         results = {}
         gene_lists = args.gene_lists.replace(" ", "").split(",") # Parse command-line input
         for gene_list in gene_lists: # Iterate through every desired gene list analysis
-            results[gene_list] = run_cmh(mt, gene_list)
+            results[gene_list] = run_cmh(mt, gene_list, kept_groups)
             
 
         df = pd.DataFrame.from_dict(results, orient = "index",
-                                    columns = ["gene_set", "p_value", "test_statistic"])
+                                    columns = ["gene_set", "OR", "p_value", "test_statistic"])
         df_ht = hl.Table.from_pandas(df, key = "gene_set")
 
-        print(f"\nWriting result to: {args.out + args.file_prefix + '_case-control_Fisher-exact_' + '-'.join(gene_lists) + '.tsv'}\n") 
-        df_ht.export(args.out + args.file_prefix + '_case-control_Fisher-exact_' + '-'.join(gene_lists) + '.tsv', delimiter='\t')
+        print(f"\nWriting result to: {args.out + args.file_prefix + '_case-control_CMH_' + '-'.join(gene_lists) + '.tsv'}\n") 
+        df_ht.export(args.out + args.file_prefix + '_case-control_CMH_' + '-'.join(gene_lists) + '.tsv', delimiter='\t')
 
             
 
@@ -172,10 +194,6 @@ if __name__ == "__main__":
         type = int,
         required = False
     )
-
-
-
-
     parser.add_argument(
         "--gene_lists",
         help = "Comma-separated gene-lists to individually filter to and analyze. Possible values: all, gnomAD-constrained, SCHEMA, NDD, ASD.",
