@@ -54,14 +54,19 @@ def main(args):
         GNOMAD_AC = "gs://gcp-public-data--gnomad/release/4.1/ht/genomes/gnomad.genomes.v4.1.sites.ht/"
         gnomad_AC = hl.read_table(GNOMAD_AC)
         gnomad_AC = gnomad_AC.annotate(raw_freq_AC = gnomad_AC.freq[gnomad_AC.freq_index_dict['raw']].AC)
-        mt = mt.annotate_rows(gnomad_ac = gnomad_AC[mt.locus, mt.alleles].raw_freq_AC)
+        mt = mt.annotate_rows(gnomad_ac = hl.if_else(hl.is_defined(gnomad_AC[mt.locus, mt.alleles]), # Check if locus/allele is even in gnomad table
+                                                     gnomad_AC[mt.locus, mt.alleles].raw_freq_AC,  # If so, use the value
+                                                     0)) # Otherwise, set to AC = 0
+        
         mt = mt.filter_rows(mt.gnomad_ac <= args.gnomAD_AC_thresh, keep = True)
         f.append(f"gnomadAC{args.gnomAD_AC_thresh}")
     if args.RGC_AC_thresh:
         logger.info(f"Filtering to RGC AC <= {args.RGC_AC_thresh}...")
         RGC_AC = "gs://bipex2/annotations/RGC/rgc_me_variant_frequencies.ht"
         rgc_AC = hl.read_table(RGC_AC)
-        mt = mt.annotate_rows(rgc_ac = rgc_AC[mt.locus, mt.alleles].ALL_AC)
+        mt = mt.annotate_rows(rgc_ac = hl.if_else(hl.is_defined(rgc_AC[mt.locus, mt.alleles]), # Check if locus/allele is even in RGC table
+                                                  rgc_AC[mt.locus, mt.alleles].ALL_AC, # If so, use the value
+                                                  0)) # Otherwise, set to AC = 0
         mt = mt.filter_rows(mt.rgc_ac <= args.RGC_AC_thresh, keep = True)
 
 

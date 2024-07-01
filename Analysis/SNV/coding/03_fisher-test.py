@@ -21,24 +21,18 @@ gene_lists_info =   {"gnomAD-constrained":  {"Description": "Constrained genes a
                      "all":                 {"Description": "All provided genes"},
                     }
 
-def run_fisher(mt: hl.MatrixTable, gene_list: str):
-    print(f"\nAnalyzing {gene_list}: {gene_lists_info[gene_list]['Description']}...\n")
-    
-    g = hl.import_table(gene_lists_info[gene_list]["List path"], 
-                        delimiter = "\t", key = "gene_symbol", impute = True) # Read in list of gene symbols
-    
-    m = mt.filter_rows(hl.is_defined(g[mt.gene_symbol]), keep = True) # Filter down to genes of interest
-    print(f"\nTotal number of genes: {m.rows().count()}\n")
-    m = m.annotate_cols(carrier = hl.agg.count_where(m.agg > 0))
+def run_fisher_on_gene_lists(m: hl.MatrixTable, counts: hl.DictExpression):
+    m = m.annotate_cols(carrier = hl.agg.any(m.agg > 0)) # Label samples as carriers (any count > 0)
+    res = m.cols()
+    case_carriers = res.aggregate(hl.agg.filter(res.case_con == "CASE", hl.agg.sum(res.carrier))) # Count carriers
+    case_non_carriers = hl.eval(counts.get("CASE")) - case_carriers # Use dictionary to get non-carrier counts (faster than re-counting)
+    control_carriers = res.aggregate(hl.agg.filter(res.case_con == "CTRL", hl.agg.sum(res.carrier))) 
+    control_non_carriers = hl.eval(counts.get("CTRL")) - case_carriers 
 
-    case_carriers = m.aggregate_cols(hl.agg.filter(m.case_con == "CASE", hl.agg.sum(m.carrier)))
-    control_carriers = m.aggregate_cols(hl.agg.filter(m.case_con == "CTRL", hl.agg.sum(m.carrier)))
-    case_non_carriers = m.aggregate_cols(hl.agg.filter(m.case_con == "CASE", hl.agg.sum(m.carrier == 0)))
-    control_non_carriers = m.aggregate_cols(hl.agg.filter(m.case_con == "CTRL", hl.agg.sum(m.carrier == 0)))
     res = hl.eval(hl.fisher_exact_test(case_carriers, case_non_carriers,
                                         control_carriers, control_non_carriers))
 
-    return [gene_list, res.p_value, res.odds_ratio, res.ci_95_lower, res.ci_95_upper,
+    return [res.p_value, res.odds_ratio, res.ci_95_lower, res.ci_95_upper,
             case_carriers, case_non_carriers, control_carriers, control_non_carriers]
 
 
@@ -52,44 +46,83 @@ def main(args):
     # Read in MT
     print(f"\nReading in MT ({args.mt})...\n")
     mt = hl.read_matrix_table(args.mt) 
+
+     # Check annotation requirements
+    if args.annotate_casecon and not args.manifest:
+        print(f"No manifest provided to pull annotations from...")
+        return
+    
+    # Annotate in fields from manifest
+    # Requires key by "s" and specific fields "CASECON" as needed
+    if args.manifest:
+        manifest = hl.import_table(args.manifest,
+                                   delimiter = "\t", impute = True, key = "s")
+        
+        if args.annotate_casecon:
+            mt = mt.annotate_cols(case_con = manifest[mt.s].CASECON)
+
+    counts = mt.aggregate_cols(hl.agg.counter(mt.case_con))
+    print(counts)
+    counts = hl.literal(counts) # Convert counts dictionary to hail format
+
+
+
     if mt.n_partitions() > 200:
         mt = mt.repartition(200, shuffle = False).persist()
     print(f"\nStarting (genes, samples): {mt.count()}\n")
-    counts = mt.aggregate_cols(hl.agg.counter(mt.case_con))
-    print(counts)
-
-
-    if args.individual:
-        print(f"\nConducting case/control Fishers exact tests for each individual gene...\n")
-        ## Output Fisher's exact tests for each individual gene
-        counts = mt.annotate_rows(case_carriers = hl.agg.filter(mt.case_con == "CASE", hl.agg.count_where(mt.agg > 0)),
-                                  control_carriers = hl.agg.filter(mt.case_con == "CTRL", hl.agg.count_where(mt.agg > 0)),
-                                  case_non_carriers = hl.agg.filter(mt.case_con == "CASE", hl.agg.count_where(mt.agg == 0)),
-                                  control_non_carriers = hl.agg.filter(mt.case_con == "CTRL", hl.agg.count_where(mt.agg == 0))) # Annotate in counts
-        
-        counts = counts.annotate_rows(fisher = (hl.expr.functions.fisher_exact_test(hl.int(counts.case_carriers), hl.int(counts.case_non_carriers),
-                                                                                    hl.int(counts.control_carriers), hl.int(counts.control_non_carriers)))) # Test and annotate
-        
-        print(f"\nWriting result to: {args.out + args.file_prefix + '_case-control_Fisher-exact_individual.tsv'}\n") 
-        counts.rows().flatten().export(args.out + args.file_prefix + '_case-control_Fisher-exact_individual.tsv') # Export
-
-
-
+    
     ## Next, conduct individual gene-set burden analyses
     if args.gene_lists:
-        results = {}
         gene_lists = args.gene_lists.replace(" ", "").split(",") # Parse command-line input
-        for gene_list in gene_lists: # Iterate through every desired gene list analysis
-            results[gene_list] = run_fisher(mt, gene_list)
+
+
+        # Running CMH on each gene individually
+        # TODO: Make this more efficient with row aggregations?
+        if "individual" in gene_lists:
+            genes = mt.gene_symbol.collect() 
+            print(f"\nAnalyzing {len(genes)} genes individually\n")
+            m = mt
+            res = m.group_cols_by(m.case_con).aggregate(n_carriers = hl.agg.sum(m.agg > 0)).repartition(200, shuffle = False).persist() # Count carriers by CASE/CTRL stratifications
+            res = res.annotate_entries(n_non_carriers = counts.get(res.case_con) - res.n_carriers) # Use dictionary to get non-carrier counts (faster than re-counting)
+            res_counts = res.annotate_rows(case_carriers = hl.agg.filter(res.case_con == "CASE", hl.agg.collect(res.n_carriers)[0]), 
+                                           case_non_carriers = hl.agg.filter(res.case_con == "CASE", hl.agg.collect(res.n_non_carriers)[0]), 
+                                           control_carriers = hl.agg.filter(res.case_con == "CTRL", hl.agg.collect(res.n_carriers)[0]), 
+                                           control_non_carriers = hl.agg.filter(res.case_con == "CTRL", hl.agg.collect(res.n_non_carriers)[0])).rows() # Collect counts into arrays (collect all ancestry x kit groups), slim to only rows now
+            res_counts = res_counts.annotate(fisher = hl.expr.functions.fisher_exact_test(hl.int(res_counts.case_carriers), hl.int(res_counts.case_non_carriers),
+                                                                                          hl.int(res_counts.control_carriers), hl.int(res_counts.control_non_carriers))) # Annotate in Fisher results
+            res_counts = res_counts.flatten()
+
+            #print(f"\nWriting result to: {args.out + args.file_prefix + '_case-control_Fisher-exact_individual.ht'}\n") 
+            #res_counts = res_counts.checkpoint(args.out + args.file_prefix + '_case-control_Fisher-exact_individual.ht')
+
+            print(f"\nWriting result to: {args.out + args.file_prefix + '_case-control_Fisher-exact_individual.tsv'}\n") 
+            res_counts.export(args.out + args.file_prefix + '_case-control_Fisher-exact_individual.tsv', delimiter = "\t")
             
+            
+            gene_lists.remove("individual")
 
-        df = pd.DataFrame.from_dict(results, orient = "index",
-                                    columns = ["gene_set", "p_value", "odds_ratio", "ci_95_lower", "ci_95_upper",
-                                               "case_carriers", "case_non_carriers", "control_carriers", "control_non_carriers"])
-        df_ht = hl.Table.from_pandas(df, key = "gene_set")
 
-        print(f"\nWriting result to: {args.out + args.file_prefix + '_case-control_Fisher-exact_' + '-'.join(gene_lists) + '.tsv'}\n") 
-        df_ht.export(args.out + args.file_prefix + '_case-control_Fisher-exact_' + '-'.join(gene_lists) + '.tsv', delimiter='\t')
+        results = {}
+        for gene_list in gene_lists: # Iterate through every desired gene list analysis
+            if gene_list == "individual":
+                continue
+            print(f"\nAnalyzing {gene_list}: {gene_lists_info[gene_list]['Description']}\n")
+            m = mt
+            g = hl.import_table(gene_lists_info[gene_list]["List path"], 
+                                delimiter = "\t", key = "gene_symbol", impute = True) # Read in list of gene symbols
+            m = m.filter_rows(hl.is_defined(g[m.gene_symbol]), keep = True) # Filter down to genes of interest
+            
+            print(f"\nTotal number of genes: {m.rows().count()}\n")    
+            results[gene_list] = [gene_list] + run_fisher_on_gene_lists(m, counts)
+
+        # Only write if something to be written at this point
+        if results:
+            df = pd.DataFrame.from_dict(results, orient = "index",
+                                        columns = ["gene_set", "p_value", "odds_ratio", "ci_95_lower", "ci_95_upper",
+                                                   "case_carriers", "case_non_carriers", "control_carriers", "control_non_carriers"])
+            df_ht = hl.Table.from_pandas(df, key = "gene_set")
+            print(f"\nWriting result to: {args.out + args.file_prefix + '_case-control_Fisher-exact_' + '-'.join(gene_lists) + '.tsv'}\n") 
+            df_ht.export(args.out + args.file_prefix + '_case-control_Fisher-exact_' + '-'.join(gene_lists) + '.tsv', delimiter='\t')
 
             
 
@@ -103,12 +136,9 @@ if __name__ == "__main__":
         type = str,
         required = True
     )
-    """
-    TODO: accommodate MT's without case/control annotated in already, also maybe ancestry/chip
-
     parser.add_argument(
         "--manifest",
-        help = "Path to manifest keyed by samples ('s') with relevant annotations: 'CASECON', 'population_inference.pop', 'chip'",
+        help = "Path to tab-delimited manifest keyed by samples ('s') with relevant annotations: 'CASECON'",
         type = str,
         required = False
     )
@@ -118,24 +148,8 @@ if __name__ == "__main__":
         action = 'store_true'
     )
     parser.add_argument(
-        "--annotate_pop",
-        help = "Flag to annotate in population for each sample",
-        action = 'store_true'
-    )
-    parser.add_argument(
-        "--annotate_chip",
-        help = "Flag to annotate in chip for each sample",
-        action = 'store_true'
-    )
-    """
-    parser.add_argument(
-        "--individual",
-        help = "Whether to conduct case/control Fishers exact tests for each individual gene",
-        action = 'store_true'
-    )
-    parser.add_argument(
         "--gene_lists",
-        help = "Comma-separated gene-lists to individually filter to and analyze. Possible values: gnomAD-constrained, SCHEMA, NDD, ASD.",
+        help = "Comma-separated gene-lists to individually filter to and analyze. Possible values: individual, gnomAD-constrained, SCHEMA, NDD, ASD.",
         type = str,
         required = False
     )

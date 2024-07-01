@@ -18,10 +18,9 @@ gene_lists_info =   {"gnomAD-constrained":  {"Description": "Constrained genes a
                                              "List path": "gs://2024-wgspd/files/gene-sets/ASD.tsv"},
                      "NDD":                 {"Description": "Top NDD genes (TADA FDR < 0.001)",
                                              "List path": "gs://2024-wgspd/files/gene-sets/NDD.tsv"},  
-                     "all":                 {"Description": "All provided genes"},
                     }
 
-
+# Hail function doesn't report OR for some reason... so here's a custom function
 def compute_MCH_OR(case_carriers, case_non_carriers,
                    control_carriers, control_non_carriers):
     def numerator_term(a, d, t):
@@ -37,42 +36,24 @@ def compute_MCH_OR(case_carriers, case_non_carriers,
 
 
 
-def run_cmh(mt: hl.MatrixTable, gene_list: str, kept_groups: list[str]):
-    print(f"\nAnalyzing {gene_list}: {gene_lists_info[gene_list]['Description']}\n")
-    print(f"Across {len(kept_groups)} groups: {kept_groups}\n")
-    
-    g = hl.import_table(gene_lists_info[gene_list]["List path"], 
-                        delimiter = "\t", key = "gene_symbol", impute = True) # Read in list of gene symbols
-    
-    m = mt.filter_rows(hl.is_defined(g[mt.gene_symbol]), keep = True) # Filter down to genes of interest
-    print(f"\nTotal number of genes: {m.rows().count()}\n")
-    m = m.annotate_cols(carrier = hl.agg.count_where(m.agg > 0))
+def run_cmh_on_gene_lists(m: hl.MatrixTable, kept_groups: list[str], counts: hl.DictExpression):
+    m = m.annotate_cols(carrier = hl.agg.any(m.agg > 0)) # Label samples as carriers (any count > 0)
+    res = m.cols()
+    res = res.group_by(res.group2).aggregate(n_carriers = hl.agg.sum(res.carrier)) # Count carriers by ancestry x kit x CASE/CTRL stratifications
+    res = res.annotate(n_non_carriers = counts.get(res.group2) - res.n_carriers) # Use dictionary to get non-carrier counts (faster than re-counting)
+    res = res.annotate(case_con = res.group2.split("_")[-1]) # Recover CASE/CTRL assignments
+    case_carriers = res.aggregate(hl.agg.filter(res.case_con == "CASE", hl.agg.collect(res.n_carriers)))
+    case_non_carriers = res.aggregate(hl.agg.filter(res.case_con == "CASE", hl.agg.collect(res.n_non_carriers)))
+    control_carriers = res.aggregate(hl.agg.filter(res.case_con == "CTRL", hl.agg.collect(res.n_carriers)))
+    control_non_carriers = res.aggregate(hl.agg.filter(res.case_con == "CTRL", hl.agg.collect(res.n_non_carriers))) # Collect counts into arrays (collect all ancestry x kit groups), slim to only rows now
 
-
-    case_carriers = []
-    control_carriers = []
-    case_non_carriers = []
-    control_non_carriers = []
-
-    for group in kept_groups:
-        a = m.aggregate_cols(hl.agg.filter((m.case_con == "CASE") & (m.group == group), hl.agg.sum(m.carrier)))
-        b = m.aggregate_cols(hl.agg.filter((m.case_con == "CTRL") &( m.group == group), hl.agg.sum(m.carrier)))
-        c = m.aggregate_cols(hl.agg.filter((m.case_con == "CASE") & (m.group == group), hl.agg.sum(m.carrier == 0)))
-        d = m.aggregate_cols(hl.agg.filter((m.case_con == "CTRL") & (m.group == group), hl.agg.sum(m.carrier == 0)))
-
-        case_carriers.append(a)
-        control_carriers.append(b)
-        case_non_carriers.append(c)
-        control_non_carriers.append(d)
-
-    
     res = hl.eval(hl.cochran_mantel_haenszel_test(case_carriers, case_non_carriers,
                                                   control_carriers, control_non_carriers))
     
     OR = compute_MCH_OR(case_carriers, case_non_carriers,
                         control_carriers, control_non_carriers)
 
-    return [gene_list, OR, res.p_value, res.test_statistic]
+    return [OR, res.p_value, res.test_statistic]
 
 
 def main(args):
@@ -106,24 +87,35 @@ def main(args):
         
     
     # Create population x chip stratification
-    mt = mt.annotate_cols(group = mt.pop + "_" + mt.chip)
-    counts = mt.aggregate_cols(hl.agg.counter(mt.group))
+    mt = mt.annotate_cols(group = mt.pop + "_" + mt.chip,
+                          group2 = mt.pop + "_" + mt.chip + "_" + mt.case_con)
+    groups = mt.aggregate_cols(hl.agg.collect_as_set(mt.group))
+    counts = mt.aggregate_cols(hl.agg.counter(mt.group2))
+
+    for g in groups:
+        if g + "_CASE" not in counts:
+            counts[g + "_CASE" ] = 0
+        if g + "_CTRL"  not in counts:
+            counts[g + "_CTRL"] = 0
+    
+
 
     # Exclude groups that are too small as desired
     excluded_groups = []
     if args.minimum_group_size | args.minimum_cases:
         if args.minimum_group_size:
-            excluded_groups += [x for x in counts if counts[x] < args.minimum_group_size]
+            excluded_groups += [x for x in groups if ((counts[x + "_CASE"] + counts[x + "_CTRL"]) < args.minimum_group_size)]
         if args.minimum_cases:
-            case_counts = mt.aggregate_cols(hl.agg.filter(mt.case_con == "CASE", hl.agg.counter(mt.group)))
-            excluded_groups += [x for x in case_counts if case_counts[x] < args.minimum_cases]   
+            excluded_groups += [x for x in groups if ((counts[x + "_CASE"]) < args.minimum_cases)]   
         
         print(f"\nGroups that are too small: {set(excluded_groups)}\n")
         print(f"\nTotal number of samples filtered out: {mt.filter_cols(hl.set(excluded_groups).contains(mt.group)).count()[1]}\n")
         mt = mt.filter_cols(hl.set(excluded_groups).contains(mt.group), keep = False)
         print(f"\nTotal number of samples after filtering: {mt.count()[1]}\n")
 
-    kept_groups = [x for x in counts if x not in excluded_groups]
+    kept_groups = [x for x in groups if x not in excluded_groups]
+
+    counts = hl.literal(counts) # Convert counts dictionary to hail format
 
     # Repartition if needed
     if mt.n_partitions() > 200:
@@ -133,23 +125,62 @@ def main(args):
     mt = mt.persist()
 
 
-
     ## Next, conduct individual gene-set burden analyses
     if args.gene_lists:
-        results = {}
         gene_lists = args.gene_lists.replace(" ", "").split(",") # Parse command-line input
+
+
+        # Running CMH on each gene individually
+        # TODO: Make this more efficient with row aggregations?
+        if "individual" in gene_lists:
+            genes = mt.gene_symbol.collect() 
+            print(f"\nAnalyzing {len(genes)} genes individually\n")
+            m = mt
+            res = m.group_cols_by(m.group2).aggregate(n_carriers = hl.agg.sum(m.agg > 0)).repartition(200, shuffle = False).persist() # Count carriers by ancestry x kit x CASE/CTRL stratifications
+            res = res.annotate_entries(n_non_carriers = counts.get(res.group2) - res.n_carriers) # Use dictionary to get non-carrier counts (faster than re-counting)
+            res = res.annotate_cols(case_con = res.group2.split("_")[-1]) # Recover CASE/CTRL assignments
+            res_counts = res.annotate_rows(case_carriers = hl.agg.filter(res.case_con == "CASE", hl.agg.collect(res.n_carriers)), 
+                                           case_non_carriers = hl.agg.filter(res.case_con == "CASE", hl.agg.collect(res.n_non_carriers)), 
+                                           control_carriers = hl.agg.filter(res.case_con == "CTRL", hl.agg.collect(res.n_carriers)), 
+                                           control_non_carriers = hl.agg.filter(res.case_con == "CTRL", hl.agg.collect(res.n_non_carriers))).rows() # Collect counts into arrays (collect all ancestry x kit groups), slim to only rows now
+            res_counts = res_counts.annotate(RES = hl.cochran_mantel_haenszel_test(res_counts.case_carriers, res_counts.case_non_carriers,
+                                                                                   res_counts.control_carriers, res_counts.control_non_carriers),
+                                             OR = compute_MCH_OR(res_counts.case_carriers, res_counts.case_non_carriers,
+                                                                 res_counts.control_carriers, res_counts.control_non_carriers)) # Annotate in MCH results and OR estimates
+            res_counts = res_counts.flatten()
+
+            #print(f"\nWriting result to: {args.out + args.file_prefix + '_case-control_CMH_individual.ht'}\n") 
+            #res_counts = res_counts.checkpoint(args.out + args.file_prefix + '_case-control_CMH_individual.ht')
+
+            print(f"\nWriting result to: {args.out + args.file_prefix + '_case-control_CMH_individual.tsv'}\n") 
+            res_counts.export(args.out + args.file_prefix + '_case-control_CMH_individual.tsv', delimiter = "\t")
+            
+            
+            gene_lists.remove("individual")
+
+
+        results = {}
         for gene_list in gene_lists: # Iterate through every desired gene list analysis
-            results[gene_list] = run_cmh(mt, gene_list, kept_groups)
+            if gene_list == "individual":
+                continue
+            print(f"\nAnalyzing {gene_list}: {gene_lists_info[gene_list]['Description']}\n")
+            print(f"Across {len(kept_groups)} groups: {kept_groups}\n")
+            m = mt
+            g = hl.import_table(gene_lists_info[gene_list]["List path"], 
+                                delimiter = "\t", key = "gene_symbol", impute = True) # Read in list of gene symbols
+            m = m.filter_rows(hl.is_defined(g[m.gene_symbol]), keep = True) # Filter down to genes of interest
             
+            print(f"\nTotal number of genes: {m.rows().count()}\n")    
+            results[gene_list] = [gene_list] + run_cmh_on_gene_lists(m, kept_groups, counts)
 
-        df = pd.DataFrame.from_dict(results, orient = "index",
-                                    columns = ["gene_set", "OR", "p_value", "test_statistic"])
-        df_ht = hl.Table.from_pandas(df, key = "gene_set")
+        # Only write if something to be written at this point
+        if results:
+            df = pd.DataFrame.from_dict(results, orient = "index",
+                                        columns = ["gene_set", "OR", "p_value", "test_statistic"])
+            df_ht = hl.Table.from_pandas(df, key = "gene_set")
+            print(f"\nWriting result to: {args.out + args.file_prefix + '_case-control_CMH_' + '-'.join(gene_lists) + '.tsv'}\n") 
+            df_ht.export(args.out + args.file_prefix + '_case-control_CMH_' + '-'.join(gene_lists) + '.tsv', delimiter='\t')
 
-        print(f"\nWriting result to: {args.out + args.file_prefix + '_case-control_CMH_' + '-'.join(gene_lists) + '.tsv'}\n") 
-        df_ht.export(args.out + args.file_prefix + '_case-control_CMH_' + '-'.join(gene_lists) + '.tsv', delimiter='\t')
-
-            
 
 
 if __name__ == "__main__":
@@ -196,7 +227,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--gene_lists",
-        help = "Comma-separated gene-lists to individually filter to and analyze. Possible values: all, gnomAD-constrained, SCHEMA, NDD, ASD.",
+        help = "Comma-separated gene-lists to individually filter to and analyze. Possible values: individual, gnomAD-constrained, SCHEMA, NDD, ASD.",
         type = str,
         required = False
     )
