@@ -1,0 +1,5 @@
+gene_set	OR	p_value	test_statistic
+ASD	1.0609e+00	1.4743e-01	2.0986e+00
+NDD	1.0006e+00	9.9591e-01	2.6316e-05
+SCHEMA	9.0495e-01	8.7806e-02	2.9141e+00
+gnomAD-constrained	9.8971e-01	8.8811e-01	1.9795e-02

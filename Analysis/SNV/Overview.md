@@ -63,10 +63,9 @@ hailctl dataproc submit rye coding/02_VEP-counts-export.py \
     --gnomAD_AC_thresh 10 \
     --cons_cat pLoF \
     --ac 5 \
-    --non_gnomAD_psych \
-    --out gs://2024-wgspd/snv/coding/outputs/original-run-annotations/ \
-    --file_prefix 20240626_BDSCZ \
-    --tmp gs://wes-bipolar-tmp-4day/20240626/
+    --out gs://2024-wgspd/snv/coding/outputs/20240710_original-run-annotations/ \
+    --file_prefix 20240710_BDSCZ \
+    --tmp gs://wes-bipolar-tmp-4day/20240710/
 
 # Synonymous singletons
 hailctl dataproc submit rye coding/02_VEP-counts-export.py \
@@ -75,15 +74,27 @@ hailctl dataproc submit rye coding/02_VEP-counts-export.py \
     --gnomAD_AC_thresh 10 \
     --cons_cat synonymous \
     --ac 1 \
-    --out gs://2024-wgspd/snv/coding/outputs/original-run-annotations/ \
-    --file_prefix 20240627_BDSCZ \
-    --tmp gs://wes-bipolar-tmp-4day/20240627/
+    --out gs://2024-wgspd/snv/coding/outputs/20240710_original-run-annotations/ \
+    --file_prefix 20240710_BDSCZ \
+    --tmp gs://wes-bipolar-tmp-4day/20240710/
+
+# Synonymous no gnomad filtering
+hailctl dataproc submit rye coding/02_VEP-counts-export.py \
+    --mt gs://2024-wgspd/snv/coding/202240618_subset_post-qc_protein-coding.mt \
+    --vep_ht gs://2024-wgspd/snv/coding/20240625_subset_post-qc_protein-coding_VEP-annotated_original.ht \
+    --cons_cat synonymous \
+    --ac 5 \
+    --out gs://2024-wgspd/snv/coding/outputs/20240710_original-run-annotations/ \
+    --file_prefix 20240710_BDSCZ \
+    --tmp gs://wes-bipolar-tmp-4day/20240710/
 
 
 
-
-
+------------------------------------------------------------------------
 #### TO RUN
+
+
+
 # Missense
 hailctl dataproc submit rye coding/02_VEP-counts-export.py \
     --mt gs://2024-wgspd/snv/coding/202240618_subset_post-qc_protein-coding.mt \
@@ -107,67 +118,86 @@ hailctl dataproc submit rye coding/02_VEP-counts-export.py \
     --out gs://2024-wgspd/snv/coding/outputs/original-run-annotations/ \
     --file_prefix 20240626_BDSCZ \
     --tmp gs://wes-bipolar-tmp-4day/20240626/
+
 ```
+
+
+
+
+
+
+
 
 
 Fisher exact tests for the above counts
 ```bash
 # pLoF
 hailctl dataproc submit rye coding/03_fisher-test.py \
-    --mt gs://2024-wgspd/snv/coding/outputs/original-run-annotations/20240626_BDSCZ_gnomadAC10_pLoF_AC5_counts.mt \
+    --mt gs://2024-wgspd/snv/coding/outputs/20240710_original-run-annotations/20240710_BDSCZ_gnomadAC10_pLoF_AC5_counts.mt \
     --gene_lists individual,gnomAD-constrained,SCHEMA,NDD,ASD \
-    --out gs://2024-wgspd/snv/coding/outputs/original-run-annotations/ \
-    --file_prefix 20240701_BDSCZ_gnomadAC10_pLoF_AC5_non-gnomAD-psych \
-    --tmp gs://wes-bipolar-tmp-4day/20240701/
+    --out gs://2024-wgspd/snv/coding/outputs/20240710_original-run-annotations/ \
+    --file_prefix 20240710_BDSCZ_gnomadAC10_pLoF_AC5_non-gnomAD-psych \
+    --tmp gs://wes-bipolar-tmp-4day/20240710/
 
+# Synonymous singletons
 hailctl dataproc submit rye coding/03_fisher-test.py \
-    --mt gs://2024-wgspd/snv/coding/outputs/original-run-annotations/20240627_BDSCZ_gnomadAC10_synonymous_singletons_counts.mt \
-    --individual \
-    --gene_lists gnomAD-constrained,SCHEMA,NDD,ASD \
-    --out gs://2024-wgspd/snv/coding/outputs/original-run-annotations/ \
-    --file_prefix 20240701_BDSCZ_gnomadAC10_synonymous_singletons \
-    --tmp gs://wes-bipolar-tmp-4day/20240701/
+    --mt gs://2024-wgspd/snv/coding/outputs/20240710_original-run-annotations/20240710_BDSCZ_gnomadAC10_synonymous_singletons_counts.mt \
+    --gene_lists individual,gnomAD-constrained,SCHEMA,NDD,ASD \
+    --out gs://2024-wgspd/snv/coding/outputs/20240710_original-run-annotations/ \
+    --file_prefix 20240710_BDSCZ_gnomadAC10_synonymous_singletons \
+    --tmp gs://wes-bipolar-tmp-4day/20240710/
+
+# Synonymous no gnomad filtering
+hailctl dataproc submit rye coding/03_fisher-test.py \
+    --mt gs://2024-wgspd/snv/coding/outputs/20240710_original-run-annotations/20240710_BDSCZ_synonymous_AC5_counts.mt \
+    --gene_lists individual,gnomAD-constrained,SCHEMA,NDD,ASD \
+    --out gs://2024-wgspd/snv/coding/outputs/20240710_original-run-annotations/ \
+    --file_prefix 20240710_BDSCZ_synonymous_AC5 \
+    --tmp gs://wes-bipolar-tmp-4day/20240710/
 ```
 
 CMH tests
 ```bash
-# Synonymous singletons (gene-sets)
+# pLoF
 hailctl dataproc submit rye coding/04_CMH-test.py \
-    --mt gs://2024-wgspd/snv/coding/outputs/original-run-annotations/20240627_BDSCZ_gnomadAC10_synonymous_singletons_counts.mt \
+    --mt gs://2024-wgspd/snv/coding/outputs/20240710_original-run-annotations/20240710_BDSCZ_gnomadAC10_pLoF_AC5_counts.mt \
     --manifest gs://2024-wgspd/files/20240523_WGSPD_final-qcd-manifest.tsv \
     --annotate_pop \
     --annotate_chip \
     --minimum_group_size 200 \
     --minimum_cases 50 \
-    --gene_lists gnomAD-constrained,SCHEMA,NDD,ASD \
-    --out gs://2024-wgspd/snv/coding/outputs/original-run-annotations/ \
-    --file_prefix 20240628_BDSCZ_gnomadAC10_synonymous_singletons \
-    --tmp gs://wes-bipolar-tmp-4day/20240628/
+    --gene_lists individual,gnomAD-constrained,SCHEMA,NDD,ASD \
+    --out gs://2024-wgspd/snv/coding/outputs/20240710_original-run-annotations/ \
+    --file_prefix 20240710_BDSCZ_gnomadAC10_pLoF_AC5_non-gnomAD-psych \
+    --tmp gs://wes-bipolar-tmp-4day/20240710/
 
-# Synonymous singletons (individual genes)
+# Synonymous singletons 
 hailctl dataproc submit rye coding/04_CMH-test.py \
-    --mt gs://2024-wgspd/snv/coding/outputs/original-run-annotations/20240627_BDSCZ_gnomadAC10_synonymous_singletons_counts.mt \
+    --mt gs://2024-wgspd/snv/coding/outputs/20240710_original-run-annotations/20240710_BDSCZ_gnomadAC10_synonymous_singletons_counts.mt \
     --manifest gs://2024-wgspd/files/20240523_WGSPD_final-qcd-manifest.tsv \
     --annotate_pop \
     --annotate_chip \
     --minimum_group_size 200 \
     --minimum_cases 50 \
-    --gene_lists individual \
-    --out gs://2024-wgspd/snv/coding/outputs/original-run-annotations/ \
-    --file_prefix 20240628_BDSCZ_gnomadAC10_synonymous_singletons \
-    --tmp gs://wes-bipolar-tmp-4day/20240628/
+    --gene_lists individual,gnomAD-constrained,SCHEMA,NDD,ASD \
+    --out gs://2024-wgspd/snv/coding/outputs/20240710_original-run-annotations/ \
+    --file_prefix 20240710_BDSCZ_gnomadAC10_synonymous_singletons \
+    --tmp gs://wes-bipolar-tmp-4day/20240710/
+
+
+# Synonymous no gnomad filtering
+hailctl dataproc submit rye coding/04_CMH-test.py \
+    --mt gs://2024-wgspd/snv/coding/outputs/20240710_original-run-annotations/20240710_BDSCZ_synonymous_AC5_counts.mt \
+    --manifest gs://2024-wgspd/files/20240523_WGSPD_final-qcd-manifest.tsv \
+    --annotate_pop \
+    --annotate_chip \
+    --minimum_group_size 200 \
+    --minimum_cases 50 \
+    --gene_lists individual,gnomAD-constrained,SCHEMA,NDD,ASD \
+    --out gs://2024-wgspd/snv/coding/outputs/20240710_original-run-annotations/ \
+    --file_prefix 20240710_BDSCZ_synonymous_AC5 \
+    --tmp gs://wes-bipolar-tmp-4day/20240710/
 ```
-hailctl dataproc submit rye coding/03_fisher-test.py \
-    --mt gs://2024-wgspd/snv/coding/outputs/original-run-annotations/20240626_BDSCZ_gnomadAC10_pLoF_AC5_counts.mt \
-    --manifest gs://2024-wgspd/files/20240523_WGSPD_final-qcd-manifest.tsv \
-    --annotate_pop \
-    --annotate_chip \
-    --minimum_group_size 200 \
-    --minimum_cases 50 \
-    --gene_lists gnomAD-constrained,SCHEMA,NDD,ASD \
-    --out gs://2024-wgspd/snv/coding/outputs/original-run-annotations/ \
-    --file_prefix 20240626_BDSCZ_gnomadAC10_pLoF_AC5_non-gnomAD-psych \
-    --tmp gs://wes-bipolar-tmp-4day/20240626/
 
 hailctl dataproc start rye \
     --num-workers 5 \

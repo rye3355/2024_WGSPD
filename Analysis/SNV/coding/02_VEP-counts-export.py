@@ -51,9 +51,9 @@ def main(args):
     # First, filter to variants below gnomAD and/or RGC AC thresholds
     if args.gnomAD_AC_thresh:
         logger.info(f"Filtering to gnomAD AC <= {args.gnomAD_AC_thresh}...")
-        GNOMAD_AC = "gs://gcp-public-data--gnomad/release/4.1/ht/genomes/gnomad.genomes.v4.1.sites.ht/"
+        GNOMAD_AC = "gs://gcp-public-data--gnomad/release/4.1/ht/joint/gnomad.joint.v4.1.sites.ht/"
         gnomad_AC = hl.read_table(GNOMAD_AC)
-        gnomad_AC = gnomad_AC.annotate(raw_freq_AC = gnomad_AC.freq[gnomad_AC.freq_index_dict['raw']].AC)
+        gnomad_AC = gnomad_AC.annotate(raw_freq_AC = gnomad_AC.joint.freq[gnomad_AC.joint_globals.freq_index_dict['raw']].AC)
         mt = mt.annotate_rows(gnomad_ac = hl.if_else(hl.is_defined(gnomad_AC[mt.locus, mt.alleles]), # Check if locus/allele is even in gnomad table
                                                      gnomad_AC[mt.locus, mt.alleles].raw_freq_AC,  # If so, use the value
                                                      0)) # Otherwise, set to AC = 0

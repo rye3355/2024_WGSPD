@@ -27,7 +27,7 @@ def run_fisher_on_gene_lists(m: hl.MatrixTable, counts: hl.DictExpression):
     case_carriers = res.aggregate(hl.agg.filter(res.case_con == "CASE", hl.agg.sum(res.carrier))) # Count carriers
     case_non_carriers = hl.eval(counts.get("CASE")) - case_carriers # Use dictionary to get non-carrier counts (faster than re-counting)
     control_carriers = res.aggregate(hl.agg.filter(res.case_con == "CTRL", hl.agg.sum(res.carrier))) 
-    control_non_carriers = hl.eval(counts.get("CTRL")) - case_carriers 
+    control_non_carriers = hl.eval(counts.get("CTRL")) - control_carriers 
 
     res = hl.eval(hl.fisher_exact_test(case_carriers, case_non_carriers,
                                         control_carriers, control_non_carriers))
