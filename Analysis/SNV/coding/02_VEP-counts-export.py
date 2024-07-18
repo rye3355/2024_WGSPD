@@ -92,16 +92,32 @@ def main(args):
     ## Next, missense-specific thresholds
     if args.mpc:
         logger.info(f"Filtering to MPC >= {args.mpc}...")
-        mt = mt.filter_rows(hl.set(["damaging_missense", "other_missense"]).contains(mt.consequence_category) & # Missense 
-                            mt.MPC < args.mpc, # And MPC under threshold
-                            keep = False) # Filter out
+        mt = mt.annotate_rows(MPC_pass = hl.if_else(hl.set(["damaging_missense", "other_missense", "missense"]).contains(mt.consequence_category), # Missense 
+                                                    mt.MPC >= args.mpc, # And at least MPC threshold 
+                                                    True)) # Default keep for non-missense
         f.append(f"MPC{args.mpc}")
     if args.am:
         logger.info(f"Filtering to AM >= {args.am}...")
-        mt = mt.filter_rows(hl.set(["damaging_missense", "other_missense"]).contains(mt.consequence_category) & # Missense 
-                            mt.AM < args.am, # And AM under threshold
-                            keep = False) # Filter out
+        mt = mt.annotate_rows(AM_pass = hl.if_else(hl.set(["damaging_missense", "other_missense", "missense"]).contains(mt.consequence_category), # Missense 
+                                                   mt.AM >= args.am, # And at least AM threshold 
+                                                   True)) # Default keep for non-missense
         f.append(f"AM{args.am}")
+    if args.misfitS:
+        logger.info(f"Filtering to misfitS > {args.misfitS}...")
+        mt = mt.annotate_rows(misfitS_pass = hl.if_else(hl.set(["damaging_missense", "other_missense", "missense"]).contains(mt.consequence_category), # Missense 
+                                                        mt.misfitS > args.misfitS, # And at least AM threshold 
+                                                        True)) # Default keep for non-missense
+        f.append(f"AM{args.misfitS}")
+    
+    # Filter
+    if args.union_missense:
+        mt = mt.annotate_rows(miss_keep = (mt.MPC_pass) | (mt.AM_pass) | (mt.misfitS_pass))
+        mt = mt.filter_rows(mt.miss_keep, keep = True)
+        f.append(f"union")
+    else:
+        mt = mt.annotate_rows(miss_keep = (mt.MPC_pass) & (mt.AM_pass) & (mt.misfitS_pass))
+        mt = mt.filter_rows(mt.miss_keep, keep = True)
+
     
     
     # Finally, aggregate/count and write
@@ -158,7 +174,7 @@ if __name__ == "__main__":
     )  
     parser.add_argument(
         "--cons_cat",
-        help = "Comma-separated consequence categories to filter to: pLoF, other_missense, damaging_missense, synonymous",
+        help = "Comma-separated consequence categories to filter to: pLoF, other_missense, damaging_missense, missense, synonymous",
         type = str,
         required = False
     )
@@ -171,7 +187,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--mpc",
         help = "MPC threshold to filter to (remove entries < thresh), usually 2 (with AM 0.98)",
-        type = int,
+        type = float,
         required = False
     )
     parser.add_argument(
@@ -179,7 +195,18 @@ if __name__ == "__main__":
         help = "AlphaMissense threshold to filter to (>= thresh), usually 0.98 (with MPC 2)",
         type = float,
         required = False
-    )    
+    )
+    parser.add_argument(
+        "--misfitS",
+        help = "misfitS threshold to filter to (> thresh), usually 0.03",
+        type = float,
+        required = False
+    )      
+    parser.add_argument(
+        "--union_missense",
+        help = "Flag for whether missense filters should be considered as union (intersection by default) ",
+        action = 'store_true'
+    )   
     parser.add_argument(
         "--non_gnomAD_psych",
         help = "Flag for filtering to non-gnomAD-psych variants",

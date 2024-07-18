@@ -68,7 +68,7 @@ def main(args):
 
 
     # Check annotation requirements
-    if (args.annotate_casecon | args.annotate_pop | args.annotate_chip) and not args.manifest:
+    if (args.annotate_casecon | args.annotate_pop | args.annotate_chip | args.filter_pass) and not args.manifest:
         print(f"No manifest provided to pull annotations from...")
         return
     
@@ -77,7 +77,11 @@ def main(args):
     if args.manifest:
         manifest = hl.import_table(args.manifest,
                                    delimiter = "\t", impute = True, key = "s")
-        
+        if args.filter_pass:
+            mt = mt.filter_cols(hl.if_else(hl.is_defined(manifest[mt.s]),
+                                           manifest[mt.s].FILTER == "PASS",
+                                           False), 
+                                keep = True)
         if args.annotate_casecon:
             mt = mt.annotate_cols(case_con = manifest[mt.s].CASECON)
         if args.annotate_pop:
@@ -85,12 +89,15 @@ def main(args):
         if args.annotate_chip:
             mt = mt.annotate_cols(chip = manifest[mt.s].CHIP)
         
+
+        
     
     # Create population x chip stratification
     mt = mt.annotate_cols(group = mt.pop + "_" + mt.chip,
                           group2 = mt.pop + "_" + mt.chip + "_" + mt.case_con)
     groups = mt.aggregate_cols(hl.agg.collect_as_set(mt.group))
     counts = mt.aggregate_cols(hl.agg.counter(mt.group2))
+    print(hl.eval(counts))
 
     for g in groups:
         if g + "_CASE" not in counts:
@@ -102,12 +109,14 @@ def main(args):
 
     # Exclude groups that are too small as desired
     excluded_groups = []
-    if args.minimum_group_size | args.minimum_cases:
+    if args.minimum_group_size or args.minimum_cases:
         if args.minimum_group_size:
             excluded_groups += [x for x in groups if ((counts[x + "_CASE"] + counts[x + "_CTRL"]) < args.minimum_group_size)]
         if args.minimum_cases:
             excluded_groups += [x for x in groups if ((counts[x + "_CASE"]) < args.minimum_cases)]   
-        
+        if args.minimum_controls:
+            excluded_groups += [x for x in groups if ((counts[x + "_CTRL"]) < args.minimum_controls)]   
+
         print(f"\nGroups that are too small: {set(excluded_groups)}\n")
         print(f"\nTotal number of samples filtered out: {mt.filter_cols(hl.set(excluded_groups).contains(mt.group)).count()[1]}\n")
         mt = mt.filter_cols(hl.set(excluded_groups).contains(mt.group), keep = False)
@@ -115,6 +124,7 @@ def main(args):
 
     kept_groups = [x for x in groups if x not in excluded_groups]
 
+    print(counts)
     counts = hl.literal(counts) # Convert counts dictionary to hail format
 
     # Repartition if needed
@@ -194,9 +204,14 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--manifest",
-        help = "Path to tab-delimited manifest keyed by samples ('s') with relevant annotations: 'CASECON', 'POP', 'CHIP'",
+        help = "Path to tab-delimited manifest keyed by samples ('s') with relevant annotations: 'FILTER', 'CASECON', 'POP', 'CHIP'",
         type = str,
         required = False
+    )
+    parser.add_argument(
+        "--filter_pass",
+        help = "Flag to filter to samples with FILTER == PASS in manifest",
+        action = 'store_true'
     )
     parser.add_argument(
         "--annotate_casecon",
@@ -222,6 +237,12 @@ if __name__ == "__main__":
     parser.add_argument(
         "--minimum_cases",
         help = "Minimum number of cases in ancestry-chip stratification group (otherwise, drop it from analysis)",
+        type = int,
+        required = False
+    )
+    parser.add_argument(
+        "--minimum_controls",
+        help = "Minimum number of controls in ancestry-chip stratification group (otherwise, drop it from analysis)",
         type = int,
         required = False
     )
