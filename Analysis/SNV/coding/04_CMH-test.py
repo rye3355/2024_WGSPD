@@ -91,10 +91,13 @@ def main(args):
         
 
         
-    
-    # Create population x chip stratification
-    mt = mt.annotate_cols(group = mt.pop + "_" + mt.chip,
-                          group2 = mt.pop + "_" + mt.chip + "_" + mt.case_con)
+    if args.population_only_strat:
+        mt = mt.annotate_cols(group = mt.pop,
+                              group2 = mt.pop + "_" + mt.case_con)
+    else:       
+        # Create population x chip stratification
+        mt = mt.annotate_cols(group = mt.pop + "_" + mt.chip,
+                              group2 = mt.pop + "_" + mt.chip + "_" + mt.case_con)
     groups = mt.aggregate_cols(hl.agg.collect_as_set(mt.group))
     counts = mt.aggregate_cols(hl.agg.counter(mt.group2))
     print(hl.eval(counts))
@@ -228,6 +231,11 @@ if __name__ == "__main__":
         help = "Flag to annotate in chip for each sample",
         action = 'store_true'
     )
+    parser.add_argument(
+        "--population_only_strat",
+        help = "Flag to stratify by population only (not chip)",
+        action = 'store_true'
+    )    
     parser.add_argument(
         "--minimum_group_size",
         help = "Minimum ancestry-chip stratification group size (otherwise, drop it from analysis)",

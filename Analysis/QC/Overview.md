@@ -110,7 +110,7 @@ manifest = merge(manifest, meta[, c("s", "population_inference.pop")], by = "s",
 table(manifest$population_inference.pop)
 #   afr   ami   amr   asj   eas   fin   mid   nfe   oth   sas 
 # 11633    67  2279   377    40  4240     8  9315   563    32 
-colnames(manifest) <- c("s", "sex_new", "sex_old", "SEX", "primary_disease_new", "primary_disease_new_fixed", "primary_disease_old", "primary_disease_old_fixed", "PRIMARY_DISEASE", "CASECON", "POP")
+colnames(manifest) <- c("s", "SEX", "PRIMARY_DISEASE", "CASECON", "COHORT", "POP")
 manifest$CHIP <- "WGS"
 
 write.table(manifest, "20240523_WGSPD_final-qcd-manifest.tsv", sep = "\t",

@@ -187,7 +187,27 @@ d$CASECON <- case_when(d$PRIMARY_DISEASE %in% c("BD", "BD1", "BD2", "CASE", "SCZ
                        d$PRIMARY_DISEASE %in% c("CTRL") ~ "CTRL",
                        T ~ "OTHER")
 
-write.table(d, "../2024_WGSPD_merged-manifest.tsv", sep = "\t",
+
+
+
+
+# Add in cohort information
+d <- merge(d, car_manifest[, c("subject_id", "terra_workspace")], 
+           by.x = "s", by.y = "subject_id",
+           all.x = T)
+d <- merge(d, old_manifest[, c("COLLABORATOR_SAMPLE_ID", "TERRA_WORKSPACE")], 
+           by.x = "s", by.y = "COLLABORATOR_SAMPLE_ID",
+           all.x = T)
+table(d[d$terra_workspace != d$TERRA_WORKSPACE, c("terra_workspace", "TERRA_WORKSPACE")], useNA = "always")
+d$COHORT <- d$terra_workspace
+
+table(d$COHORT, useNA = "always")
+
+
+
+write.table(d[, c("s", "SEX", "PRIMARY_DISEASE",
+                  "CASECON", "COHORT")],
+            "../2024_WGSPD_merged-manifest.tsv", sep = "\t",
             quote = F, col.names = T, row.names = F)
 
 

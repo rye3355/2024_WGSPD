@@ -109,14 +109,15 @@ def main(args):
                                                         True)) # Default keep for non-missense
         f.append(f"AM{args.misfitS}")
     
-    # Filter
-    if args.union_missense:
-        mt = mt.annotate_rows(miss_keep = (mt.MPC_pass) | (mt.AM_pass) | (mt.misfitS_pass))
-        mt = mt.filter_rows(mt.miss_keep, keep = True)
-        f.append(f"union")
-    else:
-        mt = mt.annotate_rows(miss_keep = (mt.MPC_pass) & (mt.AM_pass) & (mt.misfitS_pass))
-        mt = mt.filter_rows(mt.miss_keep, keep = True)
+    # MPC filter if needed
+    if args.mpc or args.am or args.misfitS:
+        if args.union_missense:
+            mt = mt.annotate_rows(miss_keep = (mt.MPC_pass) | (mt.AM_pass) | (mt.misfitS_pass))
+            mt = mt.filter_rows(mt.miss_keep, keep = True)
+            f.append(f"union")
+        else:
+            mt = mt.annotate_rows(miss_keep = (mt.MPC_pass) & (mt.AM_pass) & (mt.misfitS_pass))
+            mt = mt.filter_rows(mt.miss_keep, keep = True)
 
     
     
