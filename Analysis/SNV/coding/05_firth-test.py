@@ -1,5 +1,5 @@
 """
-Conduct MCH test on VEP-counts table (generated in 01_VEP-counts-export.py) 
+Conduct Firth regression test on VEP-counts table (generated in 01_VEP-counts-export.py) 
 Currently only supports stratification by ancestry x chip
 """
 
@@ -7,53 +7,6 @@ import hail as hl
 import pandas as pd
 import argparse
 from datetime import date
-
-
-
-gene_lists_info =   {"gnomAD-constrained":  {"Description": "Constrained genes as determined by gnomAD pLI > 0.9",
-                                             "List path": "gs://2024-wgspd/files/gene-sets/gnomAD_pLI-constrained.tsv"},
-                     "SCHEMA":              {"Description": "Top SCHEMA genes (P meta < 1.30e-04)",
-                                             "List path": "gs://2024-wgspd/files/gene-sets/SCHEMA.tsv"},
-                     "ASD":                 {"Description": "Top ASD genes (TADA FDR < 0.001)",
-                                             "List path": "gs://2024-wgspd/files/gene-sets/ASD.tsv"},
-                     "NDD":                 {"Description": "Top NDD genes (TADA FDR < 0.001)",
-                                             "List path": "gs://2024-wgspd/files/gene-sets/NDD.tsv"},  
-                    }
-
-# Hail function doesn't report OR for some reason... so here's a custom function
-def compute_MCH_OR(case_carriers, case_non_carriers,
-                   control_carriers, control_non_carriers):
-    def numerator_term(a, d, t):
-        return a*d/t
-    def denominator_term(b, c, t):
-        return b*c/t
-    n1 = hl.zip(case_carriers, case_non_carriers).map(lambda ab: ab[0] + ab[1])
-    n2 = hl.zip(control_carriers, control_non_carriers).map(lambda cd: cd[0] + cd[1])
-    t = hl.zip(n1, n2).map(lambda nn: nn[0] + nn[1])
-    numerator = hl.sum(hl.zip(case_carriers, control_non_carriers, t).map(lambda tup: numerator_term(*tup)))
-    denominator = hl.sum(hl.zip(case_non_carriers, control_carriers, t).map(lambda tup: denominator_term(*tup)))
-    return numerator / denominator
-
-
-
-def run_cmh_on_gene_lists(m: hl.MatrixTable, kept_groups: list[str], counts: hl.DictExpression):
-    m = m.annotate_cols(carrier = hl.agg.any(m.agg > 0)) # Label samples as carriers (any count > 0)
-    res = m.cols()
-    res = res.group_by(res.group2).aggregate(n_carriers = hl.agg.sum(res.carrier)) # Count carriers by ancestry x kit x CASE/CTRL stratifications
-    res = res.annotate(n_non_carriers = counts.get(res.group2) - res.n_carriers) # Use dictionary to get non-carrier counts (faster than re-counting)
-    res = res.annotate(case_con = res.group2.split("_")[-1]) # Recover CASE/CTRL assignments
-    case_carriers = res.aggregate(hl.agg.filter(res.case_con == "CASE", hl.agg.collect(res.n_carriers)))
-    case_non_carriers = res.aggregate(hl.agg.filter(res.case_con == "CASE", hl.agg.collect(res.n_non_carriers)))
-    control_carriers = res.aggregate(hl.agg.filter(res.case_con == "CTRL", hl.agg.collect(res.n_carriers)))
-    control_non_carriers = res.aggregate(hl.agg.filter(res.case_con == "CTRL", hl.agg.collect(res.n_non_carriers))) # Collect counts into arrays (collect all ancestry x kit groups), slim to only rows now
-
-    res = hl.eval(hl.cochran_mantel_haenszel_test(case_carriers, case_non_carriers,
-                                                  control_carriers, control_non_carriers))
-    
-    OR = compute_MCH_OR(case_carriers, case_non_carriers,
-                        control_carriers, control_non_carriers)
-
-    return [OR, res.p_value, res.test_statistic]
 
 
 def main(args):
@@ -67,29 +20,51 @@ def main(args):
     print(f"\nStarting (genes, samples): {mt.count()}\n")
 
 
-    # Check annotation requirements
-    if (args.annotate_casecon or args.annotate_pop or args.annotate_chip or args.filter_pass) and not args.manifest:
+    # Annotate and process with metadata from manifest
+    # Case/control, Population, Chip
+    if (args.annotate_casecon | args.annotate_pop | args.annotate_chip | args.filter_pass) and not args.manifest: # Check annotation requirements
         print(f"No manifest provided to pull annotations from...")
         return
     
     # Annotate in fields from manifest
-    # Requires key by "s" and specific fields "CASECON", "POP", and "CHIP" as needed
     if args.manifest:
         manifest = hl.import_table(args.manifest,
-                                   delimiter = "\t", impute = True, key = "s")
+                                    delimiter = "\t", impute = True, key = "s") # Requires key by "s" and specific fields "CASECON", "POP", and "CHIP" as needed
         if args.filter_pass:
-            mt = mt.filter_cols(hl.if_else(hl.is_defined(manifest[mt.s]),
-                                           manifest[mt.s].FILTER == "PASS",
-                                           False), 
-                                keep = True)
-        if args.annotate_casecon:
-            mt = mt.annotate_cols(case_con = manifest[mt.s].CASECON)
+            mt = mt.filter_cols(hl.if_else(hl.is_defined(manifest[mt.s]), # If it's even in manifest
+                                                manifest[mt.s][args.filter_pass] == args.pass_value, # Only True if PASS
+                                                False), # Otherwise, don't keep
+                                                keep = True)
+        if args.annotate_casecon: 
+            mt = mt.annotate_cols(case_con = manifest[mt.s][args.annotate_casecon]) # Annotate all with "CASE" or "CTRL"
+            mt = mt.annotate_cols(is_CASE = mt.case_con == "CASE")
         if args.annotate_pop:
-            mt = mt.annotate_cols(pop = manifest[mt.s].POP)
+            mt = mt.annotate_cols(pop = manifest[mt.s][args.annotate_pop]) # Annotate all with population
+            mt = mt.annotate_cols(is_AFR = hl.if_else(mt.pop == "AFR", 1, 0),
+                                  is_AMI = hl.if_else(mt.pop == "AMI", 1, 0),
+                                  is_AMR = hl.if_else(mt.pop == "AMR", 1, 0),
+                                  is_ASJ = hl.if_else(mt.pop == "ASJ", 1, 0),
+                                  is_CSA = hl.if_else(mt.pop == "CSA", 1, 0),
+                                  is_EAS = hl.if_else(mt.pop == "EAS", 1, 0),
+                                  is_FIN = hl.if_else(mt.pop == "FIN", 1, 0),
+                                  is_MID = hl.if_else(mt.pop == "MID", 1, 0),
+                                  is_NFE = hl.if_else(mt.pop == "NFE", 1, 0),
+                                  is_OTH = hl.if_else(mt.pop == "OTH", 1, 0),
+                                  is_SAS = hl.if_else(mt.pop == "SAS", 1, 0)
+                                  )
         if args.annotate_chip:
-            mt = mt.annotate_cols(chip = manifest[mt.s].CHIP)
+            mt = mt.annotate_cols(chip = manifest[mt.s][args.annotate_chip]) # Annotate all with chip
+            mt = mt.annotate_cols(is_Agilent = hl.if_else(mt.chip == "Agilent", 1, 0),
+                                  is_Nextera = hl.if_else(mt.chip == "Nextera", 1, 0),
+                                  is_Twist = hl.if_else(mt.chip == "Twist", 1, 0),
+                                  is_WGS = hl.if_else(mt.chip == "WGS", 1, 0),
+                                  is_broad_custom_exome_v1 = hl.if_else(mt.chip == "broad_custom_exome_v1", 1, 0),
+                                  )
         
-
+    if args.syn_count:
+        syn_counts = hl.import_table(args.syn_count,
+                                    delimiter = "\t", impute = True, key = "s")
+        mt = mt.annotate_cols(syn_count = syn_counts[mt.s]["syn_count"])
         
     if args.population_only_strat:
         mt = mt.annotate_cols(group = mt.pop,
@@ -138,30 +113,61 @@ def main(args):
     mt = mt.persist()
 
 
+
+
+
+    pcs = hl.import_table("gs://bipex2/202407_ancestry-relatedness/outputs/01_bipex2_pca-with-ref_scores_0.90.tsv", 
+                          delimiter = "\t", impute = True, key = "s")
+    
+    mt = mt.annotate_cols(PC1 = pcs[mt.s].PC1,
+                          PC2 = pcs[mt.s].PC2,
+                          PC3 = pcs[mt.s].PC3,
+                          PC4 = pcs[mt.s].PC4,
+                          PC5 = pcs[mt.s].PC5,
+                          PC6 = pcs[mt.s].PC6,
+                          PC7 = pcs[mt.s].PC7,
+                          PC8 = pcs[mt.s].PC8,
+                          PC9 = pcs[mt.s].PC9,
+                          PC10 = pcs[mt.s].PC10)
     ## Next, conduct individual gene-set burden analyses
     if args.gene_lists:
         gene_lists = args.gene_lists.replace(" ", "").split(",") # Parse command-line input
 
 
-        # Running CMH on each gene individually
+        # Running Firth on each gene individually
         # TODO: Make this more efficient with row aggregations?
         if "individual" in gene_lists:
             genes = mt.gene_symbol.collect() 
             print(f"\nAnalyzing {len(genes)} genes individually\n")
             m = mt
-            res = m.group_cols_by(m.group2).aggregate(n_carriers = hl.agg.sum(m.agg > 0)).repartition(200, shuffle = False).persist() # Count carriers by ancestry x kit x CASE/CTRL stratifications
-            res = res.annotate_entries(n_non_carriers = counts.get(res.group2) - res.n_carriers) # Use dictionary to get non-carrier counts (faster than re-counting)
-            res = res.annotate_cols(case_con = res.group2.split("_")[-1]) # Recover CASE/CTRL assignments
-            res_counts = res.annotate_rows(case_carriers = hl.agg.filter(res.case_con == "CASE", hl.agg.collect(res.n_carriers)), 
-                                           case_non_carriers = hl.agg.filter(res.case_con == "CASE", hl.agg.collect(res.n_non_carriers)), 
-                                           control_carriers = hl.agg.filter(res.case_con == "CTRL", hl.agg.collect(res.n_carriers)), 
-                                           control_non_carriers = hl.agg.filter(res.case_con == "CTRL", hl.agg.collect(res.n_non_carriers))).rows() # Collect counts into arrays (collect all ancestry x kit groups), slim to only rows now
-            res_counts = res_counts.annotate(RES = hl.cochran_mantel_haenszel_test(res_counts.case_carriers, res_counts.case_non_carriers,
-                                                                                   res_counts.control_carriers, res_counts.control_non_carriers),
-                                             OR = compute_MCH_OR(res_counts.case_carriers, res_counts.case_non_carriers,
-                                                                 res_counts.control_carriers, res_counts.control_non_carriers)) # Annotate in MCH results and OR estimates
-            res_counts = res_counts.flatten()
+            #m = mt.head(n_rows = 100, n_cols = 10000)
+            result_ht = hl.logistic_regression_rows(test = "firth", 
+                                                    y = m.is_CASE,
+                                                    x = m.agg > 0,
+                                                    covariates = [1, 
+                                                                  m.is_AFR, m.is_AMI, m.is_AMR, m.is_ASJ, m.is_CSA, m.is_EAS,
+                                                                  m.is_FIN, m.is_MID, m.is_NFE, m.is_OTH, m.is_SAS,
+                                                                  m.is_Agilent, m.is_Nextera, m.is_Twist, m.is_WGS, m.is_broad_custom_exome_v1,
+                                                                  m.syn_count])
+            result_ht = hl.logistic_regression_rows(test = "firth", 
+                                                    y = m.is_CASE,
+                                                    x = m.agg > 0,
+                                                    covariates = [1, 
+                                                                  m.PC1, m.PC2, m.PC3, m.PC4, m.PC5, 
+                                                                  m.PC6, m.PC7, m.PC8, m.PC9, m.PC10,
+                                                                  m.syn_count])
 
+
+            result_ht = result_ht.checkpoint("gs://bipex2/202407_SNV/20240806/20240806_BipEx2_PTV-miss_firth_output.ht", overwrite = True) # PTV+Missense, PCs + syn count
+            result_ht = result_ht.flatten().drop("firth_null_fit.b", "firth_null_fit.mu", "fit.b", "fit.mu")
+            result_ht.export("gs://bipex2/202407_SNV/20240805_test-firth/20240806_BipEx2_PTV-miss_firth_pcs_output.tsv")
+
+            
+            result_ht = result_ht.checkpoint("gs://wes-bipolar-tmp-4day/20240805/firth_output.ht", overwrite = True) # Syn AC 5, PCs + syn count
+            result_ht = result_ht.checkpoint("gs://wes-bipolar-tmp-4day/20240805/firth_output_pcs.ht", overwrite = True) # Syn AC 5, PCs
+            result_ht = result_ht.flatten().drop("firth_null_fit.b", "firth_null_fit.mu", "fit.b", "fit.mu")
+            result_ht.export("gs://bipex2/202407_SNV/20240805_test-firth/firth_output.tsv") #  Syn AC 5, PCs + syn count
+            result_ht.export("gs://bipex2/202407_SNV/20240805_test-firth/synAC5_firth_output_pcs.tsv") #  Syn AC 5, PCs
             #print(f"\nWriting result to: {args.out + args.file_prefix + '_case-control_CMH_individual.ht'}\n") 
             #res_counts = res_counts.checkpoint(args.out + args.file_prefix + '_case-control_CMH_individual.ht')
 
@@ -213,23 +219,39 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--filter_pass",
-        help = "Flag to filter to samples with FILTER == PASS in manifest",
-        action = 'store_true'
+        help = "Flag to filter to samples with 'PASS' in manifest; flag value is name of field in manifest",
+        type = str,
+        required = False
+    )
+    parser.add_argument(
+        "--pass_value",
+        help = "Value to keep in filter_pass field",
+        type = str,
+        required = False
     )
     parser.add_argument(
         "--annotate_casecon",
-        help = "Flag to annotate in case control status for each sample",
-        action = 'store_true'
+        help = "Flag to annotate in 'CASE' or 'CTRL' for each sample; flag value is name of field in manifest",
+        type = str,
+        required = False
     )
     parser.add_argument(
         "--annotate_pop",
-        help = "Flag to annotate in population for each sample",
-        action = 'store_true'
+        help = "Flag to annotate in population for each sample; flag value is name of field in manifest",
+        type = str,
+        required = False
     )
     parser.add_argument(
         "--annotate_chip",
-        help = "Flag to annotate in chip for each sample",
-        action = 'store_true'
+        help = "Flag to annotate in chip for each sample; flag value is name of field in manifest",
+        type = str,
+        required = False
+    )
+    parser.add_argument(
+        "--syn_count",
+        help = "Path to tab-delimited manifest keyed by samples ('s') with relevant synonymous counts: 'syn_count'",
+        type = str,
+        required = False
     )
     parser.add_argument(
         "--population_only_strat",

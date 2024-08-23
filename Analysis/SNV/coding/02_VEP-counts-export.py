@@ -107,7 +107,7 @@ def main(args):
         mt = mt.annotate_rows(misfitS_pass = hl.if_else(hl.set(["damaging_missense", "other_missense", "missense"]).contains(mt.consequence_category), # Missense 
                                                         mt.misfitS > args.misfitS, # And at least AM threshold 
                                                         True)) # Default keep for non-missense
-        f.append(f"AM{args.misfitS}")
+        f.append(f"misfitS{args.misfitS}")
     
     # MPC filter if needed
     if args.mpc or args.am or args.misfitS:
