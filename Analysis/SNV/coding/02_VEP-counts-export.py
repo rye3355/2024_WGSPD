@@ -129,7 +129,7 @@ def main(args):
         )
 
         logger.info(f"Writing to {args.out + '_'.join(f) + '_non-gnomAD-psych_counts.mt'}...")
-        mt_agg.repartition(200, shuffle = False).write(args.out + '_'.join(f) + '_non-gnomAD-psych_counts.mt', overwrite = True)
+        mt_agg.repartition(2000, shuffle = False).write(args.out + '_'.join(f) + '_non-gnomAD-psych_counts.mt', overwrite = True)
 
 
     logger.info(f"Generating counts...")
@@ -138,7 +138,7 @@ def main(args):
     )
 
     logger.info(f"Writing to {args.out + '_'.join(f) + '_counts.mt'}...")
-    mt_agg.repartition(200, shuffle = False).write(args.out + '_'.join(f) + '_counts.mt', overwrite = True)
+    mt_agg.repartition(2000, shuffle = False).write(args.out + '_'.join(f) + '_counts.mt', overwrite = True)
 
     logger.info(f"Copying log to {args.out + 'logs/' + str(date.today()) + '_' + '_'.join(f) + '.log'}...")
     hl.copy_log(f"{args.tmp + 'logs/' + str(date.today()) + '_' + '_'.join(f) + '.log'}")

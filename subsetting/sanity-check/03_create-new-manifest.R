@@ -19,6 +19,16 @@ stopifnot(all(old_manifest$COLLABORATOR_SAMPLE_ID %in% subset_manifest$sample_id
 rm(old_samples)
 
 
+# Read in SUPER samples and fix labelling
+SUPER <- fread("../files/SCZ_SCZ_AFF_BP_MDD_SUPER_table.txt")
+SUPER$seq_id <- paste0("SUPER_", SUPER$ID) # Generate seq_id
+SUPER_BD <- SUPER$seq_id[SUPER$Bipolar_disorder == 1] # Get BD samples to pull from FINN
+SUPER_SCZ <- SUPER$seq_id[SUPER$Schizophrenia == 1 & SUPER$Bipolar_disorder == 0] # Grab SCZ samples 
+SUPER_MDD <- SUPER$seq_id[SUPER$MDD_psychotic == 1 & SUPER$Schizophrenia == 0 & SUPER$Bipolar_disorder == 0] # Grab MDD only samples
+sum(subset_manifest$sample_id %in% SUPER_BD) # 212
+sum(subset_manifest$sample_id %in% SUPER_SCZ) # 478
+sum(subset_manifest$sample_id %in% SUPER_MDD) # 48
+
 # Read in manifest from Caroline (not all samples here)
 car_manifest <- fread("../files/SCHEMA_WGS_WorkingManifest.tsv")
 
@@ -53,6 +63,15 @@ table(common[, c("affected_status", "AFFECTED_STATUS")], useNA = "always") # Lin
 
 table(common[, c("primary_disease", "PRIMARY_DISEASE_FIXED")], useNA = "always") # Lines up pretty well, use primary_disease for classifications and fall back on PRIMARY_DISEASE if missing
 
+# Rescue primary disease == "" samples in car_manifest
+samples <- car_manifest$subject_id[(car_manifest$primary_disease == "") &
+                                     (car_manifest$subject_id %in% common$subject_id)]
+car_manifest$primary_disease[car_manifest$subject_id %in% samples &
+                               car_manifest$subject_id %in% common$subject_id[common$PRIMARY_DISEASE_FIXED == "BD"]] <- "BP"
+car_manifest$primary_disease[car_manifest$subject_id %in% samples &
+                               car_manifest$subject_id %in% common$subject_id[common$PRIMARY_DISEASE_FIXED == "CTRL"]] <- "Control"
+car_manifest$primary_disease[car_manifest$subject_id %in% samples &
+                               car_manifest$subject_id %in% common$subject_id[common$PRIMARY_DISEASE_FIXED == "SCZ"]] <- "SCZ"
 
 
 # Create new manifest
@@ -73,8 +92,10 @@ table(d$SEX, useNA = "always")
     # 173       5    7204    8891     237   19017 
 d$SEX <- case_when(d$SEX == "Female" ~ "Female",
                    d$SEX == "Male" ~ "Male",
-                   !(is.na(d$SEX)) ~ "Unknown")
-
+                   T ~ "Unknown")
+table(d$SEX, useNA = "always")
+ # Female    Male Unknown    <NA> 
+ #   7204    8891   19432       0 
 
 
 ## Deal with primary disease next
@@ -110,15 +131,19 @@ d$primary_disease_new_fixed <- case_when(d$primary_disease_new %in% c("Bipolar",
                                 d$primary_disease_new %in% c("Case", "Schizophrenia, Depression, Bipolar Disorder") 
                                 ~ "CASE",
                                 !is.na(d$primary_disease_new) ~ "OTHER")
+
+d$primary_disease_new_fixed[d$s %in% SUPER_BD] <- "BD"
+d$primary_disease_new_fixed[d$s %in% SUPER_SCZ] <- "SCZ"
+
 table(d[, c("primary_disease_new", "primary_disease_new_fixed")], useNA = "always")
 table(d[d$primary_disease_new_fixed == "OTHER", c("primary_disease_new", "primary_disease_new_fixed")], useNA = "always")
 table(d$primary_disease_new_fixed, useNA = "always")
-  #  BD   BD1   BD2  CASE  CTRL OTHER   SCZ  <NA> 
-  # 690  1182     6   140  4022  3102  6343 20042 
+ #   BD   BD1   BD2  CASE  CTRL OTHER   SCZ  <NA> 
+ # 1030  1182     6   140  4679  2108  7030 19352 
 
 
 stopifnot(all(is.na(d$primary_disease_new[!(d$s %in% car_manifest$subject_id)])))
-stopifnot(all(is.na(d$primary_disease_new_fixed[!(d$s %in% car_manifest$subject_id)])))
+stopifnot(all(is.na(d$primary_disease_new_fixed[!(d$s %in% car_manifest$subject_id)]))) # Some manually assigned SUPER samples
 
 # Compare to old manifest method
 d <- merge(d, old_manifest[, c("COLLABORATOR_SAMPLE_ID", "PRIMARY_DISEASE")],
@@ -179,15 +204,16 @@ d$PRIMARY_DISEASE[is.na(d$PRIMARY_DISEASE) &
                           is.na(d$primary_disease_old_fixed)] <- "CTRL" 
 
 table(d$PRIMARY_DISEASE, useNA = "always")
-  # BD   BD1   BD2  CASE  CTRL OTHER   SCZ  <NA> 
-  # 690  1182     6   140 23039  3275  7195     0 
+ #   BD   BD1   BD2  CASE  CTRL OTHER   SCZ  <NA> 
+ # 1030  1182     6   140 23664  2281  7224     0 
 
 # Final Case/Con
 d$CASECON <- case_when(d$PRIMARY_DISEASE %in% c("BD", "BD1", "BD2", "CASE", "SCZ") ~ "CASE",
                        d$PRIMARY_DISEASE %in% c("CTRL") ~ "CTRL",
                        T ~ "OTHER")
-
-
+table(d$CASECON, useNA = "always")
+ # CASE  CTRL OTHER  <NA> 
+ # 9582 23664  2281     0 
 
 
 
@@ -200,7 +226,7 @@ d <- merge(d, old_manifest[, c("COLLABORATOR_SAMPLE_ID", "TERRA_WORKSPACE")],
            all.x = T)
 table(d[d$terra_workspace != d$TERRA_WORKSPACE, c("terra_workspace", "TERRA_WORKSPACE")], useNA = "always")
 d$COHORT <- d$terra_workspace
-
+d$COHORT[d$s %in% c(SUPER_BD, SUPER_SCZ, SUPER_MDD)] <- "SUPER"
 table(d$COHORT, useNA = "always")
 
 
