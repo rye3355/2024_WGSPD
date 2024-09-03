@@ -27,14 +27,14 @@ meta = hl.import_table("gs://2024-wgspd/files/gnomad_v3.1_subset-metadata.tsv", 
 mt = mt.annotate_cols(high_quality = meta[mt.s].high_quality)
 mt = mt.filter_cols(mt.high_quality == "true")
 print(f"HQ Filtered: {mt.count()}")
-# HQ filtered: (332778683, 32739)
+# HQ Filtered: (332778683, 32739)
 
 # Slim to wanted case/control samples
 manifest = hl.import_table("gs://2024-wgspd/files/2024_WGSPD_merged-manifest.tsv", key = "s")
 mt = mt.annotate_cols(case_con = manifest[mt.s].CASECON)
 mt = mt.filter_cols(hl.set(["CASE", "CTRL"]).contains(mt.case_con))
 print(f"Case/Control filtered: {mt.count()}")
-# Case/Control filtered: (332778683, 30659)
+# Case/Control filtered: (332778683, 31248)
 
 
 
@@ -45,19 +45,19 @@ print(f"gnomad pruned: {gnomad_pruned_vars.count()}")
 # gnomad pruned: 94148
 
 pruned = mt.filter_rows(hl.is_defined(gnomad_pruned_vars[mt.locus, mt.alleles]))
-pruned.write("gs://wes-bipolar-tmp-4day/20240423_pc-relate_pruned-checkpoint.mt", overwrite = True)
-pruned = hl.read_matrix_table("gs://wes-bipolar-tmp-4day/20240423_pc-relate_pruned-checkpoint.mt")
+pruned.write("gs://wes-bipolar-tmp-4day/20240903_pc-relate_pruned-checkpoint.mt", overwrite = True)
+pruned = hl.read_matrix_table("gs://wes-bipolar-tmp-4day/20240903_pc-relate_pruned-checkpoint.mt")
 print(f"Pruned subset: {pruned.count()}")
 # Pruned subset: (90588, 30659)
-pruned = pruned.repartition(50)
-pruned = pruned.sample_rows(0.5)
+pruned = pruned.repartition(500)
+#pruned = pruned.sample_rows(0.5)
 
 
 eig, scores, _ = hl.hwe_normalized_pca(
             pruned.GT, k=10, compute_loadings=False
         )
-scores.write("gs://wes-bipolar-tmp-4day/20240423_pc-relate_scores-checkpoint.ht", overwrite = True)
-scores = hl.read_table("gs://wes-bipolar-tmp-4day/20240423_pc-relate_scores-checkpoint.ht")
+scores = scores.checkpoint("gs://wes-bipolar-tmp-4day/20240903_pc-relate_scores-checkpoint.ht", overwrite = True)
+scores = hl.read_table("gs://wes-bipolar-tmp-4day/20240903_pc-relate_scores-checkpoint.ht")
 
 print("Starting pc_relate")
 relatedness_ht = hl.pc_relate(
@@ -70,7 +70,7 @@ relatedness_ht = hl.pc_relate(
         )
 
 print("Starting write")
-relatedness_ht.write("gs://2024-wgspd/qc/20240423_pc-relate_relatedness.ht", overwrite = True)
+relatedness_ht.write("gs://2024-wgspd/qc/20240903_pc-relate_relatedness.ht", overwrite = True)
 
 
 

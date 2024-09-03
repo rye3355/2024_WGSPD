@@ -13,8 +13,8 @@ hailctl dataproc submit rye 00_variant-qc.py
 Run Hail sample qc to generate basic metrics on both 1) all samples and 2) samples passing gnomadv3 HQ sample QC
 ```bash
 hailctl dataproc submit rye 01_sample-qc.py
-gsutil cp gs://2024-wgspd/qc/20240408_subset_sample_qc1.tsv files/
-gsutil cp gs://2024-wgspd/qc/20240408_subset_hq_sample_qc1.tsv files/
+gsutil cp gs://2024-wgspd/qc/20240903_subset_sample_qc1.tsv files/
+gsutil cp gs://2024-wgspd/qc/20240903_subset_hq_sample_qc1.tsv files/
 ```
 
 Double check initial sample-level filtering based on read metrics 
@@ -42,7 +42,7 @@ v2_qc_mt_liftover.rows().write("gs://2024-wgspd/qc/20240423_gnomad.joint.high_ca
 
 Using LD pruned variants from gnomadv3, run relatedness analysis (pc_relate)
 ```bash
-Rscript 03_pc-relate.py
+hailctl dataproc submit rye 03_pc-relate.py
 ```
 
 

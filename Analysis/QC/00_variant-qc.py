@@ -16,7 +16,7 @@ Write to gs://2024-wgspd/qc/20240408_subset_initial-var-QC.mt
 
 hailctl dataproc start rye \
     --num-workers 5 \
-    --packages gnomad \
+    --pkgs="git+https://github.com/broadinstitute/gnomad_methods.git@main","ipython<8.22" \
     --autoscaling-policy=test-5-200 \
     --max-idle=15m
 """

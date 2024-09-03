@@ -2,10 +2,10 @@
 
 library(data.table)
 library(stringr)
-
+library(ggplot2)
 # Read in sample-qc data
-d <- fread("files/20240408_subset_sample_qc1.tsv")
-hq_d <- fread("files/20240408_subset_hq_sample_qc1.tsv")
+d <- fread("files/20240903_subset_sample_qc1.tsv")
+hq_d <- fread("files/20240903_subset_hq_sample_qc1.tsv")
 names(d) <- gsub("sample_qc1\\.", "", names(d))
 names(hq_d) <- gsub("hq_sample_qc1\\.", "", names(hq_d))
 
@@ -38,7 +38,6 @@ create_pretty_boxplots <- function(df, aes, aes_col, threshold=NULL,
     #geom_boxplot(outlier.shape=outlier.shape, coef=0, color='grey50', fill='grey95', show.legend=FALSE) + 
     coord_flip(ylim=xlim) +
     labs(title=title, x=y_label, y=x_label, color=key_label) + 
-    scale_color_d3('category20') +
     scale_y_continuous(breaks = scales::pretty_breaks(n=n_ticks)) +
     guides(color = guide_legend(override.aes = list(size=2))) +
     ggplot_theme() +
@@ -75,11 +74,11 @@ y_list <- c("call_rate", "dp_stats.mean", "gq_stats.mean",
             "n_singleton", "r_ti_tv", "r_insertion_deletion")
 
 for (field in y_list) {
-  plot <- create_pretty_boxplots(d, aes_string(x = "CASECON", y = field), 
+  plot <- create_pretty_boxplots(d, aes_string(x = "CASECON", y = field),
                                  aes(color = kept), violin = T, alpha = 0.3) +
     ggtitle(field)
   print(plot)
-  ggsave(paste0('figures/02_qc1_', field, '.jpg'), 
+  ggsave(paste0('figures/02_qc1_', field, '.jpg'),
          plot, width=300, height=250, units='mm')
 }
 
