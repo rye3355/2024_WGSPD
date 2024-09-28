@@ -62,8 +62,8 @@ def tie_breaker(l, r): # Define tiebreaker function
     return hl.if_else(l.is_case & ~r.is_case, -1,
                       hl.if_else(~l.is_case & r.is_case, 1, 0))
 
-pc_rel = hl.read_table("gs://2024-wgspd/qc/20240423_pc-relate_relatedness.ht") # Relatedness (4316 entries)
-pairs = pc_rel.filter(pc_rel['kin'] > 0.05) # Slim to related, as used in gnomadQC (4316 pairs)
+pc_rel = hl.read_table("gs://2024-wgspd/qc/20240903_pc-relate_relatedness.ht") # Relatedness (4337 entries)
+pairs = pc_rel.filter(pc_rel['kin'] > 0.05) # Slim to related, as used in gnomadQC (4337 pairs)
 pairs_with_case = pairs.key_by(
     i=hl.struct(id=pairs.i, is_case=samples[pairs.i].is_case),
     j=hl.struct(id=pairs.j, is_case=samples[pairs.j].is_case)) # Annotate with ordering to use in tie_breaker
@@ -72,13 +72,13 @@ related_samples_to_remove = hl.maximal_independent_set(
    pairs_with_case.i, pairs_with_case.j, False, tie_breaker) # Find maximally indep set (samples to remove)
 
 related_samples_to_remove.aggregate(hl.agg.counter(related_samples_to_remove.node.is_case)) 
-# {False: 1315, True: 790}
+# {False: 1328, True: 796}
 
 result = manifest.filter(hl.is_defined(
     related_samples_to_remove.key_by(
        s = related_samples_to_remove.node.id.s)[manifest.s]))
 
-result.export(output = "gs://2024-wgspd/qc/20240425_pc-relate_samples-to-remove.tsv")
+result.export(output = "gs://2024-wgspd/qc/20240905_pc-relate_samples-to-remove.tsv")
 ```
 
 
@@ -86,35 +86,38 @@ Check concordance of related samples with gnomadv3 QC and write final manifest
 ```R
 library(data.table)
 system2("gsutil", "cp gs://2024-wgspd/qc/20240425_pc-relate_samples-to-remove.tsv files/")
-to_remove = fread("files/20240425_pc-relate_samples-to-remove.tsv")
+to_remove = fread("files/20240905_pc-relate_samples-to-remove.tsv")
 meta = fread("../../subsetting/files/gnomad_v3.1_subset-metadata.tsv")
 manifest = fread("../../subsetting/2024_WGSPD_merged-manifest.tsv")
 
 table(meta[meta$s %in% to_remove$s, "sample_filters.all_samples_related"], useNA = "always")
-# 1443 / 2105 match up with gnomad
+# 1458 / 2124 match up with gnomad
 # FALSE  TRUE  <NA> 
-#   662  1443     0 
+#   666  1458     0 
+
 
 table(to_remove$PRIMARY_DISEASE, useNA = "always")
-#  BD  BD1 CASE CTRL  SCZ <NA> 
-#  87   29   44 1315  630    0 
+#  BD  BD1  BD2 CASE CTRL  SCZ <NA> 
+#  97   30    1   44 1328  624    0
 
 table(to_remove$CASECON, useNA = "always")
 # CASE CTRL <NA> 
-#  790 1315    0 
+# 796 1328    0
 
 manifest = manifest[manifest$s %in% meta$s[meta$high_quality],] # Slim to high quality (32739)
-manifest = manifest[manifest$CASECON %in% c("CASE", "CTRL"),] # Slim to case/control (30659)
-manifest = manifest[!(manifest$s %in% to_remove$s)] # Remove relateds (28554)
+manifest = manifest[manifest$CASECON %in% c("CASE", "CTRL"),] # Slim to case/control (31248)
+manifest = manifest[!(manifest$s %in% to_remove$s)] # Remove relateds (29124)
 manifest = merge(manifest, meta[, c("s", "population_inference.pop")], by = "s", all.x = T, all.y = F) # Get inferred populations
 table(manifest$population_inference.pop)
 #   afr   ami   amr   asj   eas   fin   mid   nfe   oth   sas 
-# 11633    67  2279   377    40  4240     8  9315   563    32 
+# 11633    67  2279   377    40  4785     8  9329   574    32 
 colnames(manifest) <- c("s", "SEX", "PRIMARY_DISEASE", "CASECON", "COHORT", "POP")
 manifest$CHIP <- "WGS"
 
-write.table(manifest, "20240523_WGSPD_final-qcd-manifest.tsv", sep = "\t",
+write.table(manifest, "20240905_WGSPD_final-qcd-manifest.tsv", sep = "\t",
             quote = F, col.names = T, row.names = F)
+
+system2("gsutil", "cp 20240905_WGSPD_final-qcd-manifest.tsv gs://2024-wgspd/qc/")
 ```
 
 Write out final QC'd MT

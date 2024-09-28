@@ -5,8 +5,8 @@ Downsampling number of variants from pruned to 50% -- still too large
 
 Need more memory workers
 hailctl dataproc start rye \
-    --num-workers 10 \
-    --num-secondary-workers 10 \
+    --num-workers 5 \
+    --autoscaling-policy=test-5-200 \
     --max-idle=15m
 """
 import hail as hl
@@ -37,8 +37,6 @@ print(f"Case/Control filtered: {mt.count()}")
 # Case/Control filtered: (332778683, 31248)
 
 
-
-
 # Slim to pruned variants from gnomad
 gnomad_pruned_vars = hl.read_table("gs://2024-wgspd/qc/20240423_gnomad.joint.high_callrate_common_biallelic_snps.pruned.grch38.ht")
 print(f"gnomad pruned: {gnomad_pruned_vars.count()}")
@@ -47,10 +45,10 @@ print(f"gnomad pruned: {gnomad_pruned_vars.count()}")
 pruned = mt.filter_rows(hl.is_defined(gnomad_pruned_vars[mt.locus, mt.alleles]))
 pruned.write("gs://wes-bipolar-tmp-4day/20240903_pc-relate_pruned-checkpoint.mt", overwrite = True)
 pruned = hl.read_matrix_table("gs://wes-bipolar-tmp-4day/20240903_pc-relate_pruned-checkpoint.mt")
-print(f"Pruned subset: {pruned.count()}")
-# Pruned subset: (90588, 30659)
-pruned = pruned.repartition(500)
-#pruned = pruned.sample_rows(0.5)
+#print(f"Pruned subset: {pruned.count()}")
+# Pruned subset: (90588, 31248)
+pruned = pruned.repartition(5000)
+pruned = pruned.sample_rows(0.5).persist()  # gs://wes-bipolar-tmp-4day/persist_MatrixTableRtxKziJK2i
 
 
 eig, scores, _ = hl.hwe_normalized_pca(
