@@ -21,7 +21,7 @@ gene_lists_info =   {"gnomAD-constrained":  {"Description": "Constrained genes a
                     }
 
 # Hail function doesn't report OR for some reason... so here's a custom function
-def compute_MCH_OR(case_carriers, case_non_carriers,
+def compute_CMH_OR(case_carriers, case_non_carriers,
                    control_carriers, control_non_carriers):
     def numerator_term(a, d, t):
         return a*d/t
@@ -50,7 +50,7 @@ def run_cmh_on_gene_lists(m: hl.MatrixTable, kept_groups: list[str], counts: hl.
     res = hl.eval(hl.cochran_mantel_haenszel_test(case_carriers, case_non_carriers,
                                                   control_carriers, control_non_carriers))
     
-    OR = compute_MCH_OR(case_carriers, case_non_carriers,
+    OR = compute_CMH_OR(case_carriers, case_non_carriers,
                         control_carriers, control_non_carriers)
 
     return [OR, res.p_value, res.test_statistic]
@@ -158,7 +158,7 @@ def main(args):
                                            control_non_carriers = hl.agg.filter(res.case_con == "CTRL", hl.agg.collect(res.n_non_carriers))).rows() # Collect counts into arrays (collect all ancestry x kit groups), slim to only rows now
             res_counts = res_counts.annotate(RES = hl.cochran_mantel_haenszel_test(res_counts.case_carriers, res_counts.case_non_carriers,
                                                                                    res_counts.control_carriers, res_counts.control_non_carriers),
-                                             OR = compute_MCH_OR(res_counts.case_carriers, res_counts.case_non_carriers,
+                                             OR = compute_CMH_OR(res_counts.case_carriers, res_counts.case_non_carriers,
                                                                  res_counts.control_carriers, res_counts.control_non_carriers)) # Annotate in MCH results and OR estimates
             res_counts = res_counts.flatten()
 

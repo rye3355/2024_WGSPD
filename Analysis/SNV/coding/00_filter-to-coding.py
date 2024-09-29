@@ -1,9 +1,6 @@
 """
-Filter to protein coding genes as defined by Gencode v46
+Filter out LCRs and to protein coding genes as defined by Gencode v46
 Also min rep
-
-Also annotate samples with case/control assignments,
-variants with MPC, AM, in gnomAD nonpsych, and in discovEHR
 
 https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_46/gencode.v46.annotation.gtf.gz
 """
@@ -13,17 +10,24 @@ hl.init(default_reference = 'GRCh38',
                 tmp_dir = "gs://wes-bipolar-tmp-4day/")
 
 # Read original data MT
-MT = 'gs://2024-wgspd/qc/20240426_subset_final-qcd.mt'
+MT = 'gs://2024-wgspd/qc/20240905_subset_final-qcd.mt'
 mt = hl.read_matrix_table(MT)
-print(f"Original data count: {mt.count()}")
-#Original data count: (332778683, 28554)
+#print(f"Original data count: {mt.count()}")
+# Original data count: (332778683, 29124)
 
 
 # Annotate case/control info in
-MANIFEST = 'gs://2024-wgspd/files/20240523_WGSPD_final-qcd-manifest.tsv'
+MANIFEST = 'gs://2024-wgspd/files/20240905_WGSPD_final-qcd-manifest.tsv'
 manifest = hl.import_table(MANIFEST, delimiter='\t',
                           key = "s", impute = True)
 mt = mt.annotate_cols(case_con = manifest[mt.s].CASECON)
+mt = mt.repartition(20000).persist() # gs://wes-bipolar-tmp-4day/persist_MatrixTable3iKo3aaH2Y
+
+
+LCR_intervals = hl.read_table("gs://gcp-public-data--gnomad/resources/grch38/lcr_intervals/LCRFromHengHg38.ht")
+mt = mt.filter_rows(hl.is_defined(LCR_intervals[mt.locus]), keep = False)
+#print(f"After filtering LCRs: {mt.count()}")
+# After filtering LCRs: (330347037, 29124)
 
 
 
@@ -33,21 +37,21 @@ GTF = 'gs://2024-wgspd/files/gencode.v46.annotation.gtf'
 gtf = hl.experimental.import_gtf(GTF,
                                 reference_genome='GRCh38',
                                 skip_invalid_contigs=True)
-print(f"Number of genes from Gencode: {gtf.count()}")
+#print(f"Number of genes from Gencode: {gtf.count()}")
 #Number of genes from Gencode: 3467156
 
 ## Filter Gencode table down to protein coding (gene/transcript type)
 protein_coding = gtf.filter(gtf.gene_type == "protein_coding")
-print(f"Number of protein-coding (gene_type) genes from Gencode: {protein_coding.count()}")
+#print(f"Number of protein-coding (gene_type) genes from Gencode: {protein_coding.count()}")
 #Number of protein-coding (gene_type) genes from Gencode: 3078241
 protein_coding = protein_coding.filter(protein_coding.transcript_type == "protein_coding")
-print(f"Number of protein-coding (gene/transcript type) genes from Gencode: {protein_coding.count()}")
+#print(f"Number of protein-coding (gene/transcript type) genes from Gencode: {protein_coding.count()}")
 #Number of protein-coding (gene/transcript type) genes from Gencode: 2113938
 
 # Filter variants in MT 
 mt = mt.filter_rows(hl.is_defined(protein_coding[mt.locus]))
-print(f"Final data (coding) count: {mt.count()}")
-#Final data (coding) count: (144360038, 28554)
+#print(f"Final data (coding) count: {mt.count()}")
+#Final data (coding) count: (143350801, 29124)
 
 
 # Min rep
@@ -58,10 +62,13 @@ mt = mt.annotate_rows(locus = mt.min_rep.locus,
                       alleles = mt.min_rep.alleles)
 mt = mt.key_rows_by('locus', 'alleles')
 mt = mt.drop('min_rep')
-print(f"min rep count: {mt.count()}")
-#min rep count: (144360038, 28554)
+#print(f"min rep count: {mt.count()}")
+#min rep count: (143350801, 29124)
 
 
+
+
+"""
 # Updated MPC annotation
 MPC = 'gs://bipex2/annotations/mpc_grch38_deduped_with_outliers_2024-04-30.ht'
 mpc = hl.read_table(MPC)
@@ -92,14 +99,8 @@ mt = mt.annotate_rows(AM = oth[mt.locus, mt.alleles].am_pathogenicity,
                       MisFit_D = oth[mt.locus, mt.alleles].MisFit_D,
                       MisFit_S = oth[mt.locus, mt.alleles].MisFit_S,
                       protein_variant = oth[mt.locus, mt.alleles].protein_variant)
-
+"""
 
 # Write
-mt.write("gs://2024-wgspd/snv/coding/202240618_subset_post-qc_protein-coding.mt", overwrite = True)
-
-"""
-print(mt.aggregate_rows(hl.agg.counter(mt.inOS)))
-
-#{'NAGNAG_SITE': 754, 'NON_CAN_SPLICE': 339, 'NON_CAN_SPLICE,NAGNAG_SITE': 4, 'PHYLOCSF_UNLIKELY_ORF': 125, 'PHYLOCSF_WEAK': 23076, 'SINGLE_EXON': 3523, 'SINGLE_EXON,PHYLOCSF_WEAK': 928, None: 144331289}
-"""
+mt.write("gs://2024-wgspd/snv/coding/20240928_subset_post-qc_protein-coding.mt", overwrite = True)
 

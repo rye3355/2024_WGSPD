@@ -2,10 +2,10 @@
 Annotate with VEP consequences
 
 Input (from 00_filter-to-coding.py):
-gs://2024-wgspd/snv/coding/202240618_subset_post-qc_protein-coding.mt
+gs://2024-wgspd/snv/coding/202240928_subset_post-qc_protein-coding.mt
 
 Output (feed into 02_VEP-counts-export.py):
-gs://2024-wgspd/snv/coding/20240625_subset_post-qc_protein-coding_VEP-annotated_original.ht
+gs://2024-wgspd/snv/coding/20240625_subset_post-qc_protein-coding_VEP-annotated.ht
 """
 import hail as hl
 from gnomad.utils.vep import vep_or_lookup_vep
@@ -77,14 +77,16 @@ def annotation_case_builder_updated(worst_csq_for_variant_canonical_expr,
 
 
 # Read MT
-MT = 'gs://2024-wgspd/snv/coding/202240618_subset_post-qc_protein-coding.mt'
+MT = 'gs://2024-wgspd/snv/coding/202240928_subset_post-qc_protein-coding.mt'
 mt = hl.read_matrix_table(MT)
 print(f"Original data count: {mt.count()}")
-#Original data count: (144360038, 28554)
+#Original data count: (143350801, 29124)
 
 # VEP
 ht = mt.rows()
-ht_vep = vep_or_lookup_vep(ht, reference="GRCh38")
+#ht_vep = vep_or_lookup_vep(ht, reference="GRCh38")
+ht_vep = hl.vep(ht, "gs://hail-us-central1-vep/vep95-GRCh38-loftee-gcloud.json")
+ht_vep = ht_vep.persist()
 ht_vep = ht_vep.select('vep')
 
 # Process consequences
@@ -92,14 +94,6 @@ ht_vep = process_consequences(ht_vep)
 ht_vep = ht_vep.annotate(consequence_category = annotation_case_builder_updated(ht_vep.vep.worst_csq_for_variant_canonical, 
                                                                                 False, None, 
                                                                                 True, False, False)) # Matching original analysis for now
-# {'damaging_missense': 354982, 'non_coding': 131179272, 'other_missense': 1592839, 'pLoF': 137917, 'synonymous': 882295, None: 10212733}
-
-# Slim down to annotations of interest
-ht_vep = ht_vep.annotate(keep = (ht_vep.consequence_category == "pLoF") | 
-                         (ht_vep.consequence_category == "other_missense") | 
-                         (ht_vep.consequence_category == "damaging_missense") | 
-                         (ht_vep.consequence_category == "synonymous"))
-ht_vep = ht_vep.filter(ht_vep.keep)
 
 # Add SNP, indel, none; inframe indel
 ht_vep = ht_vep.annotate(
@@ -112,9 +106,10 @@ ht_vep = ht_vep.annotate(
                  (ht_vep.vep.worst_csq_for_variant_canonical.most_severe_consequence == "inframe_deletion"))
 )
 
-ht_vep = ht_vep.repartition(500, shuffle = False)
+ht_vep = ht_vep.repartition(1000, shuffle = False)
 
 # Write
-ht_vep.write("gs://2024-wgspd/snv/coding/20240625_subset_post-qc_protein-coding_VEP-annotated_original.ht", overwrite = True)
+ht_vep = ht_vep.checkpoint("gs://2024-wgspd/snv/coding/20240928_subset_post-qc_protein-coding_VEP-annotated.ht", overwrite = True)
 
-
+print(ht_vep.aggregate(hl.agg.counter(ht_vep.consequence_category)))
+# {'damaging_missense': 459607, 'non_coding': 129339734, 'other_missense': 2072668, 'pLoF': 184831, 'synonymous': 1153064, None: 10140897}

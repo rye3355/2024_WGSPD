@@ -21,19 +21,24 @@ gene_lists_info =   {"gnomAD-constrained":  {"Description": "Constrained genes a
                      "all":                 {"Description": "All provided genes"},
                     }
 
-def run_fisher_on_gene_lists(m: hl.MatrixTable, counts: hl.DictExpression):
-    m = m.annotate_cols(carrier = hl.agg.any(m.agg > 0)) # Label samples as carriers (any count > 0)
+def compute_rate_ratio(m: hl.MatrixTable, counts: hl.DictExpression):
+    m = m.annotate_cols(total_obs = hl.agg.sum(m.agg)) # Label samples as carriers (any count > 0)
     res = m.cols()
-    case_carriers = res.aggregate(hl.agg.filter(res.case_con == "CASE", hl.agg.sum(res.carrier))) # Count carriers
-    case_non_carriers = hl.eval(counts.get("CASE")) - case_carriers # Use dictionary to get non-carrier counts (faster than re-counting)
-    control_carriers = res.aggregate(hl.agg.filter(res.case_con == "CTRL", hl.agg.sum(res.carrier))) 
-    control_non_carriers = hl.eval(counts.get("CTRL")) - control_carriers 
-
-    res = hl.eval(hl.fisher_exact_test(case_carriers, case_non_carriers,
-                                        control_carriers, control_non_carriers))
-
-    return [res.p_value, res.odds_ratio, res.ci_95_lower, res.ci_95_upper,
-            case_carriers, case_non_carriers, control_carriers, control_non_carriers]
+    a = res.aggregate(hl.agg.filter(res.case_con == "CASE", hl.agg.sum(res.total_obs))) # Count carriers
+    b = res.aggregate(hl.agg.filter(res.case_con == "CTRL", hl.agg.sum(res.total_obs))) # Count non-carriers
+    A = hl.eval(counts.get("CASE"))
+    B = hl.eval(counts.get("CTRL"))
+    # {fmsb} rateratio
+    rate_ratio = (a/A) / (b/B)
+    norm_p = hl.qnorm(1 - (1-0.95)/2)
+    c = (a - (A/(A+B)) * (a+b))/hl.sqrt((a+b) * (A/(A+B)) * (B/(A+B)))
+    p_value = 2 * (1 - hl.pnorm(hl.abs(c)))
+    se = hl.sqrt((1/a) + (1/b))
+    ci_95_lower = rate_ratio * hl.exp(-norm_p*se)
+    ci_95_upper = rate_ratio * hl.exp(norm_p*se)
+    p_value = 2*(1-hl.pnorm(hl.abs(hl.log(rate_ratio) / se)))
+    return [rate_ratio, ci_95_lower, ci_95_upper, p_value, se, 
+            a, b, A, B]
 
 
 
@@ -75,33 +80,6 @@ def main(args):
     if args.gene_lists:
         gene_lists = args.gene_lists.replace(" ", "").split(",") # Parse command-line input
 
-
-        # Running CMH on each gene individually
-        # TODO: Make this more efficient with row aggregations?
-        if "individual" in gene_lists:
-            genes = mt.gene_symbol.collect() 
-            print(f"\nAnalyzing {len(genes)} genes individually\n")
-            m = mt
-            res = m.group_cols_by(m.case_con).aggregate(n_carriers = hl.agg.sum(m.agg > 0)).repartition(200, shuffle = False).persist() # Count carriers by CASE/CTRL stratifications
-            res = res.annotate_entries(n_non_carriers = counts.get(res.case_con) - res.n_carriers) # Use dictionary to get non-carrier counts (faster than re-counting)
-            res_counts = res.annotate_rows(case_carriers = hl.agg.filter(res.case_con == "CASE", hl.agg.collect(res.n_carriers)[0]), 
-                                           case_non_carriers = hl.agg.filter(res.case_con == "CASE", hl.agg.collect(res.n_non_carriers)[0]), 
-                                           control_carriers = hl.agg.filter(res.case_con == "CTRL", hl.agg.collect(res.n_carriers)[0]), 
-                                           control_non_carriers = hl.agg.filter(res.case_con == "CTRL", hl.agg.collect(res.n_non_carriers)[0])).rows() # Collect counts into arrays (collect all ancestry x kit groups), slim to only rows now
-            res_counts = res_counts.annotate(fisher = hl.fisher_exact_test(hl.int(res_counts.case_carriers), hl.int(res_counts.case_non_carriers),
-                                                                           hl.int(res_counts.control_carriers), hl.int(res_counts.control_non_carriers))) # Annotate in Fisher results
-            res_counts = res_counts.flatten()
-
-            #print(f"\nWriting result to: {args.out + args.file_prefix + '_case-control_Fisher-exact_individual.ht'}\n") 
-            #res_counts = res_counts.checkpoint(args.out + args.file_prefix + '_case-control_Fisher-exact_individual.ht')
-
-            print(f"\nWriting result to: {args.out + args.file_prefix + '_case-control_Fisher-exact_individual.tsv'}\n") 
-            res_counts.export(args.out + args.file_prefix + '_case-control_Fisher-exact_individual.tsv', delimiter = "\t")
-            
-            
-            gene_lists.remove("individual")
-
-
         results = {}
         for gene_list in gene_lists: # Iterate through every desired gene list analysis
             print(f"\nAnalyzing {gene_list}: {gene_lists_info[gene_list]['Description']}\n")
@@ -112,16 +90,17 @@ def main(args):
                 m = m.filter_rows(hl.is_defined(g[m.gene_symbol]), keep = True) # Filter down to genes of interest
                 
             print(f"\nTotal number of genes: {m.rows().count()}\n")    
-            results[gene_list] = [gene_list] + run_fisher_on_gene_lists(m, counts)
+            results[gene_list] = [gene_list] + compute_rate_ratio(m, counts)
 
         # Only write if something to be written at this point
         if results:
             df = pd.DataFrame.from_dict(results, orient = "index",
-                                        columns = ["gene_set", "p_value", "odds_ratio", "ci_95_lower", "ci_95_upper",
-                                                   "case_carriers", "case_non_carriers", "control_carriers", "control_non_carriers"])
+                                        columns = ["gene_set", "rate_ratio", "ci_95_lower", "ci_95_upper", "p_value", "se", 
+                                                   "case_counts", "ctrl_counts", "n_case", "n_ctrl"]
+                                        )
             df_ht = hl.Table.from_pandas(df, key = "gene_set")
-            print(f"\nWriting result to: {args.out + args.file_prefix + '_case-control_Fisher-exact_' + '-'.join(gene_lists) + '.tsv'}\n") 
-            df_ht.export(args.out + args.file_prefix + '_case-control_Fisher-exact_' + '-'.join(gene_lists) + '.tsv', delimiter='\t')
+            print(f"\nWriting result to: {args.out + args.file_prefix + '_rate-ratio_' + '-'.join(gene_lists) + '.tsv'}\n") 
+            df_ht.export(args.out + args.file_prefix + '_rate-ratio_' + '-'.join(gene_lists) + '.tsv', delimiter='\t')
 
             
 
@@ -148,7 +127,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--gene_lists",
-        help = "Comma-separated gene-lists to individually filter to and analyze. Possible values: gnomAD-constrained, SCHEMA, NDD, ASD, all.",
+        help = "Comma-separated gene-lists to individually filter to and analyze. Possible values: individual, gnomAD-constrained, SCHEMA, NDD, ASD.",
         type = str,
         required = False
     )

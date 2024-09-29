@@ -9,10 +9,10 @@ MPC, gnomAD-nonPsych, DiscovEHR, liftover OS (see below), AM, score_ml, MisFit_S
 ```bash
 hailctl dataproc start rye \
     --num-workers 5 \
-    --packages gnomad \
+    --pkgs="git+https://github.com/broadinstitute/gnomad_methods.git@main","ipython<8.22" \
     --autoscaling-policy=test-5-200 \
-    --vep GRCh38 \
     --requester-pays-allow-all \
+    --vep GRCh38 \
     --max-idle=15m
 
 hailctl dataproc submit rye coding/00_filter-to-coding.py
@@ -28,7 +28,7 @@ VEP annotation and processing consequence categories
 Using the same consequence category annotation system as initial analysis (for now)
 {'damaging_missense': 354982, 'non_coding': 131179272, 'other_missense': 1592839, 'pLoF': 137917, 'synonymous': 882295, None: 10212733}
 ```bash
-hailctl dataproc submit rye coding/01_vep-annotate.py
+hailctl dataproc submit rye coding/original-run-annotations/01_vep-annotate.py
 ```
 
 

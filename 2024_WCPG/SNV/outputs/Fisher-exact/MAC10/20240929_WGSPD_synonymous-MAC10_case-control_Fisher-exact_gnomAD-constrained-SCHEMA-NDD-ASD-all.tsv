@@ -1,0 +1,6 @@
+gene_set	p_value	odds_ratio	ci_95_lower	ci_95_upper	case_carriers	case_non_carriers	control_carriers	control_non_carriers
+ASD	2.5469e-03	1.0837e+00	1.0284e+00	1.1418e+00	3529	4398	9018	12179
+NDD	5.8648e-12	1.3185e+00	1.2166e+00	1.4300e+00	7046	881	18197	3000
+SCHEMA	6.9218e-01	1.0126e+00	9.5117e-01	1.0778e+00	1773	6154	4695	16502
+all	NaN	NaN	NaN	NaN	7927	0	21197	0
+gnomAD-constrained	NaN	NaN	NaN	NaN	7927	0	21197	0
