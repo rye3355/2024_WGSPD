@@ -12,8 +12,13 @@ hl.init(default_reference = 'GRCh38',
 
 
 # Read in data MT
-MT= 'gs://2024-wgspd/snv/coding/202240928_subset_post-qc_protein-coding.mt'
+MT = 'gs://2024-wgspd/qc/20240905_subset_final-qcd.mt'
 mt = hl.read_matrix_table(MT)
+mt = mt.repartition(2000, shuffle = False)
+LCR_intervals = hl.read_table("gs://gcp-public-data--gnomad/resources/grch38/lcr_intervals/LCRFromHengHg38.ht")
+mt = mt.filter_rows(hl.is_defined(LCR_intervals[mt.locus]), keep = False).persist() 
+# gs://wes-bipolar-tmp-4day/tmp/hail/dnQO33mcdbHGgMZug1080a/persist_MatrixTableHYRbgJHjrW
+
 
 
 
@@ -29,18 +34,20 @@ bed_4 = bed.filter(bed.target_int > 4) # Filter to z > 4
 
 # Filter
 mt_filtered = hl.filter_intervals(mt, bed_4.interval.collect(), keep = True)
-mt_filtered.persist() # wes-bipolar-tmp-4day/persist_MatrixTable3DMIi2lUGh
-#mt_filtered.count() # (1240621, 29124)
+mt_filtered = mt_filtered.checkpoint("gs://wes-bipolar-tmp-4day/mt_filtered_checkpoint", overwrite = True) 
+print(mt_filtered.count()) # (2219734, 29124)
 
 mt_filtered = hl.variant_qc(mt_filtered)
 mt_1 = mt_filtered.filter_rows((mt_filtered.variant_qc.n_non_ref==1), keep = True)
 mt_5 = mt_filtered.filter_rows((hl.min(mt_filtered.variant_qc.AC) <= 5), keep = True)
 mt_10 = mt_filtered.filter_rows((hl.min(mt_filtered.variant_qc.AC) <= 10), keep = True)
 
-mt_1 = mt_1.checkpoint("gs://wes-bipolar-tmp-4day/noncoding-constriant/target-int4_MAC1")
-mt_5 = mt_5.checkpoint("gs://wes-bipolar-tmp-4day/noncoding-constriant/target-int4_MAC5")
-mt_10 = mt_10.checkpoint("gs://wes-bipolar-tmp-4day/noncoding-constriant/target-int4_MAC10")
-
+mt_1 = mt_1.checkpoint("gs://wes-bipolar-tmp-4day/noncoding-constriant/target-int4_MAC1", overwrite = True)
+print(mt_1.count()) # (1104990, 29124)
+mt_5 = mt_5.checkpoint("gs://wes-bipolar-tmp-4day/noncoding-constriant/target-int4_MAC5", overwrite = True)
+print(mt_5.count()) # (1768946, 29124)
+mt_10 = mt_10.checkpoint("gs://wes-bipolar-tmp-4day/noncoding-constriant/target-int4_MAC10", overwrite = True)
+print(mt_10.count()) # (1880473, 29124)
 
 #{'CASE': 7927, 'CTRL': 21197}
 def compute_rate_ratio(m: hl.MatrixTable):
@@ -66,12 +73,11 @@ def compute_rate_ratio(m: hl.MatrixTable):
 
 
 compute_rate_ratio(mt_1)
-# [0.9521359521943918, 0.9467602861217311, 0.957542141078527, 0.0, 0.0028887776402703193, 162500, 456373, 7927, 21197]
+# [0.951879122344997, 0.9478540510207982, 0.9559212861732026, 0.0, 0.002162039023704779, 290084, 814906, 7927, 21197]
 compute_rate_ratio(mt_5)
-# [1.011664001356293, 1.0092853678162914, 1.0140482407414777, 0.0, 0.0012010309809038033, 955531, 2525655, 7927, 21197]
+# [1.011181357427013, 1.0093831314473152, 1.012982786963986, 0.0, 0.0009081416017255038, 1671049, 4419017, 7927, 21197]
 compute_rate_ratio(mt_10)
-# [1.0194122256031068, 1.0173001355027165, 1.0215287007659153, 0.0, 0.001058192799652238, 1233490, 3235574, 7927, 21197]
-
+# [1.0187967802913782, 1.0172121636049638, 1.0203838654992405, 0.0, 0.0007941938793013093, 2189474, 5746690, 7927, 21197]
 
 
 
@@ -90,7 +96,7 @@ def compute_fisher(m: hl.MatrixTable):
             case_carriers, case_non_carriers, control_carriers, control_non_carriers]
 
 compute_fisher(mt_1)
-# [0.0010783373565330164, 2.592593878986912, 1.4070333356232791, 5.222051099755805, 7915, 12, 21114, 83]
+# [0.11764511419420443, inf, 0.6384203451988752, inf, 7927, 0, 21189, 8]
 compute_fisher(mt_5)
 # [nan, nan, nan, nan, 7927, 0, 21197, 0]
 compute_fisher(mt_10)

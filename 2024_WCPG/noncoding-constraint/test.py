@@ -1,11 +1,14 @@
 import hail as hl
-hl.init(default_reference = 'GRCh38',
-                tmp_dir = "gs://wes-bipolar-tmp-4day/")
-mt_1 = hl.read_matrix_table("gs://wes-bipolar-tmp-4day/noncoding-constriant/target-int4_MAC1")
+MANIFEST = 'gs://2024-wgspd/files/20240905_WGSPD_final-qcd-manifest.tsv'
+manifest = hl.import_table(MANIFEST, delimiter='\t',
+                          key = "s", impute = True)
+
+#mt_1 = hl.read_matrix_table("gs://wes-bipolar-tmp-4day/noncoding-constriant/target-int4_MAC1")
 mt_5 = hl.read_matrix_table("gs://wes-bipolar-tmp-4day/noncoding-constriant/target-int4_MAC5")
 mt_10 = hl.read_matrix_table("gs://wes-bipolar-tmp-4day/noncoding-constriant/target-int4_MAC10")
 
-
+mt_5 = mt_5.annotate_cols(case_con = manifest[mt_5.s].CASECON)
+mt_10 = mt_10.annotate_cols(case_con = manifest[mt_10.s].CASECON)
 def compute_rate_ratio(m: hl.MatrixTable):
     m = m.annotate_cols(total_obs = hl.agg.sum(m.GT.is_non_ref())) # Label samples as carriers (any count > 0)
     res = m.cols()
@@ -39,6 +42,9 @@ def compute_fisher(m: hl.MatrixTable):
     return [hl.eval(res.p_value), hl.eval(res.odds_ratio), hl.eval(res.ci_95_lower), hl.eval(res.ci_95_upper),
             case_carriers, case_non_carriers, control_carriers, control_non_carriers]
 
-print(compute_fisher(mt_1))
+
+print(compute_rate_ratio(mt_5))
 print(compute_fisher(mt_5))
+
+print(compute_rate_ratio(mt_10))
 print(compute_fisher(mt_10))
