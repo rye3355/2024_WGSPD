@@ -47,7 +47,7 @@ merged$`Genetic Ancestry` <- factor(merged$`Genetic Ancestry`,
                                                "Finnish (14.51%)", "Admixed (8.40%)", "Ashkenazi Jewish (1.35%)",
                                                "Asian (0.20%)"))
 
-colors <- c("#1f78b4", "#33a02c", "#e31a1c", "#ff7f00", "#6a3d9a", "#b15928")
+colors <- c("#0072B2", "#D55E00", "#009E73", "#CC79A7", "#C65D5D", "#F0E442")
 
 
 pca_plot <- ggplot(merged, aes(x = PC1, y = PC2, color = `Genetic Ancestry`)) +
@@ -72,24 +72,3 @@ pca_plot <- ggplot(merged, aes(x = PC1, y = PC2, color = `Genetic Ancestry`)) +
 pca_plot
 
 ggsave("outputs/ancestry-pca-plots/20240929_ancestry-pca_legend-bottom.jpg", plot = pca_plot, width = 9, height = 9)
-
-pca_plot <- ggplot(merged, aes(x = PC1, y = PC2, color = `Genetic Ancestry`)) +
-  geom_point(size = 2) +
-  scale_color_manual(values = colors) +  # Apply professional color palette
-  labs(
-    x = "Principal Component 1",
-    y = "Principal Component 2",
-    color = "Genetic Ancestry"
-  ) +
-  theme_minimal() +
-  theme(
-    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
-    axis.title = element_text(size = 12, margin = margin(t = 5, r = 5, b = 5, l = 5)),  # Adjust axis titles' margins
-    axis.text = element_text(size = 10, margin = margin(t = 0, r = 0, b = 0, l = 0)),  # Remove extra margin around tick labels
-    legend.title = element_text(size = 14),
-    legend.text = element_text(size = 12),
-    legend.position = "right",  # Move legend to the bottom for better presentation
-    panel.border = element_rect(color = "black", fill = NA, size = 1),  # Add a black border around the plot
-    plot.margin = margin(10, 10, 10, 10)  # Adjust the plot margin for overall balance
-  )
-ggsave("outputs/ancestry-pca-plots/20240929_ancestry-pca_legend-right.jpg", plot = pca_plot, width = 11, height = 8)

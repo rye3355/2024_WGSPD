@@ -1,0 +1,140 @@
+PREDICTED_INTRONIC 
+35935 1196 
+Number of >5000b DELs within 373NDD genes: 356 (out of 7119) 
+        rarevar novar
+case        342  5994
+control     208  5069
+
+	Fisher's Exact Test for Count Data
+
+data:  dat
+p-value = 0.0002252
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 1.162007 1.666887
+sample estimates:
+odds ratio 
+  1.390449 
+
+          Cases Person-time
+Exposed     342        6336
+Unexposed   208        5277
+Total       550       11613
+
+	Incidence rate ratio estimate and its significance probability
+
+data:  a b case_total control_total
+p-value = 0.0003305
+95 percent confidence interval:
+ 1.152627 1.626975
+sample estimates:
+[1] 1.369414
+
+
+ 
+ 
+PREDICTED_LOF 
+146864 1196 
+Number of >100b DELs within 373NDD genes: 149 (out of 9777) 
+        rarevar novar
+case        163  6173
+control     104  5173
+
+	Fisher's Exact Test for Count Data
+
+data:  dat
+p-value = 0.03436
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 1.017724 1.701113
+sample estimates:
+odds ratio 
+  1.313378 
+
+          Cases Person-time
+Exposed     163        6336
+Unexposed   104        5277
+Total       267       11613
+
+	Incidence rate ratio estimate and its significance probability
+
+data:  a b case_total control_total
+p-value = 0.03321
+95 percent confidence interval:
+ 1.020705 1.669369
+sample estimates:
+[1] 1.305348
+
+
+ 
+ 
+PREDICTED_PROMOTER 
+146864 1196 
+Number of >100b DELs within 373NDD genes: 16 (out of 1099) 
+        rarevar novar
+case         22  6314
+control      15  5262
+
+	Fisher's Exact Test for Count Data
+
+data:  dat
+p-value = 0.6214
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.6052339 2.5361713
+sample estimates:
+odds ratio 
+  1.222278 
+
+          Cases Person-time
+Exposed      22        6336
+Unexposed    15        5277
+Total        37       11613
+
+	Incidence rate ratio estimate and its significance probability
+
+data:  a b case_total control_total
+p-value = 0.5494
+95 percent confidence interval:
+ 0.6336986 2.3546371
+sample estimates:
+[1] 1.221528
+
+
+ 
+ 
+PREDICTED_UTR 
+146864 1196 
+Number of >100b DELs within 373NDD genes: 48 (out of 1625) 
+        rarevar novar
+case         54  6282
+control      35  5242
+
+	Fisher's Exact Test for Count Data
+
+data:  dat
+p-value = 0.2853
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 0.824701 2.033138
+sample estimates:
+odds ratio 
+  1.287404 
+
+          Cases Person-time
+Exposed      54        6336
+Unexposed    35        5277
+Total        89       11613
+
+	Incidence rate ratio estimate and its significance probability
+
+data:  a b case_total control_total
+p-value = 0.2466
+95 percent confidence interval:
+ 0.8398177 1.9661210
+sample estimates:
+[1] 1.284984
+
+
+ 
+ 
