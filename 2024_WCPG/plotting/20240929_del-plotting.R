@@ -27,11 +27,11 @@ df$Category <- factor(df$Category,
                                      "Promoter","5'UTR"))
 
 
-odds_ratio_plot <- ggplot(df[df$Category %in% c("Exonic", "Intronic"), ], aes(x = OR, y = Category, color = Gene_set)) +
-  geom_point(size = 4.5, position=position_dodge(width = 10)) +  # Points for estimates
+odds_ratio_plot <- ggplot(df, aes(x = OR, y = Category, color = Gene_set)) +
+  geom_point(size = 4.5, position=position_dodge(width = 12)) +  # Points for estimates
   geom_errorbarh(aes(xmin = CI_low, xmax = CI_high), 
                  height = 0.3, size = 1, 
-                 position=position_dodge(width = 10)) +  # Error bars
+                 position=position_dodge(width = 12)) +  # Error bars
   facet_wrap(~Category, ncol = 1) +
   labs(
     #title = "",
@@ -66,4 +66,10 @@ odds_ratio_plot <- ggplot(df[df$Category %in% c("Exonic", "Intronic"), ], aes(x 
   guides(color = guide_legend(override.aes = list(shape = 15, linetype = "blank"))) 
 odds_ratio_plot
 
-ggsave("outputs/SV-plots/20240929_sv-plotting_del-ac5_old-analysis.jpg", plot = odds_ratio_plot, width = 11, height = 6.5)
+ggsave("outputs/SV-plots/20240929_sv-plotting_del-ac5_old-analysis.jpg", plot = odds_ratio_plot, width = 11, height = 13)
+
+
+
+
+
+

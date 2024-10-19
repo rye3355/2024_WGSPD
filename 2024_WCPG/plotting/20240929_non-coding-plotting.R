@@ -6,8 +6,8 @@ library(RColorBrewer)
 library(scales) 
 
 sv <- fread("inputs/non-coding/fisher_non-coding_table.tsv")
-snv <- fread("inputs/non-coding/fisher_SNV_non-coding_table.tsv")
-
+snv <- fread("inputs/non-coding/rate-ratio_SNV_non-coding_table.tsv")
+colnames(snv) <- colnames(sv)
 
 df <- rbind(sv, snv)
 df$Category <- factor(df$Category, 
@@ -52,4 +52,4 @@ odds_ratio_plot <- ggplot(df, aes(x = OR, y = Category, color = Category)) +
   guides(color = guide_legend(override.aes = list(shape = 15, linetype = "blank"))) 
 odds_ratio_plot
 
-ggsave("outputs/non-coding/20240929_non-coding_old-analysis.jpg", plot = odds_ratio_plot, width = 8, height = 4)
+ggsave("outputs/non-coding/20241004_non-coding_old-sv-new-snv.jpg", plot = odds_ratio_plot, width = 8, height = 4)
