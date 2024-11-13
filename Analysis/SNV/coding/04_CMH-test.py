@@ -66,9 +66,12 @@ def main(args):
     mt = hl.read_matrix_table(args.mt) 
     print(f"\nStarting (genes, samples): {mt.count()}\n")
 
+    # Repartition if needed and persist
+    if args.n_partitions:
+        mt = mt.repartition(args.n_partitions, shuffle = False).persist()
 
     # Check annotation requirements
-    if (args.annotate_casecon or args.annotate_pop or args.annotate_chip or args.filter_pass) and not args.manifest:
+    if (args.annotate_casecon or args.annotate_pop or args.annotate_chip or args.filter_pass or args.annotate_cohort) and not args.manifest:
         print(f"No manifest provided to pull annotations from...")
         return
     
@@ -76,19 +79,20 @@ def main(args):
     # Requires key by "s" and specific fields "CASECON", "POP", and "CHIP" as needed
     if args.manifest:
         manifest = hl.import_table(args.manifest,
-                                   delimiter = "\t", impute = True, key = "s")
+                                   delimiter = "\t", impute = True, key = "s") # Requires key by "s" and specific fields "CASECON", "POP", and "CHIP" as needed
         if args.filter_pass:
-            mt = mt.filter_cols(hl.if_else(hl.is_defined(manifest[mt.s]),
-                                           manifest[mt.s].FILTER == "PASS",
-                                           False), 
+            mt = mt.filter_cols(hl.if_else(hl.is_defined(manifest[mt.s]), # If it's even in manifest
+                                           manifest[mt.s][args.filter_pass] == args.pass_value, # Only True if PASS
+                                           False), # Otherwise, don't keep
                                 keep = True)
         if args.annotate_casecon:
-            mt = mt.annotate_cols(case_con = manifest[mt.s].CASECON)
+            mt = mt.annotate_cols(case_con = manifest[mt.s][args.annotate_casecon]) # Annotate all with "CASE" or "CTRL"
         if args.annotate_pop:
-            mt = mt.annotate_cols(pop = manifest[mt.s].POP)
+            mt = mt.annotate_cols(pop = manifest[mt.s][args.annotate_pop]) # Annotate all with population
         if args.annotate_chip:
-            mt = mt.annotate_cols(chip = manifest[mt.s].CHIP)
-        
+            mt = mt.annotate_cols(chip = manifest[mt.s][args.annotate_chip]) # Annotate all with chip
+        if args.annotate_cohort:
+            mt = mt.annotate_cols(cohort = manifest[mt.s][args.annotate_cohort]) # Annotate all with cohort
 
         
     if args.population_only_strat:
@@ -98,9 +102,11 @@ def main(args):
         # Create population x chip stratification
         mt = mt.annotate_cols(group = mt.pop + "_" + mt.chip,
                               group2 = mt.pop + "_" + mt.chip + "_" + mt.case_con)
+        
+
+    # Exclude stratification groups based on size, case count, control count
     groups = mt.aggregate_cols(hl.agg.collect_as_set(mt.group))
     counts = mt.aggregate_cols(hl.agg.counter(mt.group2))
-    print(hl.eval(counts))
 
     for g in groups:
         if g + "_CASE" not in counts:
@@ -108,31 +114,35 @@ def main(args):
         if g + "_CTRL"  not in counts:
             counts[g + "_CTRL"] = 0
     
-
+    print("Strata before filtering:")
+    print(groups)
+    print(counts)
 
     # Exclude groups that are too small as desired
     excluded_groups = []
-    if args.minimum_group_size or args.minimum_cases:
+    if args.minimum_group_size or args.minimum_cases or args.minimum_controls:
         if args.minimum_group_size:
             excluded_groups += [x for x in groups if ((counts[x + "_CASE"] + counts[x + "_CTRL"]) < args.minimum_group_size)]
         if args.minimum_cases:
             excluded_groups += [x for x in groups if ((counts[x + "_CASE"]) < args.minimum_cases)]   
         if args.minimum_controls:
             excluded_groups += [x for x in groups if ((counts[x + "_CTRL"]) < args.minimum_controls)]   
-
         print(f"\nGroups that are too small: {set(excluded_groups)}\n")
-        print(f"\nTotal number of samples filtered out: {mt.filter_cols(hl.set(excluded_groups).contains(mt.group)).count()[1]}\n")
+    if excluded_groups:
         mt = mt.filter_cols(hl.set(excluded_groups).contains(mt.group), keep = False)
-        print(f"\nTotal number of samples after filtering: {mt.count()[1]}\n")
+        
+        print("Strata after filtering:")
+        groups = mt.aggregate_cols(hl.agg.counter(mt.group)) 
+        counts = mt.aggregate_cols(hl.agg.counter(mt.group2))
+        print(groups)
+        print(counts)
+
+        
 
     kept_groups = [x for x in groups if x not in excluded_groups]
 
     print(counts)
     counts = hl.literal(counts) # Convert counts dictionary to hail format
-
-    # Repartition if needed
-    if mt.n_partitions() > 200:
-        mt = mt.repartition(200, shuffle = False)
 
     # Persist for speed
     mt = mt.persist()
@@ -214,22 +224,28 @@ if __name__ == "__main__":
     parser.add_argument(
         "--filter_pass",
         help = "Flag to filter to samples with FILTER == PASS in manifest",
-        action = 'store_true'
+        type = str,
+    )
+    parser.add_argument(
+        "--pass_value",
+        help = "Value to keep in filter_pass field",
+        type = str,
+        required = False
     )
     parser.add_argument(
         "--annotate_casecon",
         help = "Flag to annotate in case control status for each sample",
-        action = 'store_true'
+        type = str,
     )
     parser.add_argument(
         "--annotate_pop",
         help = "Flag to annotate in population for each sample",
-        action = 'store_true'
+        type = str,
     )
     parser.add_argument(
         "--annotate_chip",
         help = "Flag to annotate in chip for each sample",
-        action = 'store_true'
+        type = str,
     )
     parser.add_argument(
         "--population_only_strat",
@@ -254,6 +270,13 @@ if __name__ == "__main__":
         type = int,
         required = False
     )
+
+    parser.add_argument(
+        "--n_partitions",
+        help = "Number of partitions to repartition to",
+        type = int,
+        required = False
+    )     
     parser.add_argument(
         "--gene_lists",
         help = "Comma-separated gene-lists to individually filter to and analyze. Possible values: individual, gnomAD-constrained, SCHEMA, NDD, ASD.",
