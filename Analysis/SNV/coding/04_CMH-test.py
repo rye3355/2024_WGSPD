@@ -131,11 +131,11 @@ def main(args):
     if excluded_groups:
         mt = mt.filter_cols(hl.set(excluded_groups).contains(mt.group), keep = False)
         
-        print("Strata after filtering:")
+        #print("Strata after filtering:")
         groups = mt.aggregate_cols(hl.agg.counter(mt.group)) 
         counts = mt.aggregate_cols(hl.agg.counter(mt.group2))
-        print(groups)
-        print(counts)
+        #print(groups)
+        #print(counts)
 
         
 
@@ -246,6 +246,12 @@ if __name__ == "__main__":
         "--annotate_chip",
         help = "Flag to annotate in chip for each sample",
         type = str,
+    )
+    parser.add_argument(
+        "--annotate_cohort",
+        help = "Flag to annotate in cohort for each sample; flag value is name of field in manifest",
+        type = str,
+        required = False
     )
     parser.add_argument(
         "--population_only_strat",
