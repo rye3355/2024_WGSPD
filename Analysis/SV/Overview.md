@@ -52,7 +52,11 @@ ht = ht.transmute(info = hl.dict(
     ))
 # Also get keys
 ht = ht.annotate(keys = ht.info.keys())
+unique_elements = ht.aggregate(hl.agg.explode(lambda x: hl.agg.collect_as_set(x), ht.keys))
+ht = ht.annotate_globals(all_keys = unique_elements)
+
 # Write
+ht = ht.repartition(100)
 ht.write("gs://2024-wgspd/sv/20241104_WGSPD_Xuefang/gnomAD_SV_v3_joined.ht")
 ```
 
@@ -68,7 +72,12 @@ hailctl dataproc start rye --num-workers 5 --autoscaling-policy=test-5-200 --max
 
 # Merge GT VCFs into a MT
 hailctl dataproc submit rye 00_merge-SV-VCFs.py
+# Writes to gs://2024-wgspd/sv/20241104_WGSPD_sample-GT/gnomAD_SV_v3.release_4_1.1KGP_merged.mt
 ```
+NOTE: not all samples from final-qcd manifest are present in MT, some are not releasable
+ CASECON releasable unreleasable
+   CASE       6866         1061
+   CTRL      15969         5228
 
 
 
@@ -77,3 +86,4 @@ hailctl dataproc submit rye 00_merge-SV-VCFs.py
 
 
 hailctl dataproc start rye --num-workers 5 --num-secondary-workers 10 --pkgs="ipython<8.22" --max-idle=10m
+hailctl dataproc start rye --num-workers 5 --autoscaling-policy=test-5-200 --max-idle=10m
